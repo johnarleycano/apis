@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{erpApiUrlVersion2}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Estado_Cuenta_cliente&parametros=f200_id='811007434'|f353_consec_docto_cruce='-1'"
+  url: "{{urlVersion1}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Estado_Cuenta_cliente&parametros=f200_id='811007434'|f353_consec_docto_cruce='-1'"
   headers:
     - name: conniKey
       value: "{{conniKey}}"

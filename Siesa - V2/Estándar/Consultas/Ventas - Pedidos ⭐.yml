@@ -5,12 +5,12 @@ info:
 
 http:
   method: GET
-  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=1|tamPag=100&parametros=f430_rowid IS NOT NULL and f430_id_co=''200'' and f430_id_tipo_docto=''CPC'' and f430_consec_docto=''25422''"
+  url: "{{urlVersion1}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=1|tamPag=100&parametros=f430_rowid IS NOT NULL and f430_id_co=''200'' and f430_id_tipo_docto=''CPC'' and f430_consec_docto=''25422''"
   headers:
     - name: ConniKey
-      value: "{{erpConniKeyVersion3}}"
+      value: "{{conniKeyVersion2}}"
     - name: ConniToken
-      value: "{{erpConniTokenVersion3}}"
+      value: "{{conniTokenVersion2}}"
   params:
     - name: idCompania
       value: "{{idCompania}}"

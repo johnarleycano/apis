@@ -5,12 +5,12 @@ info:
 
 http:
   method: GET
-  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Auxiliares&paginacion=numPag=1|tamPag=100&parametros=f253_rowid IS NOT NULL"
+  url: "{{urlVersion1}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Auxiliares&paginacion=numPag=1|tamPag=100&parametros=f253_rowid IS NOT NULL"
   headers:
     - name: ConniKey
-      value: "{{apiSiesaConnekta_conniKey}}"
+      value: "{{conniKeyVersion2}}"
     - name: ConniToken
-      value: "{{apiSiesaConnekta_conniToken}}"
+      value: "{{conniTokenVersion2}}"
   params:
     - name: idCompania
       value: "{{idCompania}}"
@@ -25,15 +25,6 @@ http:
       value: f253_rowid IS NOT NULL
       type: query
   auth: inherit
-
-runtime:
-  variables:
-    - name: erpApiUrlVersion2
-      value: https://serviciosqa.siesacloud.com
-    - name: apiSiesaConnekta_conniKey
-      value: 7f3db62af80e421edf4a4f0e0ac79f15
-    - name: apiSiesaConnekta_conniToken
-      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY4MTAxODU3LTE3YWItNGIyZi05MTc5LWIxZWE5M2ZmNTI1NCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6ImFhMWFkZTZmLWJjOTctNGY4MC04YTIyLThhMDQxMzU3MzdiZiJ9.A0eXfX-nNKHAtkwv6f_Sz4g2hxOCJjeBNCAU8we0SLU
 
 settings:
   encodeUrl: true

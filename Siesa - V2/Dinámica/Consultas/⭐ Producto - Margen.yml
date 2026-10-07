@@ -8,9 +8,9 @@ http:
   url: https://servicios.siesacloud.com/api/connekta/v3.1/ejecutarconsulta?descripcion=muellesyfrenos_Margen&paginacion=numPag=1|tamPag=100&idCompania=7129&parametros=f_rowid_item=''7443''
   headers:
     - name: ConniKey
-      value: "{{erpConniKeyVersion3}}"
+      value: "{{conniKeyVersion3}}"
     - name: ConniToken
-      value: "{{erpConniTokenVersion3}}"
+      value: "{{conniTokenVersion3}}"
   params:
     - name: descripcion
       value: muellesyfrenos_Margen

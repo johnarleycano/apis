@@ -5,12 +5,12 @@ info:
 
 http:
   method: GET
-  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_ItemsKits&paginacion=numPag=1|tamPag=100&parametros=f120_rowid_kit IS NOT NULL"
+  url: "{{urlVersion1}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_ItemsKits&paginacion=numPag=1|tamPag=100&parametros=f120_rowid_kit IS NOT NULL"
   headers:
     - name: ConniKey
-      value: "{{erpConniKeyVersion2}}"
+      value: "{{conniKeyVersion2}}"
     - name: ConniToken
-      value: "{{erpConniTokenVersion2}}"
+      value: "{{conniTokenVersion2}}"
   params:
     - name: idCompania
       value: "{{idCompania}}"

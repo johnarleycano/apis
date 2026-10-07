@@ -18,10 +18,14 @@ request:
   variables:
     - name: idCompania
       value: "7129"
-    - name: erpConniTokenVersion2
-      value: "{{process.env.SIESA_CONNI_TOKEN}}"
-    - name: erpConniKeyVersion2
-      value: "{{process.env.SIESA_CONNI_KEY}}"
+    - name: conniKeyVersion2
+      value: 7f3db62af80e421edf4a4f0e0ac79f15
+    - name: conniTokenVersion2
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY4MTAxODU3LTE3YWItNGIyZi05MTc5LWIxZWE5M2ZmNTI1NCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6ImFhMWFkZTZmLWJjOTctNGY4MC04YTIyLThhMDQxMzU3MzdiZiJ9.A0eXfX-nNKHAtkwv6f_Sz4g2hxOCJjeBNCAU8we0SLU
+    - name: conniKeyVersion3
+      value: b4ae62f4b60bac1d7b2e68426f4c749e
+    - name: conniTokenVersion3
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjBhYTliMjFmLTA1NzUtNDRkNS04MmVkLWFhNzc3YjQzZjBiYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6IjA3MDQzMjQwLTNlYjMtNGZkMi04Y2JkLTQ5NWRjMmQwMzAyOCJ9.x7QRQ2NVMBVhTa-C2ABWPlX6RC62qd8L5MNr-JUy-a0
 
 docs:
   content: Coleccion creada por Interfaces y Soluciones para la empresa Muelles y Frenos Simón Bolívar como parte de la integracion con el ERP Siesa Enterprise y el Ecommerce propio.

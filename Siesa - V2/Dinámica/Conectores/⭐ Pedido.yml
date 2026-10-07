@@ -5,12 +5,12 @@ info:
 
 http:
   method: POST
-  url: "{{erpApiUrlVersion2}}/api/siesa/v3.1/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento=209907&nombreDocumento=PEDIDOS&idSistema=7129"
+  url: "{{urlVersion1}}/api/siesa/v3.1/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento=209907&nombreDocumento=PEDIDOS&idSistema=7129"
   headers:
     - name: conniKey
-      value: "{{erpConniKeyVersion3}}"
+      value: "{{conniKeyVersion3}}"
     - name: conniToken
-      value: "{{erpConniTokenVersion3}}"
+      value: "{{conniTokenVersion3}}"
   params:
     - name: idCompania
       value: "{{idCompania}}"

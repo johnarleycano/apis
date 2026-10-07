@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{erpApiUrlVersion2}}/api/connekta/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Margen_Calculado_ERP&parametros=Referencia='-1'|IdItem='116'|Bodega=''1'|Descripcion='-1'|ListaPrecio='-1'"
+  url: "{{urlVersion1}}/api/connekta/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Margen_Calculado_ERP&parametros=Referencia='-1'|IdItem='116'|Bodega=''1'|Descripcion='-1'|ListaPrecio='-1'"
   headers:
     - name: ConniKey
       value: "{{erpConniKeyConnektaVersion2}}"

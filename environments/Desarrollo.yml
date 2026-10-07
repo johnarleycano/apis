@@ -1,4 +1,5 @@
 name: Desarrollo
 variables:
-  - name: erpApiUrlVersion2
+  - name: urlVersion1
     value: https://serviciosqa.siesacloud.com
+    description: ""
