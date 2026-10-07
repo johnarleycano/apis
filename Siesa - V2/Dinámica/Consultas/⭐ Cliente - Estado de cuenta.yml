@@ -1,16 +1,16 @@
 info:
   name: ⭐ Cliente - Estado de cuenta
   type: http
-  seq: 3
+  seq: 2
 
 http:
   method: GET
   url: "{{urlVersion1}}/api/connekta/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Estado_cuenta_cliente_2&parametros=f200_id=-1|f353_consec_docto_cruce=-1|FechaInicio=|FechaFin=|TipoDocumento=-1|Sucursal=-1|CentroOperacion=-1|Nit=811007434|Auxiliar=-1|ValorMin=0.1|ValorMax=|DiasVencidosMin=|DiasVencidosMax=|SoloVencidos=0"
   headers:
     - name: ConniKey
-      value: "{{conniKeyVersion3}}"
+      value: "{{conniKeyVersion2}}"
     - name: ConniToken
-      value: "{{conniTokenVersion3}}"
+      value: "{{conniTokenVersion2}}"
   params:
     - name: idCompania
       value: "{{idCompania}}"

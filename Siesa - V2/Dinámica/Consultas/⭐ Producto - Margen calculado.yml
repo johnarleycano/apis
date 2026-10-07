@@ -1,0 +1,39 @@
+info:
+  name: ⭐ Producto - Margen calculado
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{urlVersion1}}/api/connekta/v3.1/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Margen_Calculado_ERP&paginacion=numPag=1|tamPag=100&parametros=Cantidad_Disponible > 0 and Iditem = ''72'' and Lista_Precio = ''001'' and Bodega = ''00300''"
+  headers:
+    - name: ConniKey
+      value: "{{conniKeyVersion2}}"
+    - name: ConniToken
+      value: "{{conniTokenVersion2}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: muellesyfrenos_Margen_Calculado_ERP
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: Cantidad_Disponible > 0 and Iditem = ''72'' and Lista_Precio = ''001'' and Bodega = ''00300''
+      type: query
+  auth: inherit
+
+runtime:
+  variables:
+    - name: conniTokenVersion4
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQ4ZjIxNTkwLTY5NWMtNDU5YS1iNjYzLTFmNTVjNzM4OTE3ZCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6ImVkMzdiZTljLWY0YTAtNDdmYS1iNDFlLTVkZjdkZDI1YmU4ZCJ9.W34h4DewsgCpjjGHaqXF3PLpuuJT1hPblAs-0N2m6b4
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
