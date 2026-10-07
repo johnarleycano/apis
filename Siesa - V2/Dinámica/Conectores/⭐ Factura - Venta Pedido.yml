@@ -1,0 +1,402 @@
+info:
+  name: ⭐ Factura - Venta Pedido
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://serviciosqa.siesacloud.com/api/siesa/v3/conectoresimportarestandar?idCompania=7129&idDocumento=142905&nombreDocumento=API_v1_Ventas_Comercial_FacturaPedido
+  headers:
+    - name: ConniKey
+      value: 492929a4aa1455aaa29322ab5c030143
+    - name: ConniToken
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjBhYTliMjFmLTA1NzUtNDRkNS04MmVkLWFhNzc3YjQzZjBiYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6IjhiNDY3NGIzLTRiMzQtNGMzNy04YTE5LWMwMzM2MzljMjhhYyJ9.wfFCoEOiUnyo0R2Bo7ma5NxAb9cR1opoGEylH1aolYU
+  params:
+    - name: idCompania
+      value: "7129"
+      type: query
+    - name: idDocumento
+      value: "142905"
+      type: query
+    - name: nombreDocumento
+      value: API_v1_Ventas_Comercial_FacturaPedido
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Inicial\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Doctoventascomercial\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F_CONSEC_AUTO_REG\": \"1\",\r
+
+      \            \"F350_ID_CO\": \"100\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"CFE\", // CFF: contado; CFE: crédito\r
+
+      \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+      \            \"F350_FECHA\": \"20260522\",\r
+
+      \            \"F350_IND_ESTADO\": \"1\",\r
+
+      \            \"F350_IND_IMPRESION\": \"1\",\r
+
+      \            \"F430_ID_TIPO_DOCTO\": \"CPC\", // 430 -> pedidos\r
+
+      \            \"F430_CONSEC_DOCTO\": \"40415\",\r
+
+      \            \"f462_id_vehiculo\": \"\",\r
+
+      \            \"f462_id_tercero_transp\": \"\",\r
+
+      \            \"f462_id_sucursal_transp\": \"\",\r
+
+      \            \"f462_id_tercero_conductor\": \"\",\r
+
+      \            \"f462_nombre_conductor\": \"\",\r
+
+      \            \"f462_identif_conductor\": \"\",\r
+
+      \            \"f462_numero_guia\": \"\",\r
+
+      \            \"f462_cajas\": \"\",\r
+
+      \            \"f462_peso\": \"\",\r
+
+      \            \"f462_volumen\": \"\",\r
+
+      \            \"f462_valor_seguros\": \"\",\r
+
+      \            \"f462_notas\": \"Prueba de conector\",\r
+
+      \            \"f460_id_cond_pago\": \"C30\",\r
+
+      \            \"f461_ind_contabilizar_x_co\": \"0\",\r
+
+      \            \"f461_id_caja\": \"\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"CuotasCxC\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F350_ID_CO\": \"100\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"CFE\",\r
+
+      \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+      \            \"F353_ID_TIPO_DOCTO_CRUCE\": \"\",\r
+
+      \            \"F353_CONSEC_DOCTO_CRUCE\": \"\",\r
+
+      \            \"F353_NRO_CUOTA_CRUCE\": \"\",\r
+
+      \            \"F353_VLR_CRUCE\": \"\",\r
+
+      \            \"F_PORCENTAJE_CUOTA\": \"100.00\",\r
+
+      \            \"F353_FECHA_VCTO\": \"20260522\", // Acorde a la condición de pago (f460_id_cond_pago)\r
+
+      \            \"F353_VLR__DSCTO_PP\": \"\",\r
+
+      \            \"F_PORCENTAJE_PP\": \"\",\r
+
+      \            \"F353_FECHA_DSCTO_PP\": \"20260522\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    // \"Caja\": [\r
+
+      \    //     {\r
+
+      \    //         \"F_CIA\": \"\",\r
+
+      \    //         \"F350_ID_CO\": \"\",\r
+
+      \    //         \"F350_ID_TIPO_DOCTO\": \"\",\r
+
+      \    //         \"F350_CONSEC_DOCTO\": \"\",\r
+
+      \    //         \"F358_ID_MEDIOS_PAGO\": \"\",\r
+
+      \    //         \"F358_ID_MONEDA\": \"\",\r
+
+      \    //          \"F_VLR_MEDIO_PAGO\": \"\",\r
+
+      \            \r
+
+      \    //         // \"F358_VALOR\": \"\",\r
+
+      \    //         // \"f358_nro_alt_docto_banco\": \"\",\r
+
+      \    //         // \"f358_docto_banco_cg\": \"\",\r
+
+      \r
+
+      \    //         \"F358_ID_BANCO\": \"\",\r
+
+      \    //         \"F358_NRO_CHEQUE\": \"0\",\r
+
+      \    //         \"F358_NRO_CUENTA\": \"\",\r
+
+      \    //         \"F358_COD_SEGURIDAD\": \"\",\r
+
+      \    //         \"F358_NRO_AUTORIZACION\": \"\",\r
+
+      \    //         \"F358_FECHA_VCTO\": \"\",\r
+
+      \    //         \"F358_REFERENCIA_OTROS\": \"\",\r
+
+      \    //         \"F358_FECHA_CONSIGNACION\": \"\",\r
+
+      \    //         \"F358_ID_CAUSALES_DEVOLUCION\": \"\",\r
+
+      \    //         \"F358_ID_TERCERO\": \"\",\r
+
+      \    //         \"F358_NOTAS\": \"\",\r
+
+      \    //         \"F358_ID_CCOSTO\": \"\"\r
+
+      \    //     }\r
+
+      \    // ],\r
+
+      \    \"Final\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Contado
+    request:
+      url: https://serviciosqa.siesacloud.com/api/siesa/v3/conectoresimportarestandar?idCompania=7129&idDocumento=142905&nombreDocumento=API_v1_Ventas_Comercial_FacturaPedido
+      method: POST
+      headers:
+        - name: ConniKey
+          value: 492929a4aa1455aaa29322ab5c030143
+        - name: ConniToken
+          value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjBhYTliMjFmLTA1NzUtNDRkNS04MmVkLWFhNzc3YjQzZjBiYSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6IjhiNDY3NGIzLTRiMzQtNGMzNy04YTE5LWMwMzM2MzljMjhhYyJ9.wfFCoEOiUnyo0R2Bo7ma5NxAb9cR1opoGEylH1aolYU
+      params:
+        - name: idCompania
+          value: "7129"
+          type: query
+        - name: idDocumento
+          value: "142905"
+          type: query
+        - name: nombreDocumento
+          value: API_v1_Ventas_Comercial_FacturaPedido
+          type: query
+      body:
+        type: json
+        data: "{\r
+
+          \    \"Inicial\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Doctoventascomercial\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\",\r
+
+          \            \"F_CONSEC_AUTO_REG\": \"1\",\r
+
+          \            \"F350_ID_CO\": \"400\",\r
+
+          \            \"F350_ID_TIPO_DOCTO\": \"CFE\", // CFF: contado; CFE: crédito\r
+
+          \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+          \            \"F350_FECHA\": \"20260514\",\r
+
+          \            \"F350_IND_ESTADO\": \"1\",\r
+
+          \            \"F350_IND_IMPRESION\": \"1\",\r
+
+          \            \"F430_ID_TIPO_DOCTO\": \"CPV\", // 430 -> pedidos\r
+
+          \            \"F430_CONSEC_DOCTO\": \"10\",\r
+
+          \            \"f462_id_vehiculo\": \"\",\r
+
+          \            \"f462_id_tercero_transp\": \"\",\r
+
+          \            \"f462_id_sucursal_transp\": \"\",\r
+
+          \            \"f462_id_tercero_conductor\": \"\",\r
+
+          \            \"f462_nombre_conductor\": \"\",\r
+
+          \            \"f462_identif_conductor\": \"\",\r
+
+          \            \"f462_numero_guia\": \"\",\r
+
+          \            \"f462_cajas\": \"\",\r
+
+          \            \"f462_peso\": \"\",\r
+
+          \            \"f462_volumen\": \"\",\r
+
+          \            \"f462_valor_seguros\": \"\",\r
+
+          \            \"f462_notas\": \"Prueba de conector\",\r
+
+          \            \"f460_id_cond_pago\": \"C30\",\r
+
+          \            \"f461_ind_contabilizar_x_co\": \"0\",\r
+
+          \            \"f461_id_caja\": \"\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"CuotasCxC\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\",\r
+
+          \            \"F350_ID_CO\": \"400\",\r
+
+          \            \"F350_ID_TIPO_DOCTO\": \"CFE\",\r
+
+          \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+          \            \"F353_ID_TIPO_DOCTO_CRUCE\": \"\",\r
+
+          \            \"F353_CONSEC_DOCTO_CRUCE\": \"\",\r
+
+          \            \"F353_NRO_CUOTA_CRUCE\": \"\",\r
+
+          \            \"F353_VLR_CRUCE\": \"\",\r
+
+          \            \"F_PORCENTAJE_CUOTA\": \"100.00\",\r
+
+          \            \"F353_FECHA_VCTO\": \"20260514\", // Acorde a la condición de pago (f460_id_cond_pago)\r
+
+          \            \"F353_VLR__DSCTO_PP\": \"\",\r
+
+          \            \"F_PORCENTAJE_PP\": \"\",\r
+
+          \            \"F353_FECHA_DSCTO_PP\": \"20260514\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    // \"Caja\": [\r
+
+          \    //     {\r
+
+          \    //         \"F_CIA\": \"\",\r
+
+          \    //         \"F350_ID_CO\": \"\",\r
+
+          \    //         \"F350_ID_TIPO_DOCTO\": \"\",\r
+
+          \    //         \"F350_CONSEC_DOCTO\": \"\",\r
+
+          \    //         \"F358_ID_MEDIOS_PAGO\": \"\",\r
+
+          \    //         \"F358_ID_MONEDA\": \"\",\r
+
+          \    //          \"F_VLR_MEDIO_PAGO\": \"\",\r
+
+          \            \r
+
+          \    //         // \"F358_VALOR\": \"\",\r
+
+          \    //         // \"f358_nro_alt_docto_banco\": \"\",\r
+
+          \    //         // \"f358_docto_banco_cg\": \"\",\r
+
+          \r
+
+          \    //         \"F358_ID_BANCO\": \"\",\r
+
+          \    //         \"F358_NRO_CHEQUE\": \"0\",\r
+
+          \    //         \"F358_NRO_CUENTA\": \"\",\r
+
+          \    //         \"F358_COD_SEGURIDAD\": \"\",\r
+
+          \    //         \"F358_NRO_AUTORIZACION\": \"\",\r
+
+          \    //         \"F358_FECHA_VCTO\": \"\",\r
+
+          \    //         \"F358_REFERENCIA_OTROS\": \"\",\r
+
+          \    //         \"F358_FECHA_CONSIGNACION\": \"\",\r
+
+          \    //         \"F358_ID_CAUSALES_DEVOLUCION\": \"\",\r
+
+          \    //         \"F358_ID_TERCERO\": \"\",\r
+
+          \    //         \"F358_NOTAS\": \"\",\r
+
+          \    //         \"F358_ID_CCOSTO\": \"\"\r
+
+          \    //     }\r
+
+          \    // ],\r
+
+          \    \"Final\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      body:
+        type: text
+        data: ""

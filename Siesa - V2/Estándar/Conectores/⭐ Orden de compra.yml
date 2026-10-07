@@ -1,0 +1,126 @@
+info:
+  name: ⭐ Orden de compra
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{erpApiUrlVersion2}}/api/siesa/v3/conectoresimportarestandar?idCompania={{idCompania}}&idInterface=1161&idDocumento=209907&nombreDocumento=API_v1_Compras_Comercial_EntradaOC&idSistema=7129"
+  headers:
+    - name: conniKey
+      value: "{{erpConniKeyVersion3}}"
+    - name: conniToken
+      value: "{{erpConniTokenVersion3}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idInterface
+      value: "1161"
+      type: query
+    - name: idDocumento
+      value: "209907"
+      type: query
+    - name: nombreDocumento
+      value: API_v1_Compras_Comercial_EntradaOC
+      type: query
+    - name: idSistema
+      value: "7129"
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Pedidos\": [\r
+
+      \        {\r
+
+      \            \"f430_id_co\":\"100\",                             // Valida en maestro, código de centro de operación del documento\r
+
+      \            \"f430_id_tipo_docto\":\"CPC\",                     // Valida en maestro, código de tipo de documento\r
+
+      \            \"f430_consec_docto\":\"1\",                        // Numero de documento\r
+
+      \            \"f430_id_fecha\":\"{{fechaPedido}}\",              // El formato debe ser AAAAMMDD\r
+
+      \            \"f430_id_tercero_fact\":\"1036961037\",             // Valida en maestro, código de tercero cliente\r
+
+      \            \"f430_id_sucursal_fact\":\"001\",                  // Valida en maestro el codigo de la sucursal del cliente a facturar\r
+
+      \            \"f430_id_tercero_rem\":\"1036961037\",              // Valida en maestro , codigo del tercero del cliente a despachar\r
+
+      \            \"f430_id_sucursal_rem\":\"001\",                   // Valida en maestro el codigo de la sucursal del cliente a despachar\r
+
+      \            \"f430_id_tipo_cli_fact\":\"C005\",                 // Valida en maestro, tipo de clientes. Si es vacio la trae del cliente a facturar\r
+
+      \            \"f430_id_co_fact\":\"100\",                        // Valida en maestro, código de centro de operación del documento\r
+
+      \            \"f430_fecha_entrega\":\"{{fechaPedido}}\",         // El formato debe ser AAAAMMDD\r
+
+      \            \"f430_num_dias_entrega\":\"0\",                    // Valida Nro de dias en que se estima, la entrega del pedido\r
+
+      \            \"f430_num_docto_referencia\":\"7\",                // Valida la orden de compra del documento\r
+
+      \            \"f430_id_cond_pago\":\"CNT\",                      // Valida en maestro, condiciones de pago\r
+
+      \            \"f430_notas\":\"PRUEBA CONECTOR\",                 // Observaciones\r
+
+      \            \"f430_id_tercero_vendedor\":\"22222221\"           // Si es vacio lo trae del cliente a facturar\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Movto Pedidos comercial\": [\r
+
+      \        {\r
+
+      \            \"f431_id_co\":\"100\",                             // Valida en maestro, código de centro de operación del documento\r
+
+      \            \"f431_id_tipo_docto\":\"CPC\",                     // Valida en maestro, código de tipo de documento, tipo de documento del pedido\r
+
+      \            \"f431_consec_docto\":\"1\",                        // Numero de documento del pedido\r
+
+      \            \"f431_nro_registro\":\"1\",                        // Numero de registro del movimiento\r
+
+      \            \"f431_id_item\":\"11600\",                          // Codigo, es obligatorio si no va referencia ni codigo de barras\r
+
+      \            \"f431_id_bodega\":\"00550\",                       // Valida en maestro, código de bodega\r
+
+      \            \"f431_id_motivo\":\"01\",                          // Valida en maestro, código de motivo\r
+
+      \            \"f431_id_co_movto\":\"100\",                       // Valida en maestro, código de centro de operación del movimiento\r
+
+      \            \"f431_id_un_movto\":\"01\",                        // Valida en maestro, código de unidad de negocio del movimiento. Si es vacio el sistema la calcula\r
+
+      \            \"f431_fecha_entrega\":\"{{fechaPedido}}\",         // El formato debe ser AAAAMMDD\r
+
+      \            \"f431_num_dias_entrega\":\"0\",                    // Valida Nro de dias en que se estima, la entrega del pedido\r
+
+      \            \"f431_id_unidad_medida\":\"UNDC\",                 // Valida en maestro, código de unidad de medida del movimiento\r
+
+      \            \"f431_cant_pedida_base\":\"0.5\",                    // 15 enteros + punto + 4 decimales. El número de decimales se deben reportar teniendo en cuenta el número de decimales configurados en la unidad de medidad. (000000000000000.0000)\r
+
+      \            \"f431_notas\":\"PRUEBA\",                           // Notas del movimiento\r
+
+      \            \"f431_id_lista_precio\": \"001\",\r
+
+      \      \"f431_precio_unitario\": 5000.00,\r
+
+      \      \"f431_ind_precio\": 2\r
+
+      \r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

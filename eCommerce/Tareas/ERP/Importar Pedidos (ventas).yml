@@ -1,0 +1,58 @@
+info:
+  name: Importar Pedidos (ventas)
+  type: http
+  seq: 12
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_ventas_pedidos?fecha=2026-07-30"
+  params:
+    - name: fecha
+      value: 2026-07-30
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Cada 5 minutos
+    request:
+      url: "{{ecommerce_baseUrl}}/tareas/erp/importar_ventas_pedidos"
+      method: POST
+      params:
+        - name: fecha
+          value: 2026-07-08
+          type: query
+          disabled: true
+      body:
+        type: json
+        data: ""
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Diario
+    request:
+      url: "{{ecommerce_baseUrl}}/tareas/erp/importar_ventas_pedidos?fecha=2026-07-08"
+      method: POST
+      params:
+        - name: fecha
+          value: 2026-07-08
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      body:
+        type: text
+        data: ""
+
+docs: Desde la API estándar API_v2_Ventas_Pedidos importa los pedidos para que posteriormente puedan ser creadas facturas de manera automática

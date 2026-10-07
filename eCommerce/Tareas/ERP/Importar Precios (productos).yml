@@ -1,0 +1,23 @@
+info:
+  name: Importar Precios (productos)
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_productos_precios?lista_precio=003"
+  params:
+    - name: lista_precio
+      value: "003"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

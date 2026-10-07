@@ -1,0 +1,39 @@
+info:
+  name: Envíos
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/webhooks/envios"
+  body:
+    type: json
+    data: "{\r
+
+      \t\"guia\": \"CR9168710\",\r
+
+      \t\"remitente\": \"MUELLES Y FRENOS SIMÓN BOLIVAR SAS\",\r
+
+      \t\"remitente\": \"900296641\",\r
+
+      \t\"destinatario\": \"TULCÁN CARVAJAL JOHANA VICTORIA\",\r
+
+      \t\"destinatario\": \"1084253380\",\r
+
+      \t\"destino\": \"PITALITO\",\r
+
+      \t\"direccion\": \"AV CIRCUNVALAR CLL 16 Y 17 LC 09\",\r
+
+      \t\"estado\": \"RECIBIDA\",\r
+
+      \t\"ubicacion\": \"BOGOTA PRINCIPAL\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

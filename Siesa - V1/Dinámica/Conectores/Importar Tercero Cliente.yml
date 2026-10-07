@@ -1,0 +1,577 @@
+info:
+  name: Importar Tercero Cliente
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{erpApiUrlVersion1}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento={{idDocumento}}&nombreDocumento={{nombreConector}}"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "{{idDocumento}}"
+      type: query
+    - name: nombreDocumento
+      value: "{{nombreConector}}"
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \        \"Terceros\": [\r
+
+      \            {\r
+
+      \                \"F200_ID\": \"901949794\",\r
+
+      \                \"F200_NIT\": \"901949794\",\r
+
+      \                \"F200_ID_TIPO_IDENT\": \"N\",\r
+
+      \                \"F200_IND_TIPO_TERCERO\": 2,\r
+
+      \                \"F200_RAZON_SOCIAL\": \"INGENIERIA TECNIAUTOS SAS\",\r
+
+      \                \"F200_APELLIDO1\": \"\",\r
+
+      \                \"F200_APELLIDO2\": \"\",\r
+
+      \                \"F200_NOMBRES\": \"\",\r
+
+      \                \"F015_CONTACTO\": \"EDGAR CORTES\",\r
+
+      \                \"F015_DIRECCION1\": \"CARRERA 1A N 72 36\",\r
+
+      \                \"F015_DIRECCION2\": \"\",\r
+
+      \                \"F015_ID_PAIS\": \"169\",\r
+
+      \                \"F015_ID_DEPTO\": \"73\",\r
+
+      \                \"F015_ID_CIUDAD\": \"001\",\r
+
+      \                \"F015_TELEFONO\": \"\",\r
+
+      \                \"F015_COD_POSTAL\": \"\",\r
+
+      \                \"F015_EMAIL\": \"ingenieriatecniautos.sas@gmail.com\",\r
+
+      \                \"F200_FECHA_NACIMIENTO\": \"20260115\",\r
+
+      \                \"F200_ID_CIIU\": \"\",\r
+
+      \                \"F015_CELULAR\": \"321 2420779\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"Clientes\": [\r
+
+      \            {\r
+
+      \                \"F201_ID_TERCERO\": \"901949794\",\r
+
+      \                \"F201_ID_SUCURSAL\": \"001\",\r
+
+      \                \"F201_IND_ESTADO_ACTIVO\": 1,\r
+
+      \                \"F201_DESCRIPCION_SUCURSAL\": \"INGENIERIA TECNIAUTOS SAS \",\r
+
+      \                \"F201_ID_VENDEDOR\": \"Z028\",\r
+
+      \                \"F201_ID_COND_PAGO\": \"CNT\",\r
+
+      \                \"F201_DIAS_GRACIA\": \"8\",\r
+
+      \                \"F201_CUPO_CREDITO\": \"0\",\r
+
+      \                \"F201_ID_TIPO_CLI\": \"C005\",\r
+
+      \                \"F201_ID_LISTA_PRECIO\": \"001\",\r
+
+      \                \"F015_CONTACTO\": \"EDGAR CORTES\",\r
+
+      \                \"F015_DIRECCION1\": \"CARRERA 1A N 72 36\",\r
+
+      \                \"F015_DIRECCION2\": \"\",\r
+
+      \                \"F015_ID_PAIS\": \"169\",\r
+
+      \                \"F015_ID_DEPTO\": \"73\",\r
+
+      \                \"F015_ID_CIUDAD\": \"001\",\r
+
+      \                \"F015_TELEFONO\": \"\",\r
+
+      \                \"F015_EMAIL\": \"ingenieriatecniautos.sas@gmail.com\",\r
+
+      \                \"F201_FECHA_INGRESO\": \"20260115\",\r
+
+      \                \"f201_id_cobrador\": \"\",\r
+
+      \                \"f015_celular\": \"321 2420779\",\r
+
+      \                \"F201_IND_BLOQUEO_CUPO\": 0,\r
+
+      \                \"F201_IND_BLOQUEO_MORA\": 1\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"Imptos_y_Reten\": [\r
+
+      \            {\r
+
+      \                \"F_TIPO_REG\": \"46\",\r
+
+      \                \"F_ID_TERCERO\": \"901949794\",\r
+
+      \                \"F_ID_SUCURSAL\": \"001\",\r
+
+      \                \"F_ID_CLASE\": \"1\",\r
+
+      \                \"F_ID_VALOR_TERCERO\": \"1\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"F_TIPO_REG\": \"47\",\r
+
+      \                \"F_ID_TERCERO\": \"901949794\",\r
+
+      \                \"F_ID_SUCURSAL\": \"001\",\r
+
+      \                \"F_ID_CLASE\": \"11\",\r
+
+      \                \"F_ID_VALOR_TERCERO\": \"1\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"Ent_Dinamica_Tercero\": [\r
+
+      \            {\r
+
+      \                \"f200_id\": \"901949794\",\r
+
+      \                \"f753_id_entidad\": \"EUNOECO017\",\r
+
+      \                \"f753_id_atributo\": \"co017_codigo_regimen\",\r
+
+      \                \"f753_id_maestro\": \"MUNOECO016\",\r
+
+      \                \"f753_id_maestro_detalle\": \"48\"\r
+
+      \            },\r
+
+      \            {\r
+
+      \                \"f200_id\": \"901949794\",\r
+
+      \                \"f753_id_entidad\": \"EUNOECO031\",\r
+
+      \                \"f753_id_atributo\": \"co031_detalle_tributario1\",\r
+
+      \                \"f753_id_maestro\": \"MUNOECO035\",\r
+
+      \                \"f753_id_maestro_detalle\": \"01\"\r
+
+      \            }\r
+
+      \        ],\r
+
+      \        \"Criterios_Clientes\": [\r
+
+      \            {\r
+
+      \                \"f207_id_tercero\": \"901949794\",\r
+
+      \                \"f207_id_sucursal\": \"001\",\r
+
+      \                \"f207_id_plan_criterios\": \"001\",\r
+
+      \                \"f207_id_criterio_mayor\": \"0008\"\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Importar cliente completo
+    request:
+      url: "{{erpApiUrlVersion1}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento={{idDocumento}}&nombreDocumento={{nombreConector}}"
+      method: POST
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: idInterface
+          value: "{{idInterface}}"
+          type: query
+        - name: idDocumento
+          value: "{{idDocumento}}"
+          type: query
+        - name: nombreDocumento
+          value: "{{nombreConector}}"
+          type: query
+      body:
+        type: json
+        data: "{\r
+
+          \    \"Terceros\": [\r
+
+          \        {\r
+
+          \            \"F200_ID\": \"901949794\",\r
+
+          \            \"F200_NIT\": \"901949794\",\r
+
+          \            \"F200_ID_TIPO_IDENT\": \"N\",\r
+
+          \            \"F200_IND_TIPO_TERCERO\": 2,\r
+
+          \            \"F200_RAZON_SOCIAL\": \"INGENIERIA TECNIAUTOS SAS\",\r
+
+          \            \"F200_APELLIDO1\": \"\",\r
+
+          \            \"F200_APELLIDO2\": \"\",\r
+
+          \            \"F200_NOMBRES\": \"\",\r
+
+          \            \"F015_CONTACTO\": \"EDGAR CORTES\",\r
+
+          \            \"F015_DIRECCION1\": \"CARRERA 1A N 72 36\",\r
+
+          \            \"F015_DIRECCION2\": \"\",\r
+
+          \            \"F015_ID_PAIS\": \"169\",\r
+
+          \            \"F015_ID_DEPTO\": \"73\",\r
+
+          \            \"F015_ID_CIUDAD\": \"001\",\r
+
+          \            \"F015_TELEFONO\": \"\",\r
+
+          \            \"F015_COD_POSTAL\": \"\",\r
+
+          \            \"F015_EMAIL\": \"ingenieriatecniautos.sas@gmail.com\",\r
+
+          \            \"F200_FECHA_NACIMIENTO\": \"20260115\",\r
+
+          \            \"F200_ID_CIIU\": \"\",\r
+
+          \            \"F015_CELULAR\": \"321 2420779\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Clientes\": [\r
+
+          \        {\r
+
+          \            \"F201_ID_TERCERO\": \"901949794\",\r
+
+          \            \"F201_ID_SUCURSAL\": \"001\",\r
+
+          \            \"F201_IND_ESTADO_ACTIVO\": 1,\r
+
+          \            \"F201_DESCRIPCION_SUCURSAL\": \"INGENIERIA TECNIAUTOS SAS \",\r
+
+          \            \"F201_ID_VENDEDOR\": \"Z028\",\r
+
+          \            \"F201_ID_COND_PAGO\": \"CNT\",\r
+
+          \            \"F201_DIAS_GRACIA\": \"8\",\r
+
+          \            \"F201_CUPO_CREDITO\": \"0\",\r
+
+          \            \"F201_ID_TIPO_CLI\": \"C005\",\r
+
+          \            \"F201_ID_LISTA_PRECIO\": \"001\",\r
+
+          \            \"F015_CONTACTO\": \"EDGAR CORTES\",\r
+
+          \            \"F015_DIRECCION1\": \"CARRERA 1A N 72 36\",\r
+
+          \            \"F015_DIRECCION2\": \"\",\r
+
+          \            \"F015_ID_PAIS\": \"169\",\r
+
+          \            \"F015_ID_DEPTO\": \"73\",\r
+
+          \            \"F015_ID_CIUDAD\": \"001\",\r
+
+          \            \"F015_TELEFONO\": \"\",\r
+
+          \            \"F015_EMAIL\": \"ingenieriatecniautos.sas@gmail.com\",\r
+
+          \            \"F201_FECHA_INGRESO\": \"20260115\",\r
+
+          \            \"f201_id_cobrador\": \"\",\r
+
+          \            \"f015_celular\": \"321 2420779\",\r
+
+          \            \"F201_IND_BLOQUEO_CUPO\": 0,\r
+
+          \            \"F201_IND_BLOQUEO_MORA\": 1\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Imptos_y_Reten\": [\r
+
+          \        {\r
+
+          \            \"F_TIPO_REG\": \"46\",\r
+
+          \            \"F_ID_TERCERO\": \"901949794\",\r
+
+          \            \"F_ID_SUCURSAL\": \"001\",\r
+
+          \            \"F_ID_CLASE\": \"1\",\r
+
+          \            \"F_ID_VALOR_TERCERO\": \"1\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"F_TIPO_REG\": \"47\",\r
+
+          \            \"F_ID_TERCERO\": \"901949794\",\r
+
+          \            \"F_ID_SUCURSAL\": \"001\",\r
+
+          \            \"F_ID_CLASE\": \"11\",\r
+
+          \            \"F_ID_VALOR_TERCERO\": \"1\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Ent_Dinamica_Tercero\": [\r
+
+          \        {\r
+
+          \            \"f200_id\": \"901949794\",\r
+
+          \            \"f753_id_entidad\": \"EUNOECO017\",\r
+
+          \            \"f753_id_atributo\": \"co017_codigo_regimen\",\r
+
+          \            \"f753_id_maestro\": \"MUNOECO016\",\r
+
+          \            \"f753_id_maestro_detalle\": \"48\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"f200_id\": \"901949794\",\r
+
+          \            \"f753_id_entidad\": \"EUNOECO031\",\r
+
+          \            \"f753_id_atributo\": \"co031_detalle_tributario1\",\r
+
+          \            \"f753_id_maestro\": \"MUNOECO035\",\r
+
+          \            \"f753_id_maestro_detalle\": \"01\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Criterios_Clientes\": [\r
+
+          \        {\r
+
+          \            \"f207_id_tercero\": \"901949794\",\r
+
+          \            \"f207_id_sucursal\": \"001\",\r
+
+          \            \"f207_id_plan_criterios\": \"001\",\r
+
+          \            \"f207_id_criterio_mayor\": \"0008\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Importar sucursal
+    request:
+      url: "{{erpApiUrlVersion1}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento={{idDocumento}}&nombreDocumento={{nombreConector}}"
+      method: POST
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: idInterface
+          value: "{{idInterface}}"
+          type: query
+        - name: idDocumento
+          value: "{{idDocumento}}"
+          type: query
+        - name: nombreDocumento
+          value: "{{nombreConector}}"
+          type: query
+      body:
+        type: json
+        data: "{\r
+
+          \    // 1\r
+
+          \    \"Clientes\": [\r
+
+          \        {\r
+
+          \            \"F201_ID_TERCERO\": \"901949794\",\r
+
+          \            \"F201_ID_SUCURSAL\": \"002\",\r
+
+          \            \"F201_IND_ESTADO_ACTIVO\": 1,\r
+
+          \            \"F201_DESCRIPCION_SUCURSAL\": \"002 INGENIERIA TECNIAUTOS SAS \",\r
+
+          \            \"F201_ID_VENDEDOR\": \"Z028\",\r
+
+          \            \"F201_ID_COND_PAGO\": \"CNT\",\r
+
+          \            \"F201_DIAS_GRACIA\": \"8\",\r
+
+          \            \"F201_CUPO_CREDITO\": \"0\",\r
+
+          \            \"F201_ID_TIPO_CLI\": \"C005\",\r
+
+          \            \"F201_ID_LISTA_PRECIO\": \"001\",\r
+
+          \            \"F015_CONTACTO\": \"EDGAR CORTES\",\r
+
+          \            \"F015_DIRECCION1\": \"CARRERA 1A N 72 36\",\r
+
+          \            \"F015_DIRECCION2\": \"\",\r
+
+          \            \"F015_ID_PAIS\": \"169\",\r
+
+          \            \"F015_ID_DEPTO\": \"73\",\r
+
+          \            \"F015_ID_CIUDAD\": \"001\",\r
+
+          \            \"F015_TELEFONO\": \"\",\r
+
+          \            \"F015_EMAIL\": \"ingenieriatecniautos.sas@gmail.com\",\r
+
+          \            \"F201_FECHA_INGRESO\": \"20260115\",\r
+
+          \            \"f201_id_cobrador\": \"\",\r
+
+          \            \"f015_celular\": \"321 2420779\",\r
+
+          \            \"F201_IND_BLOQUEO_CUPO\": 0,\r
+
+          \            \"F201_IND_BLOQUEO_MORA\": 1,\r
+
+          \            \"F201_NOTAS\": \"CREADO POR JOHN ARLEY CANO\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    // 2\r
+
+          \    \"Imptos_y_Reten\": [\r
+
+          \        {\r
+
+          \            \"F_TIPO_REG\": \"46\",\r
+
+          \            \"F_ID_TERCERO\": \"901949794\",\r
+
+          \            \"F_ID_SUCURSAL\": \"002\",\r
+
+          \            \"F_ID_CLASE\": \"1\",\r
+
+          \            \"F_ID_VALOR_TERCERO\": \"1\"\r
+
+          \        },\r
+
+          \        {\r
+
+          \            \"F_TIPO_REG\": \"47\",\r
+
+          \            \"F_ID_TERCERO\": \"901949794\",\r
+
+          \            \"F_ID_SUCURSAL\": \"002\",\r
+
+          \            \"F_ID_CLASE\": \"11\",\r
+
+          \            \"F_ID_VALOR_TERCERO\": \"1\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    // 3\r
+
+          \    \"Criterios_Clientes\": [\r
+
+          \        {\r
+
+          \            \"f207_id_tercero\": \"901949794\",\r
+
+          \            \"f207_id_sucursal\": \"002\",\r
+
+          \            \"f207_id_plan_criterios\": \"001\",\r
+
+          \            \"f207_id_criterio_mayor\": \"0008\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      body:
+        type: text
+        data: ""

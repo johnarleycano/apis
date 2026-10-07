@@ -1,0 +1,286 @@
+info:
+  name: Importar Documento Contable
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{base_url_qa}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento=145767&nombreDocumento=DOCUMENTO_CONTABLE"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "145767"
+      type: query
+    - name: nombreDocumento
+      value: DOCUMENTO_CONTABLE
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \    // Uno solo\r
+
+      \t\"Documento_contable\": [\r
+
+      \t\t{\r
+
+      \t\t\t\"F350_CONSEC_DOCTO\": \"1\",                  // Número de documento (Siesa lo autogenera)\r
+
+      \t\t\t\"F350_FECHA\": \"20250113\",                   // El formato debe ser AAAAMMDD\r
+
+      \t\t\t\"F350_ID_TERCERO\": \"901274733\",            // Valida en maestro, código de tercero\r
+
+      \t\t\t\"F350_NOTAS\": \"(PRUEBA) PEDIDO XXXX ECOMMERCE o PAGO DE FACTURA (CON DETALLE DE WOMPI)\"       // Observaciones \r
+
+      \t\t}\r
+
+      \t],\r
+
+      \t\"Movimiento_contable\": [\r
+
+      \        // Primer movimiento -> Banco\r
+
+      \t\t{\r
+
+      \t\t\t\"F350_CONSEC_DOCTO\": \"1\",                   // Número de documento (Siesa lo autogenera)\r
+
+      \t\t\t\"F351_ID_AUXILIAR\": \"11100504\",             // Valida en maestro, código de cuenta contable (DEPENDIENDO SI ES TARJETA O PSE)\r
+
+      \t\t\t\"F351_VALOR_DB\": \"2369445\", // suma de todas las facturas                  // Valor debito del asiento, si el asiento es crédito este debe ir en cero (signo + 15 enteros + punto + 4 decimales) (+000000000000000.0000)\r
+
+      \t\t\t\"F351_NRO_DOCTO_BANCO\": \"20230926\",         // Solo si la cuenta es de bancos, corresponde al numero 'CH', 'CG', 'ND' o 'NC'.\r
+
+      \t\t\t\"F351_NOTAS\": \"PEDIDO XXXX ECOMMERCE o PAGO DE FACTURA (CON DETALLE DE WOMPI)\"       // Observaciones\r
+
+      \t\t},\r
+
+      \        // ,\r
+
+      \        // Segundo movimiento -> Auxiliar de la factura (Usar para retenciones y descuentos)\r
+
+      \t\t{\r
+
+      \t\t\t\"F350_CONSEC_DOCTO\": \"1\",                   // Número de documento (Siesa lo autogenera)\r
+
+      \t\t\t\"F351_ID_AUXILIAR\": \"13050505\",             // Valida en maestro, código de cuenta contable (ID DE LA TABLA AUXILIAR)\r
+
+      \t\t\t\"F351_VALOR_DB\": \"2169445\",                  // Valor debito del asiento, si el asiento es crédito este debe ir en cero (signo + 15 enteros + punto + 4 decimales) (+000000000000000.0000)\r
+
+      \t\t\t\"F351_NRO_DOCTO_BANCO\": \"20230926\",         // Solo si la cuenta es de bancos, corresponde al numero 'CH', 'CG', 'ND' o 'NC'.\r
+
+      \t\t\t\"F351_NOTAS\": \"(PRUEBA) PEDIDO XXXX ECOMMERCE o PAGO DE FACTURA (CON DETALLE DE WOMPI)\"       // Observaciones\r
+
+      \t\t}\r
+
+      \t],\r
+
+      \    // Cruce de la factura (Para todos los valores positivos a pagar)\r
+
+      \    // Este por cada factura que se vaya a pagar\r
+
+      \t\"Movimiento_CxC\": [\r
+
+      \        // Factura 1\r
+
+      \t\t{\r
+
+      \t\t\t\"F350_CONSEC_DOCTO\": \"1\",                   // Número de documento (Siesa lo autogenera)\r
+
+      \t\t\t\"F351_ID_AUXILIAR\": \"13050505\",             // Valida en maestro, código de cuenta contable (ID DE LA TABLA AUXILIAR)\r
+
+      \t\t\t\"F351_ID_TERCERO\": \"901274733\",             // Valida en maestro, código de tercero, solo se requiere si la auxiliar contable maneja tercero\r
+
+      \t\t\t\"F351_ID_CO_MOV\": \"300\", //                    // Valida en maestro, código de centro de operación del movimiento (CÓDIGO DE LA SEDE)\r
+
+      \t\t\t\"F351_VALOR_CR\": \"2169445\",                  // Valor crédito del asiento, si el asiento es debito este debe ir en cero, el formato debe ser (signo + 15 enteros + punto + 4 decimales) (+000000000000000.0000\r
+
+      \t\t\t\"F351_NOTAS\": \"(PRUEBA) PEDIDO XXXX ECOMMERCE o PAGO DE FACTURA (CON DETALLE DE WOMPI)\",      // Observaciones\r
+
+      \t\t\t\"F353_ID_SUCURSAL\": \"008\",                  // Valida en maestro, código de sucursal del cliente. (3 digitos)\r
+
+      \t\t\t\"F353_ID_TIPO_DOCTO_CRUCE\": \"CFE\",          // Valida en maestro, código de tipo de documento. (Tipo_Doc_Cruce)\r
+
+      \t\t\t\"F353_CONSEC_DOCTO_CRUCE\": \"6560\",             // Numero de documento de cruce, es un numero entre 1 y 99999999.\r
+
+      \t\t\t\"F353_FECHA_VCTO\": \"20230926\",              // Fecha de vencimiento del documento, el formato debe ser AAAAMMDD\r
+
+      \t\t\t\"F353_FECHA_DSCTO_PP\": \"20230926\"           // Fecha de pronto pago del documento, el formato debe ser AAAAMMDD\r
+
+      \t\t}\r
+
+      \        // Factura 2 (pago parcial)\r
+
+      \        ,\r
+
+      \        {\r
+
+      \t\t\t\"F350_CONSEC_DOCTO\": \"1\",                   // Número de documento (Siesa lo autogenera)\r
+
+      \t\t\t\"F351_ID_AUXILIAR\": \"13050505\",             // Valida en maestro, código de cuenta contable (ID DE LA TABLA AUXILIAR)\r
+
+      \t\t\t\"F351_ID_TERCERO\": \"901274733\",             // Valida en maestro, código de tercero, solo se requiere si la auxiliar contable maneja tercero\r
+
+      \t\t\t\"F351_ID_CO_MOV\": \"300\", //                    // Valida en maestro, código de centro de operación del movimiento (CÓDIGO DE LA SEDE)\r
+
+      \t\t\t\"F351_VALOR_CR\": \"200000\",                  // Valor crédito del asiento, si el asiento es debito este debe ir en cero, el formato debe ser (signo + 15 enteros + punto + 4 decimales) (+000000000000000.0000\r
+
+      \t\t\t\"F351_NOTAS\": \"(PRUEBA) PEDIDO XXXX ECOMMERCE o PAGO DE FACTURA (CON DETALLE DE WOMPI)\",      // Observaciones\r
+
+      \t\t\t\"F353_ID_SUCURSAL\": \"067\",                  // Valida en maestro, código de sucursal del cliente. (3 digitos)\r
+
+      \t\t\t\"F353_ID_TIPO_DOCTO_CRUCE\": \"CFE\",          // Valida en maestro, código de tipo de documento. (Tipo_Doc_Cruce)\r
+
+      \t\t\t\"F353_CONSEC_DOCTO_CRUCE\": \"6587\",             // Numero de documento de cruce, es un numero entre 1 y 99999999.\r
+
+      \t\t\t\"F353_FECHA_VCTO\": \"20230926\", //(la de factura)             // Fecha de vencimiento del documento, el formato debe ser AAAAMMDD\r
+
+      \t\t\t\"F353_FECHA_DSCTO_PP\": \"20230926\"           // Fecha de pronto pago del documento, el formato debe ser AAAAMMDD\r
+
+      \t\t}\r
+
+      \t]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Importar Documento Contable
+    request:
+      url: "{{base_url_qa}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento=145767&nombreDocumento=DOCUMENTO_CONTABLE"
+      method: POST
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: idInterface
+          value: "{{idInterface}}"
+          type: query
+        - name: idDocumento
+          value: "145767"
+          type: query
+        - name: nombreDocumento
+          value: DOCUMENTO_CONTABLE
+          type: query
+      body:
+        type: json
+        data: "{\r
+
+          \t\"Documento_contable\": [\r
+
+          \t\t{\r
+
+          \t\t\t\"F350_CONSEC_DOCTO\": \"1\",\r
+
+          \t\t\t\"F350_FECHA\": \"20230328\",\r
+
+          \t\t\t\"F350_ID_TERCERO\": \"1039448943\",\r
+
+          \t\t\t\"F350_NOTAS\": \"PEDIDO XXXX ECOMMERCE\"\r
+
+          \t\t}\r
+
+          \t],\r
+
+          \t\"Movimiento_contable\": [\r
+
+          \t\t{\r
+
+          \t\t\t\"F350_CONSEC_DOCTO\": \"1\",\r
+
+          \t\t\t\"F351_ID_AUXILIAR\": \"11100504\",\r
+
+          \t\t\t\"F351_VALOR_DB\": \"100000\",\r
+
+          \t\t\t\"F351_NRO_DOCTO_BANCO\": \"20230328\",\r
+
+          \t\t\t\"F351_NOTAS\": \"PEDIDO XXXX ECOMMERCE\"\r
+
+          \t\t}\r
+
+          \t],\r
+
+          \t\"Movimiento_CxC\": [\r
+
+          \t\t{\r
+
+          \t\t\t\"F350_CONSEC_DOCTO\": \"1\",\r
+
+          \t\t\t\"F351_ID_AUXILIAR\": \"28050505\",\r
+
+          \t\t\t\"F351_ID_TERCERO\": \"1039448943\",\r
+
+          \t\t\t\"F351_ID_CO_MOV\": \"400\",\r
+
+          \t\t\t\"F351_VALOR_CR\": \"100000\",\r
+
+          \t\t\t\"F351_NOTAS\": \"PEDIDO XXXX ECOMMERCE\",\r
+
+          \t\t\t\"F353_ID_SUCURSAL\": \"001\",\r
+
+          \t\t\t\"F353_ID_TIPO_DOCTO_CRUCE\": \"CPE\",\r
+
+          \t\t\t\"F353_CONSEC_DOCTO_CRUCE\": \"1\",\r
+
+          \t\t\t\"F353_FECHA_VCTO\": \"20230328\",\r
+
+          \t\t\t\"F353_FECHA_DSCTO_PP\": \"20230328\"\r
+
+          \t\t}\r
+
+          \t]\r
+
+          }"
+    response:
+      status: 400
+      statusText: Bad Request
+      headers:
+        - name: Content-Length
+          value: "285"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 27 Apr 2023 14:50:37 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 1,
+              "mensaje": "Error al importar el plano",
+              "detalle": [
+                  {
+                      "f_nro_linea": "2",
+                      "f_tipo_reg": "350",
+                      "f_subtipo_reg": "0",
+                      "f_version": "2",
+                      "f_nivel": "0",
+                      "f_valor": "1-400-FRC-00000001",
+                      "f_detalle": "El usuario no tiene acceso a manipular el C.O. del documento 400. Documento: 400-FRC-1."
+                  }
+              ]
+          }

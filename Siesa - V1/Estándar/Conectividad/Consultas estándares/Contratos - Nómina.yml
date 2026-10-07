@@ -1,0 +1,34 @@
+info:
+  name: Contratos - Nómina
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_ContratosNomina&paginacion=numPag=1|tamPag=100&parametros=f200_id=''1027889997''"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_ContratosNomina
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f200_id=''1027889997''
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

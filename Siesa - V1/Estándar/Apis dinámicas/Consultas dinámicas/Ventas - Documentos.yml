@@ -1,0 +1,31 @@
+info:
+  name: Ventas - Documentos
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base_url_produccion}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Documento_ventas&parametros=tamPag=500|numPag=1|fecha=|nit=41319228"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Documento_ventas
+      type: query
+    - name: parametros
+      value: tamPag=500|numPag=1|fecha=|nit=41319228
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

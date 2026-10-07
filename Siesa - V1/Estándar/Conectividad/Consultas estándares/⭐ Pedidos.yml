@@ -1,0 +1,142 @@
+info:
+  name: ⭐ Pedidos
+  type: http
+  seq: 36
+
+http:
+  method: GET
+  url: "{{erpApiUrlVersion1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=1|tamPag=100&parametros=f430_id_fecha=''2026-05-13'' and f200_nit_pedido_fact=''71768901''"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_Ventas_Pedidos
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f430_id_fecha=''2026-05-13'' and f200_nit_pedido_fact=''71768901''
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Pedidos no facturados de un cliente
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=2|tamPag=100&parametros=f200_nit_pedido_fact=''900733839'' and f430_ind_facturado=''0''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_Ventas_Pedidos
+          type: query
+        - name: paginacion
+          value: numPag=2|tamPag=100
+          type: query
+        - name: parametros
+          value: f200_nit_pedido_fact=''900733839'' and f430_ind_facturado=''0''
+          type: query
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Pedidos de un cliente
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=2|tamPag=100&parametros=f200_nit_pedido_fact=''901860262''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_Ventas_Pedidos
+          type: query
+        - name: paginacion
+          value: numPag=2|tamPag=100
+          type: query
+        - name: parametros
+          value: f200_nit_pedido_fact=''901860262''
+          type: query
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Pedido del módulo Ventas Externas
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=1|tamPag=100&parametros=f431_notas LIKE ''%Pedido 10741%''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_Ventas_Pedidos
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f431_notas LIKE ''%Pedido 10741%''
+          type: query
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Producto específico
+    request:
+      url: "{{erpApiUrlVersion1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=1|tamPag=100&parametros=f120_id=''18673''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_Ventas_Pedidos
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f120_id=''18673''
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""

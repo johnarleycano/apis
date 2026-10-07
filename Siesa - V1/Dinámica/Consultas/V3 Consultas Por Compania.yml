@@ -1,0 +1,83 @@
+info:
+  name: V3 Consultas Por Compania
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{simonBolivar_BaseUrl}}/api/v3/consultasporcompania?idCompania={{idCompania}}"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: V3 Consultas Por Compania
+    request:
+      url: "{{base_url_qa}}/api/v3/consultasporcompania?idCompania={{idCompania}}"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "297"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Tue, 25 Apr 2023 17:00:39 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": [
+                  {
+                      "IdCompania": 7129,
+                      "Descripcion": "Estado_Cuenta_cliente"
+                  },
+                  {
+                      "IdCompania": 7129,
+                      "Descripcion": "Inventarios"
+                  },
+                  {
+                      "IdCompania": 7129,
+                      "Descripcion": "Pedidos"
+                  },
+                  {
+                      "IdCompania": 7129,
+                      "Descripcion": "Precios"
+                  },
+                  {
+                      "IdCompania": 7129,
+                      "Descripcion": "Productos"
+                  }
+              ]
+          }

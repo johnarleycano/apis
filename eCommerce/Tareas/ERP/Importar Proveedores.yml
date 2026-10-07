@@ -1,0 +1,19 @@
+info:
+  name: Importar Proveedores
+  type: http
+  seq: 17
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_proveedores"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

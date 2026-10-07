@@ -1,0 +1,41 @@
+info:
+  name: Pedidos
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base_url_produccion}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento=144733&nombreDocumento=PEDIDOS&paginacion=numPag=1|tamPag=100"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "144733"
+      type: query
+    - name: nombreDocumento
+      value: PEDIDOS
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f430_id_tercero_fact="800246302"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

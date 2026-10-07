@@ -1,0 +1,400 @@
+info:
+  name: ⭐ Factura - Venta Pedido
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{erpApiUrl1}}/api/v3/conectoresimportar?idCompania={{idCompania}}&nombreDocumento=API_v1_Ventas_Comercial_FacturaPedido&idInterface={{idInterface}}&idDocumento=150388"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: nombreDocumento
+      value: API_v1_Ventas_Comercial_FacturaPedido
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "150388"
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Inicial\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"doctoVentasComercial\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F_CONSEC_AUTO_REG\": \"1\",\r
+
+      \            \"F350_ID_CO\": \"400\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"CFE\", // CFF: contado; CFE: crédito\r
+
+      \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+      \            \"F350_FECHA\": \"20260421\",\r
+
+      \            \"F350_IND_ESTADO\": \"1\",\r
+
+      \            \"F350_IND_IMPRESION\": \"1\",\r
+
+      \            \"F430_ID_TIPO_DOCTO\": \"CPV\", // 430 -> pedidos\r
+
+      \            \"F430_CONSEC_DOCTO\": \"6\",\r
+
+      \            \"f462_id_vehiculo\": \"\",\r
+
+      \            \"f462_id_tercero_transp\": \"\",\r
+
+      \            \"f462_id_sucursal_transp\": \"\",\r
+
+      \            \"f462_id_tercero_conductor\": \"\",\r
+
+      \            \"f462_nombre_conductor\": \"\",\r
+
+      \            \"f462_identif_conductor\": \"\",\r
+
+      \            \"f462_numero_guia\": \"\",\r
+
+      \            \"f462_cajas\": \"\",\r
+
+      \            \"f462_peso\": \"\",\r
+
+      \            \"f462_volumen\": \"\",\r
+
+      \            \"f462_valor_seguros\": \"\",\r
+
+      \            \"f462_notas\": \"Prueba de conector\",\r
+
+      \            \"f460_id_cond_pago\": \"C30\",\r
+
+      \            \"f461_ind_contabilizar_x_co\": \"\",\r
+
+      \            \"f461_id_caja\": \"\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"cuotasCxC\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F350_ID_CO\": \"400\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"CFE\",\r
+
+      \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+      \            \"F353_ID_TIPO_DOCTO_CRUCE\": \"\",\r
+
+      \            \"F353_CONSEC_DOCTO_CRUCE\": \"\",\r
+
+      \            \"F353_NRO_CUOTA_CRUCE\": \"\",\r
+
+      \            \"F353_VLR_CRUCE\": \"\",\r
+
+      \            \"F_PORCENTAJE_CUOTA\": \"100.00\",\r
+
+      \            \"F353_FECHA_VCTO\": \"20260521\", // Acorde a la condición de pago (f460_id_cond_pago)\r
+
+      \            \"F353_VLR__DSCTO_PP\": \"\",\r
+
+      \            \"F_PORCENTAJE_PP\": \"\",\r
+
+      \            \"F353_FECHA_DSCTO_PP\": \"20260421\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Caja\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"\",\r
+
+      \            \"F350_ID_CO\": \"\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"\",\r
+
+      \            \"F350_CONSEC_DOCTO\": \"\",\r
+
+      \            \"F358_ID_MEDIOS_PAGO\": \"\",\r
+
+      \            \"F358_ID_MONEDA\": \"\",\r
+
+      \            \r
+
+      \            // \"F358_VALOR\": \"\",\r
+
+      \            // \"f358_nro_alt_docto_banco\": \"\",\r
+
+      \            // \"f358_docto_banco_cg\": \"\",\r
+
+      \r
+
+      \            \"F358_ID_BANCO\": \"\",\r
+
+      \            \"F358_NRO_CHEQUE\": \"0\",\r
+
+      \            \"F358_NRO_CUENTA\": \"\",\r
+
+      \            \"F358_COD_SEGURIDAD\": \"\",\r
+
+      \            \"F358_NRO_AUTORIZACION\": \"\",\r
+
+      \            \"F358_FECHA_VCTO\": \"\",\r
+
+      \            \"F358_REFERENCIA_OTROS\": \"\",\r
+
+      \            \"F358_FECHA_CONSIGNACION\": \"\",\r
+
+      \            \"F358_ID_CAUSALES_DEVOLUCION\": \"\",\r
+
+      \            \"F358_ID_TERCERO\": \"\",\r
+
+      \            \"F358_NOTAS\": \"\",\r
+
+      \            \"F358_ID_CCOSTO\": \"\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Final\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: ⭐ Factura - Venta Pedido
+    request:
+      url: "{{erpApiUrlVersion1}}/api/v3/conectoresimportar?idCompania={{idCompania}}&nombreDocumento=API_v1_Ventas_Comercial_FacturaPedido&idInterface={{idInterface}}&idDocumento=150388"
+      method: POST
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: nombreDocumento
+          value: API_v1_Ventas_Comercial_FacturaPedido
+          type: query
+        - name: idInterface
+          value: "{{idInterface}}"
+          type: query
+        - name: idDocumento
+          value: "150388"
+          type: query
+      body:
+        type: json
+        data: "{\r
+
+          \    \"Inicial\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"doctoVentasComercial\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\",\r
+
+          \            \"F_CONSEC_AUTO_REG\": \"0\",\r
+
+          \            \"F350_ID_CO\": \"500\",\r
+
+          \            \"F350_ID_TIPO_DOCTO\": \"CPV\",\r
+
+          \            \"F350_CONSEC_DOCTO\": \"1\",\r
+
+          \            \"F350_FECHA\": \"20260306\",\r
+
+          \            \"F350_IND_ESTADO\": \"1\",\r
+
+          \            \"F350_IND_IMPRESION\": \"0\",\r
+
+          \            \"F430_ID_TIPO_DOCTO\": \"CPV\",\r
+
+          \            \"F430_CONSEC_DOCTO\": \"62255\",\r
+
+          \            \"f462_id_vehiculo\": \"\",\r
+
+          \            \"f462_id_tercero_transp\": \"\",\r
+
+          \            \"f462_id_sucursal_transp\": \"\",\r
+
+          \            \"f462_id_tercero_conductor\": \"\",\r
+
+          \            \"f462_nombre_conductor\": \"\",\r
+
+          \            \"f462_identif_conductor\": \"\",\r
+
+          \            \"f462_numero_guia\": \"\",\r
+
+          \            \"f462_cajas\": \"\",\r
+
+          \            \"f462_peso\": \"0\",\r
+
+          \            \"f462_volumen\": \"0\",\r
+
+          \            \"f462_valor_seguros\": \"0\",\r
+
+          \            \"f462_notas\": \"entregar en amaga en explanan\",\r
+
+          \            \"f460_id_cond_pago\": \"C30\",\r
+
+          \            \"f461_ind_contabilizar_x_co\": \"0\",\r
+
+          \            \"f461_id_caja\": \"\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"cuotasCxC\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\",\r
+
+          \            \"F350_ID_CO\": \"500\",\r
+
+          \            \"F350_ID_TIPO_DOCTO\": \"CPV\",\r
+
+          \            \"F350_CONSEC_DOCTO\": \"137179\",\r
+
+          \            \"F353_ID_TIPO_DOCTO_CRUCE\": \"CPV\",\r
+
+          \            \"F353_CONSEC_DOCTO_CRUCE\": \"62255\",\r
+
+          \            \"F353_NRO_CUOTA_CRUCE\": \"0\",\r
+
+          \            \"F353_VLR_CRUCE\": \"0\",\r
+
+          \            \"F_PORCENTAJE_CUOTA\": \"100.00\",\r
+
+          \            \"F353_FECHA_VCTO\": \"20260306\",\r
+
+          \            \"F353_VLR__DSCTO_PP\": \"\",\r
+
+          \            \"F_PORCENTAJE_PP\": \"\",\r
+
+          \            \"F353_FECHA_DSCTO_PP\": \"\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Caja\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\",\r
+
+          \            \"F350_ID_CO\": \"500\",\r
+
+          \            \"F350_ID_TIPO_DOCTO\": \"CPV\",\r
+
+          \            \"F350_CONSEC_DOCTO\": \"62255\",\r
+
+          \            \"F358_ID_MEDIOS_PAGO\": \"C30\",\r
+
+          \            \"F358_ID_MONEDA\": \"COP\",\r
+
+          \            \"F358_VALOR\": \"123000\",\r
+
+          \            \"f358_nro_alt_docto_banco\": \"\",\r
+
+          \            \"f358_docto_banco_cg\": \"\",\r
+
+          \            \"F358_ID_BANCO\": \"\",\r
+
+          \            \"F358_NRO_CHEQUE\": \"0\",\r
+
+          \            \"F358_NRO_CUENTA\": \"\",\r
+
+          \            \"F358_COD_SEGURIDAD\": \"\",\r
+
+          \            \"F358_NRO_AUTORIZACION\": \"\",\r
+
+          \            \"F358_FECHA_VCTO\": \"\",\r
+
+          \            \"F358_REFERENCIA_OTROS\": \"\",\r
+
+          \            \"F358_FECHA_CONSIGNACION\": \"\",\r
+
+          \            \"F358_ID_CAUSALES_DEVOLUCION\": \"\",\r
+
+          \            \"F358_ID_TERCERO\": \"\",\r
+
+          \            \"F358_NOTAS\": \"\",\r
+
+          \            \"F358_ID_CCOSTO\": \"\"\r
+
+          \        }\r
+
+          \    ],\r
+
+          \    \"Final\": [\r
+
+          \        {\r
+
+          \            \"F_CIA\": \"1\"\r
+
+          \        }\r
+
+          \    ]\r
+
+          }"
+    response:
+      body:
+        type: text
+        data: ""

@@ -1,0 +1,115 @@
+info:
+  name: Movimientos contables
+  type: http
+  seq: 45
+
+http:
+  method: GET
+  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f350_rowid IS NOT NULL"
+  headers:
+    - name: ConniKey
+      value: "{{erpConniKeyVersion2}}"
+    - name: ConniToken
+      value: "{{erpConniTokenVersion2}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_MovtosContables_General
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f350_rowid IS NOT NULL
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Retenciones en la fuente
+    request:
+      url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100"
+      method: GET
+      headers:
+        - name: ConniKey
+          value: "{{erpConniKeyVersion2}}"
+        - name: ConniToken
+          value: "{{erpConniTokenVersion2}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f350_rowid IS NOT NULL and f350_fecha>=''2026-01-01'' and f350_fecha<=''2026-12-31'' and f253_id LIKE ''2365%'' and f350_ind_estado=''0''
+          type: query
+          disabled: true
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Credicontados
+    request:
+      url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f350_id_tipo_docto=''CFF''"
+      method: GET
+      headers:
+        - name: ConniKey
+          value: "{{erpConniKeyVersion2}}"
+        - name: ConniToken
+          value: "{{erpConniTokenVersion2}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f350_id_tipo_docto=''CFF''
+          type: query
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Recibo de un cliente
+    request:
+      url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f350_rowid IS NOT NULL"
+      method: GET
+      headers:
+        - name: ConniKey
+          value: "{{erpConniKeyVersion2}}"
+        - name: ConniToken
+          value: "{{erpConniTokenVersion2}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f350_rowid IS NOT NULL
+          type: query
+    response:
+      body:
+        type: text
+        data: ""

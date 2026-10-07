@@ -1,0 +1,20 @@
+info:
+  name: Descargar certificados de retenciones
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/clientes_descargar_certificados"
+  body:
+    type: form-urlencoded
+    data:
+      - name: datos
+        value: '{"id_comprobante_tipo": 4, "anio": 2025, "id_sede":  1, "mes": "11.NOVIEMBRE"}'
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

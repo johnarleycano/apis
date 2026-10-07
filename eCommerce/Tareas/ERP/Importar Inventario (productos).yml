@@ -1,0 +1,24 @@
+info:
+  name: Importar Inventario (productos)
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_productos_inventario?bodega=00014"
+  params:
+    - name: bodega
+      value: "00014"
+      type: query
+      description: Código de la bodega
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

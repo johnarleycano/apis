@@ -1,0 +1,30 @@
+info:
+  name: Anular despacho
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{tcc_url}}/remesas/anulardespacho"
+  headers:
+    - name: AccessToken
+      value: CLITCC20240OLPBZGKAK
+  body:
+    type: json
+    data: "{\r
+
+      \    \"numeroremesa\": \"446846084\",    // Número de guía\r
+
+      \    \"fechadespacho\": \"2025-10-30\",  // (YYYY-MM-DD)\r
+
+      \    \"cuentaremitente\": \"1485100\"    // Numero de acuerdo comercial asignado (1485100: Paquetería; 5625200: Mensajería)\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

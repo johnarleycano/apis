@@ -1,0 +1,66 @@
+info:
+  name: Consultar liquidación
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{tcc_url}}/tarifas/v5/consultarliquidacion"
+  headers:
+    - name: AccessToken
+      value: "{{tcc_token}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"tipoenvio\": \"1\",               // 1: Nacional, 2: Urbano\r
+
+      \    \"idciudadorigen\": \"05001000\",   // Código DANE de 8 dígitos\r
+
+      \    \"idciudaddestino\": \"11001000\",  // Código DANE de 8 dígitos\r
+
+      \    \"valormercancia\": \"250000\",\r
+
+      \    \"boomerang\": \"0\",               // Cantidad de documentos tipo boomerag que acompañarán la marcancia\r
+
+      \    \"identificacion\": \"900296641\",  // Número de identificacion de quien realizará el despacho\r
+
+      \    \"cuenta\": \"5625200\",            // Numero de acuerdo comercial asignado (1485100: Paquetería; 5625200: Mensajería)\r
+
+      \    \"fecharemesa\": \"2025-09-12\",    // YYYY-MM-DD\r
+
+      \    \"idunidadnegocio\": \"2\",         // 1: Paqueteria; 2: Mensajeria\r
+
+      \    \"unidades\": [\r
+
+      \        {\r
+
+      \            \"numerounidades\": \"1\",\r
+
+      \            \"pesoreal\": \"10\",\r
+
+      \            // Si son enviadas las dimensiones, estas priman sobre el valor enviado en volumen, tambien si no se tiene el volumen se puede enviar Cero (0), siempre y cuando se envie el peso real(ancho (metros) * largo (metros) * alto (metros)) * 400 -> (0.4 * 0.4 * 0.3) * 400\r
+
+      \            \"pesovolumen\": \"15\",\r
+
+      \            \"alto\": \"40\",           \r
+
+      \            \"largo\": \"40\",\r
+
+      \            \"ancho\": \"20\",\r
+
+      \            \"tipoempaque\": \"\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

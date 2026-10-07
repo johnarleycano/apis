@@ -1,0 +1,107 @@
+info:
+  name: ⭐ Consulta Precios Parametros
+  type: http
+  seq: 11
+
+http:
+  method: GET
+  url: "{{base_url_produccion}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Precios_V2&parametros=IdItem='-1'|Lista_precio='009'"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Precios_V2
+      type: query
+    - name: parametros
+      value: IdItem='-1'|Lista_precio='009'
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Precios Parametros
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Precios_V2&parametros=IdItem='13'|Lista_precio='-1'"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Precios_V2
+          type: query
+        - name: parametros
+          value: IdItem='13'|Lista_precio='-1'
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "661"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 18 May 2023 19:22:27 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "IdItem": 13,
+                          "Referencia": "122417-EURO",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 8289183,
+                          "PrecioMinimo": 1246493.69,
+                          "PrecioSugerido": 1486000
+                      },
+                      {
+                          "IdItem": 13,
+                          "Referencia": "122417-EURO",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 8289183,
+                          "PrecioMinimo": 1246493.69,
+                          "PrecioSugerido": 1467400
+                      },
+                      {
+                          "IdItem": 13,
+                          "Referencia": "122417-EURO",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 8289183,
+                          "PrecioMinimo": 1246493.69,
+                          "PrecioSugerido": 1444200
+                      }
+                  ]
+              }
+          }

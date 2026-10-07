@@ -1,0 +1,35 @@
+info:
+  name: Ítems - Extensiones
+  type: http
+  seq: 24
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_ItemsExtensiones&paginacion=numPag=1|tamPag=100"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_ItemsExtensiones
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f200_nit_prov=''900812184''
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

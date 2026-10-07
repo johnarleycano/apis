@@ -1,0 +1,1174 @@
+info:
+  name: Consulta Productos
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Productos_V2&parametros=Id_item='-1'|Marca='-1'|Grupo='-1'|Linea='-1'"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Productos_V2
+      type: query
+    - name: parametros
+      value: Id_item='-1'|Marca='-1'|Grupo='-1'|Linea='-1'
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Productos
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Productos"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Productos
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "26088"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 27 Apr 2023 16:22:53 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "IdItem": "1",
+                          "Descripcion_Corta": "FLETE ORIGEN IMPORTA",
+                          "Referencia": "FLETE ORIGEN IMPORTACION",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "FLETE ORIGEN IMPORTACION",
+                          "Tipo_Inventario": "INVFLETE",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "2",
+                          "Descripcion_Corta": "IVA DE IMPORTACION",
+                          "Referencia": "IVA DE IMPORTACION",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "IVA DE IMPORTACION",
+                          "Tipo_Inventario": "INV1435L",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "3",
+                          "Descripcion_Corta": "ARANCELARANCEL",
+                          "Referencia": "ARANCEL",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ARANCEL",
+                          "Tipo_Inventario": "INV1435O",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "4",
+                          "Descripcion_Corta": "AGENCIAMIENTO ADUANE",
+                          "Referencia": "AGENCIAMIENTO ADUANERO",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "AGENCIAMIENTO ADUANERO",
+                          "Tipo_Inventario": "INV1435I",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "5",
+                          "Descripcion_Corta": "FLETE NAL DE IMPORTA",
+                          "Referencia": "FLETE NAL DE IMPORTACION",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "FLETE NAL DE IMPORTACION",
+                          "Tipo_Inventario": "INVFLETENA",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "6",
+                          "Descripcion_Corta": "DESCARGUE IMPORTACIO",
+                          "Referencia": "DESCARGUE IMPORTACION",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "DESCARGUE IMPORTACION",
+                          "Tipo_Inventario": "INVIMPORTA",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "7",
+                          "Descripcion_Corta": "TE_FLETE INTERNACION",
+                          "Referencia": "TE_FLETE INTERNACIONAL",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "TE_FLETE INTERNACIONAL",
+                          "Tipo_Inventario": "INV1435G",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "8",
+                          "Descripcion_Corta": "PR_SEGURO INTERNACIO",
+                          "Referencia": "PR_SEGURO INTERNACIONAL",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PR_SEGURO INTERNACIONAL",
+                          "Tipo_Inventario": "INV1435H",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "9",
+                          "Descripcion_Corta": "PR_GASTOS INTERNACIO",
+                          "Referencia": "PR_GASTOS INTERNACIO",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PR_GASTOS INTERNACIO",
+                          "Tipo_Inventario": "INVIMPORTA",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "10",
+                          "Descripcion_Corta": "TE_GASTOS INTERNACIO",
+                          "Referencia": "TE_GASTOS IMPORTACION",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "TE_GASTOS INTERNACIONALES",
+                          "Tipo_Inventario": "INVIMPORTA",
+                          "Marca": "SERVICIO                                ",
+                          "Linea": "SERVICIO",
+                          "Grupo": "SERVICIO"
+                      },
+                      {
+                          "IdItem": "11",
+                          "Descripcion_Corta": "101878",
+                          "Referencia": "101878",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "4 TETAS ESCUALIZA 38 LBS SPICER",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "SPICER",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "12",
+                          "Descripcion_Corta": "122417",
+                          "Referencia": "122417-SPICER",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "4 TETAS ESCUALIZA 46 LBS EATON (PARA RELACION 9*37)",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "SPICER",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "13",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Referencia": "122417-EURO",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "4 TETAS ESCUALIZA 46 LBS EURO",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "EURO",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "14",
+                          "Descripcion_Corta": "98548",
+                          "Referencia": "98584E",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "4 TETAS ESCUALIZACION 44 LBS EURO",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "EURO",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "15",
+                          "Descripcion_Corta": "KSLHDF412",
+                          "Referencia": "208326",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA (STB 306) MANGUERA ADMISION TURBO 350 KTBSF394 92-100 mmAUTOMAN (561230356) 42003 con torque con arandelas KSLHDF412",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "DCM                                     ",
+                          "Linea": "MOTOR",
+                          "Grupo": "350"
+                      },
+                      {
+                          "IdItem": "16",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Referencia": "91400",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA (STB406) MANG TURBO 4\" INTERCOOLLER ECL-1944 (561230406)-MAK83AX872PAI-3557858C1 ktbsf437 103 - 111 mm con torque y resorte KTBSF437",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "DCM                                     ",
+                          "Linea": "MOTOR",
+                          "Grupo": "ISX"
+                      },
+                      {
+                          "IdItem": "17",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Referencia": "3557854C1",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA 21/2-23/4 KTBSF287 con torque y resorte",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "DCM                                     ",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "NEUMATICA"
+                      },
+                      {
+                          "IdItem": "18",
+                          "Descripcion_Corta": "ECL1937",
+                          "Referencia": "ECL1937",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA CORREA MOFLE LISA 5\" 20-400-ES",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "19",
+                          "Descripcion_Corta": "41000150",
+                          "Referencia": "41000150",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MOFLE (A50D-7) HERRADURA 5\" (T500D/020017)",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "20",
+                          "Descripcion_Corta": "41000151",
+                          "Referencia": "41000151",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MOFLE HERRADURA 11/2 A 3\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "21",
+                          "Descripcion_Corta": "41000135",
+                          "Referencia": "41000135",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MOFLE HERRADURA 31/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "22",
+                          "Descripcion_Corta": "41000140",
+                          "Referencia": "41000140",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MOFLE HERRADURA 4\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "23",
+                          "Descripcion_Corta": "410000141",
+                          "Referencia": "410000141",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MOFLE HERRADURA 41/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "24",
+                          "Descripcion_Corta": "AM-23/4p21/2",
+                          "Referencia": "AM-23/4*21/2",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MUELLE 23/4*21/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "SUSPENSION",
+                          "Grupo": "MECANICA"
+                      },
+                      {
+                          "IdItem": "25",
+                          "Descripcion_Corta": "AM",
+                          "Referencia": "AM",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MUELLE- 45027",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "SUSPENSION",
+                          "Grupo": "MECANICA"
+                      },
+                      {
+                          "IdItem": "26",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Referencia": "AM-4p41/2",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MUELLE- 45027",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "SUSPENSION",
+                          "Grupo": "MECANICA"
+                      },
+                      {
+                          "IdItem": "27",
+                          "Descripcion_Corta": "AM-4p3",
+                          "Referencia": "AM-4p3",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE MUELLE-45027 AM-4*3",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "SUSPENSION",
+                          "Grupo": "MECANICA"
+                      },
+                      {
+                          "IdItem": "28",
+                          "Descripcion_Corta": "301008600R",
+                          "Referencia": "301008600R",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA DE PERCHA TRAILER RANDON",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "TRAILER",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "29",
+                          "Descripcion_Corta": "TIOA15",
+                          "Referencia": "TIOA15",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA ENCAUCHETADA 1",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "30",
+                          "Descripcion_Corta": "TIOA10",
+                          "Referencia": "TIOA10",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA ENCAUCHETADA 1/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "31",
+                          "Descripcion_Corta": "TIOA18",
+                          "Referencia": "TIOA18",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA ENCAUCHETADA 11/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "32",
+                          "Descripcion_Corta": "TIOA12",
+                          "Referencia": "TIOA12",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA ENCAUCHETADA 3/4",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "33",
+                          "Descripcion_Corta": "TIOA7.5",
+                          "Referencia": "TIOA7.5",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA ENCAUCHETADA 3/8 A7.5",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "34",
+                          "Descripcion_Corta": "T-501",
+                          "Referencia": "T-501",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-501 28-30MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "35",
+                          "Descripcion_Corta": "T-502",
+                          "Referencia": "T-502",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-502 30-34MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "36",
+                          "Descripcion_Corta": "T-503",
+                          "Referencia": "T-503",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-503 34-36MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "37",
+                          "Descripcion_Corta": "T-504",
+                          "Referencia": "T-504",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-504 37-40MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "38",
+                          "Descripcion_Corta": "T-505",
+                          "Referencia": "T-505",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-505 40-44MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "39",
+                          "Descripcion_Corta": "T-506",
+                          "Referencia": "T-506",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-506 44-48MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "40",
+                          "Descripcion_Corta": "T-507",
+                          "Referencia": "T-507",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-507 48-52MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "41",
+                          "Descripcion_Corta": "T-508",
+                          "Referencia": "T-508",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-508 52-57MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "42",
+                          "Descripcion_Corta": "T-510",
+                          "Referencia": "T-510",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-510 62-67MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "43",
+                          "Descripcion_Corta": "T-511",
+                          "Referencia": "T-511",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-511 67-72MM MS21/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "44",
+                          "Descripcion_Corta": "T-512",
+                          "Referencia": "T-512",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-512 72-78MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "45",
+                          "Descripcion_Corta": "T-513",
+                          "Referencia": "T-513",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-513 78-84MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "46",
+                          "Descripcion_Corta": "T-514",
+                          "Referencia": "T-514",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-514 84-90MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "47",
+                          "Descripcion_Corta": "T-515",
+                          "Referencia": "T-515",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-515 90-96MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "48",
+                          "Descripcion_Corta": "T-517",
+                          "Referencia": "T-517",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-517 102-108MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "49",
+                          "Descripcion_Corta": "T-519",
+                          "Referencia": "T-519",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-519 114-120MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "50",
+                          "Descripcion_Corta": "T-520",
+                          "Referencia": "T-520",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-520 120-128MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "51",
+                          "Descripcion_Corta": "T-523",
+                          "Referencia": "T-523",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-523",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "52",
+                          "Descripcion_Corta": "T-525",
+                          "Referencia": "T-525",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-525",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "53",
+                          "Descripcion_Corta": "T-526",
+                          "Referencia": "T-526",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-526",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "54",
+                          "Descripcion_Corta": "T-527",
+                          "Referencia": "T-527",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA INDUSTRIAL T-527",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "55",
+                          "Descripcion_Corta": "HM-40PLS",
+                          "Referencia": "ECL1939-IMPO",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MOFLE 4\" PULGADAS IMPORTADA MARCA HEAVYMOGUL-KTC-MAXITRUCK",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "HEAVY MOGUL",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "56",
+                          "Descripcion_Corta": "90366A-10",
+                          "Referencia": "ECL1939-TORTI",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MOFLE 4\" PULGADAS MARCA TORTICTE",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "TORCTITE",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "57",
+                          "Descripcion_Corta": "HM-50PLS",
+                          "Referencia": "ECL1942-IMPO",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MOFLE 5\" PULGADAS MARCA HEAVYMOGUL-KTC-MAXITRUCK",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "HEAVY MOGUL",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "58",
+                          "Descripcion_Corta": "ECL1942",
+                          "Referencia": "ECL1942-TORT",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MOFLE 5\" PULGADAS MARCA TORTICTE X007785",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "TORCTITE",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "59",
+                          "Descripcion_Corta": "EC50UZP",
+                          "Referencia": "EC50UZP",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MOFLE HERRADURA 5 GALVANIZADA TRP",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "ESCAPE",
+                          "Grupo": "SISTEMA ESCAPE"
+                      },
+                      {
+                          "IdItem": "60",
+                          "Descripcion_Corta": "3558220C1",
+                          "Referencia": "3558220C1",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MOFLE ORIGINAL INTERNATIONAL-3541591c1",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "INTERNATIONAL",
+                          "Linea": "MOTOR",
+                          "Grupo": "ISX"
+                      },
+                      {
+                          "IdItem": "61",
+                          "Descripcion_Corta": "AM-6P31/2",
+                          "Referencia": "AM-31/2*6",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MUELLE 31/2*6",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "SUSPENSION",
+                          "Grupo": "MECANICA"
+                      },
+                      {
+                          "IdItem": "62",
+                          "Descripcion_Corta": "AM-4p21/2",
+                          "Referencia": "AM-4P21/2",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA MUELLE 4*21/2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "SUSPENSION",
+                          "Grupo": "MECANICA"
+                      },
+                      {
+                          "IdItem": "63",
+                          "Descripcion_Corta": "2008AC",
+                          "Referencia": "2008AC",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA P/MASTIL PLASTICA 3 HUECOS 2001AC",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "64",
+                          "Descripcion_Corta": "247-007K",
+                          "Referencia": "247-007K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "65",
+                          "Descripcion_Corta": "247-006K",
+                          "Referencia": "247-006K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "66",
+                          "Descripcion_Corta": "247-008K",
+                          "Referencia": "247-008K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA 20CMS",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "67",
+                          "Descripcion_Corta": "247-014K",
+                          "Referencia": "247-014K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA 40CMS",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "68",
+                          "Descripcion_Corta": "247-017K",
+                          "Referencia": "247-017K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA 540X7.6MM (54 CM) (21\")",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "69",
+                          "Descripcion_Corta": "247-012K",
+                          "Referencia": "247-012K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA NEGRA 30CM (302X4.8MM) AP30 247-012K",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "70",
+                          "Descripcion_Corta": "247-013K",
+                          "Referencia": "247-013K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA NEGRA 36 CM (368X4.8MM) AP37 247-013K O (247-015K --> 368X7.6MM)",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "71",
+                          "Descripcion_Corta": "247-009K",
+                          "Referencia": "247-009K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA NEGRA 4.8MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "72",
+                          "Descripcion_Corta": "247-016K",
+                          "Referencia": "247-016K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA NEGRA 45CMS 450X7.6MM",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "73",
+                          "Descripcion_Corta": "247-018K",
+                          "Referencia": "247-018K",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PLASTICA NEGRA 70 CM (702X9MM) AP70 247-018K",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "KTC",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "74",
+                          "Descripcion_Corta": "AP",
+                          "Referencia": "AP",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA PL?STICA PEQUE?A (MENOS DE 20 CM)",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "NEUMATICA"
+                      },
+                      {
+                          "IdItem": "75",
+                          "Descripcion_Corta": "ABSM",
+                          "Referencia": "ABSM",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SEGUN MUESTRA",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "76",
+                          "Descripcion_Corta": "TIO70",
+                          "Referencia": "TIO36",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE PARA LA MS21/2 T2536-7",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "77",
+                          "Descripcion_Corta": "TIO12",
+                          "Referencia": "TIO12",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 11/16 A 11/4 ((14453))",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "78",
+                          "Descripcion_Corta": "TIO24",
+                          "Referencia": "TIO24",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 11/16\" A 2\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "79",
+                          "Descripcion_Corta": "TIO20",
+                          "Referencia": "TIO20",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 13/16 A 13/4\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "80",
+                          "Descripcion_Corta": "TIO45",
+                          "Referencia": "TIO16",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 13/16\" - 11/2\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "81",
+                          "Descripcion_Corta": "TIO27",
+                          "Referencia": "TIO28",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 15/16\" - 21/4\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "82",
+                          "Descripcion_Corta": "TIO32",
+                          "Referencia": "TIO32",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 19/16\" - 21/2\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "83",
+                          "Descripcion_Corta": "TIO40",
+                          "Referencia": "TIO40",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 21/16\" A 3\" (T2540-7)",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "84",
+                          "Descripcion_Corta": "TIO48",
+                          "Referencia": "TIO48",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 29/16\" A 31/2\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "85",
+                          "Descripcion_Corta": "TIO18",
+                          "Referencia": "TIO18",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 3/8\" A 13/4",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "86",
+                          "Descripcion_Corta": "TIO55",
+                          "Referencia": "TIO56",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 31/16\" A 4\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "87",
+                          "Descripcion_Corta": "TIO64",
+                          "Referencia": "TIO64",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 31/2\" A 41/2\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "88",
+                          "Descripcion_Corta": "TIO72",
+                          "Referencia": "TIO72",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 4\" A 5 \"mm76-127",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "89",
+                          "Descripcion_Corta": "TIO80",
+                          "Referencia": "TIO80",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 5 1/8\" A 5-1/2\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "90",
+                          "Descripcion_Corta": "TIO22",
+                          "Referencia": "TIO04",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 5/16\" - 5/8\" 10-16",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "91",
+                          "Descripcion_Corta": "TIO60",
+                          "Referencia": "TIO60",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 5/16\" A 41/4\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "92",
+                          "Descripcion_Corta": "TIO90",
+                          "Referencia": "TIO88",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 51/8-6mm130-152(T2588-7) 30M2-088BA",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "93",
+                          "Descripcion_Corta": "TIO11",
+                          "Referencia": "TIO10",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE 9/16 A 1.1/16",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "94",
+                          "Descripcion_Corta": "TIO00",
+                          "Referencia": "TIO00",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE T-00 1/4 A 3/8",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "95",
+                          "Descripcion_Corta": "TIO25",
+                          "Referencia": "TIO08",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SIN FIN ACERO INOXIDABLE TIO08 3/4 A 1\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MISCELANEA",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "96",
+                          "Descripcion_Corta": "0201-SAEJ",
+                          "Referencia": "0201-SAEJ",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA SOPORTE SEMIGUARDA POLVO 0201",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "TRAILER",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "97",
+                          "Descripcion_Corta": "AT30",
+                          "Referencia": "AT30",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA TARRO DE SEGURIDAD T30",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "FRENO",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "98",
+                          "Descripcion_Corta": "SAP30011L",
+                          "Referencia": "AT30-SAP",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA TARRO DE SEGURIDAD T30 SAP",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "SAP",
+                          "Linea": "FRENO",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "99",
+                          "Descripcion_Corta": "AT31/2",
+                          "Referencia": "AT31/2",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA TURBO 31/2 CUMMINS HM9135ZW 3.5\"",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MOTOR",
+                          "Grupo": "MISCELANEA"
+                      },
+                      {
+                          "IdItem": "100",
+                          "Descripcion_Corta": "AT41/2",
+                          "Referencia": "AT41/2",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ABRAZADERA TURBO 41/2 CUMMINS",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "MOTOR",
+                          "Grupo": "MISCELANEA"
+                      }
+                  ]
+              }
+          }

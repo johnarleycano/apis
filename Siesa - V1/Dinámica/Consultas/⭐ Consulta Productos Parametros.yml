@@ -1,0 +1,396 @@
+info:
+  name: ⭐ Consulta Productos Parametros
+  type: http
+  seq: 8
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Productos_V2&parametros=Id_item='1501'|Marca='-1'|Linea='-1'|Grupo='-1'"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Productos_V2
+      type: query
+    - name: parametros
+      value: Id_item='1501'|Marca='-1'|Linea='-1'|Grupo='-1'
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Productos Parametros
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Productos_V2&parametros=Id_item='-1'|Marca='MCA - MARCA COLOMBIANA DE AUTOPARTES'|Linea='DIFERENCIAL'|Grupo='-1'"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Productos_V2
+          type: query
+        - name: parametros
+          value: Id_item='-1'|Marca='MCA - MARCA COLOMBIANA DE AUTOPARTES'|Linea='DIFERENCIAL'|Grupo='-1'
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "7588"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 18 May 2023 19:20:57 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "IdItem": "289",
+                          "Descripcion_Corta": "AH",
+                          "Referencia": "AH",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ANILLO DE HAUSS 800-900-91/2-MACK",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "345",
+                          "Descripcion_Corta": "MJAHS102",
+                          "Referencia": "MJAHS102",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "ARANDELA ALUMINIO SOLAR HI BUS Y CAMION",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "1453",
+                          "Descripcion_Corta": "MJASS-100",
+                          "Referencia": "MJASS100",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "BRONCES ESCUALIZACION HI BUS CAMION",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "1883",
+                          "Descripcion_Corta": "MJADY100",
+                          "Referencia": "MJADY100",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "CAMPANA TRANSMISION HI BUS Y CAMION",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "2638",
+                          "Descripcion_Corta": "376",
+                          "Referencia": "376-GEN",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "CRUCETA 376 CARDAN PAREJA 17 1/2 PRECISION",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "CARDAN"
+                      },
+                      {
+                          "IdItem": "2694",
+                          "Descripcion_Corta": "CRUCETA",
+                          "Referencia": "CRUCETA",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "CRUCETA SEGUN MUESTRA",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "GENERICO"
+                      },
+                      {
+                          "IdItem": "3105",
+                          "Descripcion_Corta": "EE800",
+                          "Referencia": "EE800",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "EMPAQUE EJE F800",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "3106",
+                          "Descripcion_Corta": "EE900",
+                          "Referencia": "EE900",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "EMPAQUE EJE F900 TAGE2",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "3107",
+                          "Descripcion_Corta": "EEMACK",
+                          "Referencia": "EEMACK",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "EMPAQUE EJE MACK 6 HUECOS",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "6184",
+                          "Descripcion_Corta": "1229-L-4354",
+                          "Referencia": "1229L4354",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PIN DIVISOR MERITOR 44/46 LBS",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "6185",
+                          "Descripcion_Corta": "85997",
+                          "Referencia": "85997",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PIN EJE DIVISOR38 ML-46ML",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "6186",
+                          "Descripcion_Corta": "85994",
+                          "Referencia": "85994",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PIN EJE SALIDA 34-38-44-46 LBS DIVISOR DEL DIVISOR",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "6188",
+                          "Descripcion_Corta": "1229P2590",
+                          "Referencia": "1229P2590",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PIN EJE SALIDA MERITOR 46160 155 IN",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "6253",
+                          "Descripcion_Corta": "PAG",
+                          "Referencia": "PAG",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PINADORA AGRALE GRANDE",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "GENERICO"
+                      },
+                      {
+                          "IdItem": "6273",
+                          "Descripcion_Corta": "PD300",
+                          "Referencia": "PD300",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PINADORA HAUSSING PD 300 AGRALE FORD CARGO 815",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "GENERICO"
+                      },
+                      {
+                          "IdItem": "6275",
+                          "Descripcion_Corta": "PCH",
+                          "Referencia": "PCH",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PINADORA HOUSING CHEVROLET NPR NPR-1124",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "GENERICO"
+                      },
+                      {
+                          "IdItem": "6587",
+                          "Descripcion_Corta": "21845",
+                          "Referencia": "21845",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "PORTA CORONA 941 DEL Y TRASERO SB 48 LBS PLANO",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "GENERICO"
+                      },
+                      {
+                          "IdItem": "7139",
+                          "Descripcion_Corta": "51238",
+                          "Referencia": "51238",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "RESORTE DIVISOR DE 38 LBS",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "7140",
+                          "Descripcion_Corta": "127095",
+                          "Referencia": "127095",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "RESORTE DIVISOR DE 44 46 ML",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "7735",
+                          "Descripcion_Corta": "2203K9839",
+                          "Referencia": "2203K9839",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "SEPARADOR SPEED DEL MERITOR 46160 ENTRE RODILLOS 12.33 MM (2203T9838)",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "RETENEDOR"
+                      },
+                      {
+                          "IdItem": "8088",
+                          "Descripcion_Corta": "902010T",
+                          "Referencia": "902010T",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "SOPORTE CARDAN ISUZU KTC NPR",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "CARDAN"
+                      },
+                      {
+                          "IdItem": "8464",
+                          "Descripcion_Corta": "2021P",
+                          "Referencia": "2021P",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "TAPA TUERCA EJE HEXAGONAL PRESION 90MM * 33MM 2021P",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "TAPA TUERCA DE LUJO"
+                      },
+                      {
+                          "IdItem": "9486",
+                          "Descripcion_Corta": "83799",
+                          "Referencia": "83799",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "TUERCA SPEED 44 LBS DELANTERA DE PINAR",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "9493",
+                          "Descripcion_Corta": "2241",
+                          "Referencia": "2241",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "TUERCA SPEED TRASERA MACK",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "11450",
+                          "Descripcion_Corta": "131049",
+                          "Referencia": "131049",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "CRUCETA 46170",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "12466",
+                          "Descripcion_Corta": "KITRODAMIENTO",
+                          "Referencia": "KITRODAMIENTO",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "KIT RODAMIENTO NPR",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "12514",
+                          "Descripcion_Corta": "5224",
+                          "Referencia": "5224",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "VALVULA ANTIPATINAJE AIRE ELECTRICA KW",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "12612",
+                          "Descripcion_Corta": "1254*2",
+                          "Referencia": "1254*2",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "KIT RODAMIENTO TRANSMISION FRR",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      },
+                      {
+                          "IdItem": "14124",
+                          "Descripcion_Corta": "647561N",
+                          "Referencia": "647561N",
+                          "Unidad_Inventario": "UNID",
+                          "Notas": "FLANCHE SPEED TRAS 46. LB 41 EST  5280X",
+                          "Tipo_Inventario": "INV1435A",
+                          "Marca": "MCA - MARCA COLOMBIANA DE AUTOPARTES",
+                          "Linea": "DIFERENCIAL",
+                          "Grupo": "DIFERENCIAL"
+                      }
+                  ]
+              }
+          }

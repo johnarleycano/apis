@@ -1,0 +1,158 @@
+info:
+  name: ⭐ Movimientos Contables - General
+  type: http
+  seq: 32
+
+http:
+  method: GET
+  url: "{{erpApiUrlVersion1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_MovtosContables_General
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Retenciones en la fuente
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f350_fecha>=''2026-01-01'' and f350_fecha<=''2026-12-31'' and f253_id LIKE ''2365%'' and f350_ind_estado=''0''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f350_fecha>=''2026-01-01'' and f350_fecha<=''2026-12-31'' and f253_id LIKE ''2365%'' and f350_ind_estado=''0''
+          type: query
+          description: Retenciones en la fuente
+      body:
+        type: json
+        data: ""
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Recibo de caja (Pago en línea)
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f200_nit=''902000725'' "
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: "f200_nit=''902000725'' "
+          type: query
+          description: Recibo de caja de un pago
+        - name: ""
+          value: and f351_notas=''Recibo 7245''
+          type: query
+          disabled: true
+      body:
+        type: json
+        data: ""
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Recibo de caja (Pago general)
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f200_nit=''900128'' and f350_id_co=''100'' and f350_id_tipo_docto =''FRC'' and f350_consec_docto=''70116''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f200_nit=''900128'' and f350_id_co=''100'' and f350_id_tipo_docto =''FRC'' and f350_consec_docto=''70116''
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Recibo de caja (Pago con comprobante)
+    request:
+      url: "{{erpApiUrl1}}/api/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_MovtosContables_General&paginacion=numPag=1|tamPag=100&parametros=f200_nit=''811007434'' and f351_notas LIKE ''Recibo 7824%''"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_MovtosContables_General
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f200_nit=''811007434'' and f351_notas LIKE ''Recibo 7824%''
+          type: query
+      body:
+        type: json
+        data: ""
+    response:
+      body:
+        type: text
+        data: ""

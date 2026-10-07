@@ -1,0 +1,1071 @@
+info:
+  name: Consulta Precios
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Precios"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Precios
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Precios
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Precios"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Precios
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "18396"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 27 Apr 2023 16:21:04 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "IdItem": 5,
+                          "Referencia": "FLETE NAL DE IMPORTACION",
+                          "Descripcion_Corta": "FLETE NAL DE IMPORTA",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 21000000,
+                          "PrecioMinimo": 500000,
+                          "PrecioSugerido": 20000000
+                      },
+                      {
+                          "IdItem": 11,
+                          "Referencia": "101878",
+                          "Descripcion_Corta": "101878",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 3943187.1,
+                          "PrecioMinimo": 592960.47,
+                          "PrecioSugerido": 731600
+                      },
+                      {
+                          "IdItem": 11,
+                          "Referencia": "101878",
+                          "Descripcion_Corta": "101878",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 3943187.1,
+                          "PrecioMinimo": 592960.47,
+                          "PrecioSugerido": 640200
+                      },
+                      {
+                          "IdItem": 11,
+                          "Referencia": "101878",
+                          "Descripcion_Corta": "101878",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 3943187.1,
+                          "PrecioMinimo": 592960.47,
+                          "PrecioSugerido": 678700
+                      },
+                      {
+                          "IdItem": 12,
+                          "Referencia": "122417-SPICER",
+                          "Descripcion_Corta": "122417",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 6776235.79,
+                          "PrecioMinimo": 1129372.63,
+                          "PrecioSugerido": 1292700
+                      },
+                      {
+                          "IdItem": 12,
+                          "Referencia": "122417-SPICER",
+                          "Descripcion_Corta": "122417",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 6776235.79,
+                          "PrecioMinimo": 1129372.63,
+                          "PrecioSugerido": 1324600
+                      },
+                      {
+                          "IdItem": 12,
+                          "Referencia": "122417-SPICER",
+                          "Descripcion_Corta": "122417",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 6776235.79,
+                          "PrecioMinimo": 1129372.63,
+                          "PrecioSugerido": 1358200
+                      },
+                      {
+                          "IdItem": 13,
+                          "Referencia": "122417-EURO",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 8289183,
+                          "PrecioMinimo": 1246493.69,
+                          "PrecioSugerido": 1444200
+                      },
+                      {
+                          "IdItem": 13,
+                          "Referencia": "122417-EURO",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 8289183,
+                          "PrecioMinimo": 1246493.69,
+                          "PrecioSugerido": 1486000
+                      },
+                      {
+                          "IdItem": 13,
+                          "Referencia": "122417-EURO",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 8289183,
+                          "PrecioMinimo": 1246493.69,
+                          "PrecioSugerido": 1467400
+                      },
+                      {
+                          "IdItem": 14,
+                          "Referencia": "98584E",
+                          "Descripcion_Corta": "98548",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 5936000,
+                          "PrecioMinimo": 1150116.21,
+                          "PrecioSugerido": 1484000
+                      },
+                      {
+                          "IdItem": 14,
+                          "Referencia": "98584E",
+                          "Descripcion_Corta": "98548",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 5936000,
+                          "PrecioMinimo": 1150116.21,
+                          "PrecioSugerido": 1431000
+                      },
+                      {
+                          "IdItem": 14,
+                          "Referencia": "98584E",
+                          "Descripcion_Corta": "98548",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 5936000,
+                          "PrecioMinimo": 1150116.21,
+                          "PrecioSugerido": 1431000
+                      },
+                      {
+                          "IdItem": 15,
+                          "Referencia": "208326",
+                          "Descripcion_Corta": "KSLHDF412",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 98955.89,
+                          "PrecioMinimo": 10995.1,
+                          "PrecioSugerido": 16100
+                      },
+                      {
+                          "IdItem": 15,
+                          "Referencia": "208326",
+                          "Descripcion_Corta": "KSLHDF412",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 98955.89,
+                          "PrecioMinimo": 10995.1,
+                          "PrecioSugerido": 19000
+                      },
+                      {
+                          "IdItem": 15,
+                          "Referencia": "208326",
+                          "Descripcion_Corta": "KSLHDF412",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 98955.89,
+                          "PrecioMinimo": 10995.1,
+                          "PrecioSugerido": 17500
+                      },
+                      {
+                          "IdItem": 16,
+                          "Referencia": "91400",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 171360,
+                          "PrecioMinimo": 18037.9,
+                          "PrecioSugerido": 27700
+                      },
+                      {
+                          "IdItem": 16,
+                          "Referencia": "91400",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 171360,
+                          "PrecioMinimo": 18037.9,
+                          "PrecioSugerido": 33600
+                      },
+                      {
+                          "IdItem": 16,
+                          "Referencia": "91400",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 171360,
+                          "PrecioMinimo": 18037.9,
+                          "PrecioSugerido": 31800
+                      },
+                      {
+                          "IdItem": 17,
+                          "Referencia": "3557854C1",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 150832.5,
+                          "PrecioMinimo": 15877.11,
+                          "PrecioSugerido": 21600
+                      },
+                      {
+                          "IdItem": 17,
+                          "Referencia": "3557854C1",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 150832.5,
+                          "PrecioMinimo": 15877.11,
+                          "PrecioSugerido": 23300
+                      },
+                      {
+                          "IdItem": 17,
+                          "Referencia": "3557854C1",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 150832.5,
+                          "PrecioMinimo": 15877.11,
+                          "PrecioSugerido": 22200
+                      },
+                      {
+                          "IdItem": 18,
+                          "Referencia": "ECL1937",
+                          "Descripcion_Corta": "ECL1937",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 210442.11,
+                          "PrecioMinimo": 35073.68,
+                          "PrecioSugerido": 40700
+                      },
+                      {
+                          "IdItem": 18,
+                          "Referencia": "ECL1937",
+                          "Descripcion_Corta": "ECL1937",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 210442.11,
+                          "PrecioMinimo": 35073.68,
+                          "PrecioSugerido": 42800
+                      },
+                      {
+                          "IdItem": 18,
+                          "Referencia": "ECL1937",
+                          "Descripcion_Corta": "ECL1937",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 210442.11,
+                          "PrecioMinimo": 35073.68,
+                          "PrecioSugerido": 41700
+                      },
+                      {
+                          "IdItem": 19,
+                          "Referencia": "41000150",
+                          "Descripcion_Corta": "41000150",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 88648.74,
+                          "PrecioMinimo": 14774.79,
+                          "PrecioSugerido": 28700
+                      },
+                      {
+                          "IdItem": 19,
+                          "Referencia": "41000150",
+                          "Descripcion_Corta": "41000150",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 88648.74,
+                          "PrecioMinimo": 14774.79,
+                          "PrecioSugerido": 32500
+                      },
+                      {
+                          "IdItem": 19,
+                          "Referencia": "41000150",
+                          "Descripcion_Corta": "41000150",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 88648.74,
+                          "PrecioMinimo": 14774.79,
+                          "PrecioSugerido": 30600
+                      },
+                      {
+                          "IdItem": 20,
+                          "Referencia": "41000151",
+                          "Descripcion_Corta": "41000151",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 135284.21,
+                          "PrecioMinimo": 15031.58,
+                          "PrecioSugerido": 28600
+                      },
+                      {
+                          "IdItem": 20,
+                          "Referencia": "41000151",
+                          "Descripcion_Corta": "41000151",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 135284.21,
+                          "PrecioMinimo": 15031.58,
+                          "PrecioSugerido": 23800
+                      },
+                      {
+                          "IdItem": 20,
+                          "Referencia": "41000151",
+                          "Descripcion_Corta": "41000151",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 135284.21,
+                          "PrecioMinimo": 15031.58,
+                          "PrecioSugerido": 26000
+                      },
+                      {
+                          "IdItem": 21,
+                          "Referencia": "41000135",
+                          "Descripcion_Corta": "41000135",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 40585.26,
+                          "PrecioMinimo": 6764.21,
+                          "PrecioSugerido": 9200
+                      },
+                      {
+                          "IdItem": 21,
+                          "Referencia": "41000135",
+                          "Descripcion_Corta": "41000135",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 40585.26,
+                          "PrecioMinimo": 6764.21,
+                          "PrecioSugerido": 9900
+                      },
+                      {
+                          "IdItem": 21,
+                          "Referencia": "41000135",
+                          "Descripcion_Corta": "41000135",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 40585.26,
+                          "PrecioMinimo": 6764.21,
+                          "PrecioSugerido": 9600
+                      },
+                      {
+                          "IdItem": 22,
+                          "Referencia": "41000140",
+                          "Descripcion_Corta": "41000140",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 112138.46,
+                          "PrecioMinimo": 16862.93,
+                          "PrecioSugerido": 25900
+                      },
+                      {
+                          "IdItem": 22,
+                          "Referencia": "41000140",
+                          "Descripcion_Corta": "41000140",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 112138.46,
+                          "PrecioMinimo": 16862.93,
+                          "PrecioSugerido": 27700
+                      },
+                      {
+                          "IdItem": 22,
+                          "Referencia": "41000140",
+                          "Descripcion_Corta": "41000140",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 112138.46,
+                          "PrecioMinimo": 16862.93,
+                          "PrecioSugerido": 26700
+                      },
+                      {
+                          "IdItem": 23,
+                          "Referencia": "410000141",
+                          "Descripcion_Corta": "410000141",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 60532.17,
+                          "PrecioMinimo": 10088.69,
+                          "PrecioSugerido": 15800
+                      },
+                      {
+                          "IdItem": 23,
+                          "Referencia": "410000141",
+                          "Descripcion_Corta": "410000141",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 60532.17,
+                          "PrecioMinimo": 10088.69,
+                          "PrecioSugerido": 13700
+                      },
+                      {
+                          "IdItem": 23,
+                          "Referencia": "410000141",
+                          "Descripcion_Corta": "410000141",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 60532.17,
+                          "PrecioMinimo": 10088.69,
+                          "PrecioSugerido": 14800
+                      },
+                      {
+                          "IdItem": 24,
+                          "Referencia": "AM-23/4*21/2",
+                          "Descripcion_Corta": "AM-23/4p21/2",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 12776.84,
+                          "PrecioMinimo": 2129.47,
+                          "PrecioSugerido": 5800
+                      },
+                      {
+                          "IdItem": 24,
+                          "Referencia": "AM-23/4*21/2",
+                          "Descripcion_Corta": "AM-23/4p21/2",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 12776.84,
+                          "PrecioMinimo": 2129.47,
+                          "PrecioSugerido": 6800
+                      },
+                      {
+                          "IdItem": 24,
+                          "Referencia": "AM-23/4*21/2",
+                          "Descripcion_Corta": "AM-23/4p21/2",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 12776.84,
+                          "PrecioMinimo": 2129.47,
+                          "PrecioSugerido": 8100
+                      },
+                      {
+                          "IdItem": 25,
+                          "Referencia": "AM",
+                          "Descripcion_Corta": "AM",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 16670.02,
+                          "PrecioMinimo": 2778.34,
+                          "PrecioSugerido": 4800
+                      },
+                      {
+                          "IdItem": 25,
+                          "Referencia": "AM",
+                          "Descripcion_Corta": "AM",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 16670.02,
+                          "PrecioMinimo": 2778.34,
+                          "PrecioSugerido": 5900
+                      },
+                      {
+                          "IdItem": 25,
+                          "Referencia": "AM",
+                          "Descripcion_Corta": "AM",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 16670.02,
+                          "PrecioMinimo": 2778.34,
+                          "PrecioSugerido": 5300
+                      },
+                      {
+                          "IdItem": 26,
+                          "Referencia": "AM-4p41/2",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 19541.05,
+                          "PrecioMinimo": 3256.84,
+                          "PrecioSugerido": 5700
+                      },
+                      {
+                          "IdItem": 26,
+                          "Referencia": "AM-4p41/2",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 19541.05,
+                          "PrecioMinimo": 3256.84,
+                          "PrecioSugerido": 4900
+                      },
+                      {
+                          "IdItem": 26,
+                          "Referencia": "AM-4p41/2",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 19541.05,
+                          "PrecioMinimo": 3256.84,
+                          "PrecioSugerido": 4300
+                      },
+                      {
+                          "IdItem": 28,
+                          "Referencia": "301008600R",
+                          "Descripcion_Corta": "301008600R",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 248900.4,
+                          "PrecioMinimo": 41483.4,
+                          "PrecioSugerido": 58000
+                      },
+                      {
+                          "IdItem": 28,
+                          "Referencia": "301008600R",
+                          "Descripcion_Corta": "301008600R",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 248900.4,
+                          "PrecioMinimo": 41483.4,
+                          "PrecioSugerido": 65700
+                      },
+                      {
+                          "IdItem": 28,
+                          "Referencia": "301008600R",
+                          "Descripcion_Corta": "301008600R",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 248900.4,
+                          "PrecioMinimo": 41483.4,
+                          "PrecioSugerido": 61600
+                      },
+                      {
+                          "IdItem": 29,
+                          "Referencia": "TIOA15",
+                          "Descripcion_Corta": "TIOA15",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 11353.79,
+                          "PrecioMinimo": 1707.34,
+                          "PrecioSugerido": 4300
+                      },
+                      {
+                          "IdItem": 29,
+                          "Referencia": "TIOA15",
+                          "Descripcion_Corta": "TIOA15",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 11353.79,
+                          "PrecioMinimo": 1707.34,
+                          "PrecioSugerido": 4000
+                      },
+                      {
+                          "IdItem": 29,
+                          "Referencia": "TIOA15",
+                          "Descripcion_Corta": "TIOA15",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 11353.79,
+                          "PrecioMinimo": 1707.34,
+                          "PrecioSugerido": 3700
+                      },
+                      {
+                          "IdItem": 30,
+                          "Referencia": "TIOA10",
+                          "Descripcion_Corta": "TIOA10",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 4982.97,
+                          "PrecioMinimo": 830.49,
+                          "PrecioSugerido": 2400
+                      },
+                      {
+                          "IdItem": 30,
+                          "Referencia": "TIOA10",
+                          "Descripcion_Corta": "TIOA10",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 4982.97,
+                          "PrecioMinimo": 830.49,
+                          "PrecioSugerido": 2200
+                      },
+                      {
+                          "IdItem": 30,
+                          "Referencia": "TIOA10",
+                          "Descripcion_Corta": "TIOA10",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 4982.97,
+                          "PrecioMinimo": 830.49,
+                          "PrecioSugerido": 2000
+                      },
+                      {
+                          "IdItem": 31,
+                          "Referencia": "TIOA18",
+                          "Descripcion_Corta": "TIOA18",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 21994.96,
+                          "PrecioMinimo": 2443.88,
+                          "PrecioSugerido": 5100
+                      },
+                      {
+                          "IdItem": 31,
+                          "Referencia": "TIOA18",
+                          "Descripcion_Corta": "TIOA18",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 21994.96,
+                          "PrecioMinimo": 2443.88,
+                          "PrecioSugerido": 4500
+                      },
+                      {
+                          "IdItem": 31,
+                          "Referencia": "TIOA18",
+                          "Descripcion_Corta": "TIOA18",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 21994.96,
+                          "PrecioMinimo": 2443.88,
+                          "PrecioSugerido": 4800
+                      },
+                      {
+                          "IdItem": 32,
+                          "Referencia": "TIOA12",
+                          "Descripcion_Corta": "TIOA12",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 8513.26,
+                          "PrecioMinimo": 1280.19,
+                          "PrecioSugerido": 4600
+                      },
+                      {
+                          "IdItem": 32,
+                          "Referencia": "TIOA12",
+                          "Descripcion_Corta": "TIOA12",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 8513.26,
+                          "PrecioMinimo": 1280.19,
+                          "PrecioSugerido": 5200
+                      },
+                      {
+                          "IdItem": 32,
+                          "Referencia": "TIOA12",
+                          "Descripcion_Corta": "TIOA12",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 8513.26,
+                          "PrecioMinimo": 1280.19,
+                          "PrecioSugerido": 5900
+                      },
+                      {
+                          "IdItem": 33,
+                          "Referencia": "TIOA7.5",
+                          "Descripcion_Corta": "TIOA7.5",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 3494.84,
+                          "PrecioMinimo": 582.47,
+                          "PrecioSugerido": 1000
+                      },
+                      {
+                          "IdItem": 33,
+                          "Referencia": "TIOA7.5",
+                          "Descripcion_Corta": "TIOA7.5",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 3494.84,
+                          "PrecioMinimo": 582.47,
+                          "PrecioSugerido": 1000
+                      },
+                      {
+                          "IdItem": 33,
+                          "Referencia": "TIOA7.5",
+                          "Descripcion_Corta": "TIOA7.5",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 3494.84,
+                          "PrecioMinimo": 582.47,
+                          "PrecioSugerido": 1000
+                      },
+                      {
+                          "IdItem": 34,
+                          "Referencia": "T-501",
+                          "Descripcion_Corta": "T-501",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 21937.54,
+                          "PrecioMinimo": 3656.26,
+                          "PrecioSugerido": 5900
+                      },
+                      {
+                          "IdItem": 34,
+                          "Referencia": "T-501",
+                          "Descripcion_Corta": "T-501",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 21937.54,
+                          "PrecioMinimo": 3656.26,
+                          "PrecioSugerido": 6300
+                      },
+                      {
+                          "IdItem": 34,
+                          "Referencia": "T-501",
+                          "Descripcion_Corta": "T-501",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 21937.54,
+                          "PrecioMinimo": 3656.26,
+                          "PrecioSugerido": 6600
+                      },
+                      {
+                          "IdItem": 35,
+                          "Referencia": "T-502",
+                          "Descripcion_Corta": "T-502",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 22615.95,
+                          "PrecioMinimo": 3400.9,
+                          "PrecioSugerido": 6400
+                      },
+                      {
+                          "IdItem": 35,
+                          "Referencia": "T-502",
+                          "Descripcion_Corta": "T-502",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 22615.95,
+                          "PrecioMinimo": 3400.9,
+                          "PrecioSugerido": 6800
+                      },
+                      {
+                          "IdItem": 35,
+                          "Referencia": "T-502",
+                          "Descripcion_Corta": "T-502",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 22615.95,
+                          "PrecioMinimo": 3400.9,
+                          "PrecioSugerido": 6000
+                      },
+                      {
+                          "IdItem": 36,
+                          "Referencia": "T-503",
+                          "Descripcion_Corta": "T-503",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 19992,
+                          "PrecioMinimo": 3006.32,
+                          "PrecioSugerido": 4400
+                      },
+                      {
+                          "IdItem": 36,
+                          "Referencia": "T-503",
+                          "Descripcion_Corta": "T-503",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 19992,
+                          "PrecioMinimo": 3006.32,
+                          "PrecioSugerido": 4200
+                      },
+                      {
+                          "IdItem": 36,
+                          "Referencia": "T-503",
+                          "Descripcion_Corta": "T-503",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 19992,
+                          "PrecioMinimo": 3006.32,
+                          "PrecioSugerido": 4100
+                      },
+                      {
+                          "IdItem": 37,
+                          "Referencia": "T-504",
+                          "Descripcion_Corta": "T-504",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 21324.8,
+                          "PrecioMinimo": 3206.74,
+                          "PrecioSugerido": 11800
+                      },
+                      {
+                          "IdItem": 37,
+                          "Referencia": "T-504",
+                          "Descripcion_Corta": "T-504",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 21324.8,
+                          "PrecioMinimo": 3206.74,
+                          "PrecioSugerido": 10100
+                      },
+                      {
+                          "IdItem": 37,
+                          "Referencia": "T-504",
+                          "Descripcion_Corta": "T-504",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 21324.8,
+                          "PrecioMinimo": 3206.74,
+                          "PrecioSugerido": 10900
+                      },
+                      {
+                          "IdItem": 38,
+                          "Referencia": "T-505",
+                          "Descripcion_Corta": "T-505",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 24123.68,
+                          "PrecioMinimo": 3627.63,
+                          "PrecioSugerido": 6900
+                      },
+                      {
+                          "IdItem": 38,
+                          "Referencia": "T-505",
+                          "Descripcion_Corta": "T-505",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 24123.68,
+                          "PrecioMinimo": 3627.63,
+                          "PrecioSugerido": 7700
+                      },
+                      {
+                          "IdItem": 38,
+                          "Referencia": "T-505",
+                          "Descripcion_Corta": "T-505",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 24123.68,
+                          "PrecioMinimo": 3627.63,
+                          "PrecioSugerido": 8700
+                      },
+                      {
+                          "IdItem": 39,
+                          "Referencia": "T-506",
+                          "Descripcion_Corta": "T-506",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 3240.37,
+                          "PrecioMinimo": 487.28,
+                          "PrecioSugerido": 910
+                      },
+                      {
+                          "IdItem": 39,
+                          "Referencia": "T-506",
+                          "Descripcion_Corta": "T-506",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 3240.37,
+                          "PrecioMinimo": 487.28,
+                          "PrecioSugerido": 1030
+                      },
+                      {
+                          "IdItem": 39,
+                          "Referencia": "T-506",
+                          "Descripcion_Corta": "T-506",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 3240.37,
+                          "PrecioMinimo": 487.28,
+                          "PrecioSugerido": 970
+                      },
+                      {
+                          "IdItem": 40,
+                          "Referencia": "T-507",
+                          "Descripcion_Corta": "T-507",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 32317.89,
+                          "PrecioMinimo": 5386.32,
+                          "PrecioSugerido": 9700
+                      },
+                      {
+                          "IdItem": 40,
+                          "Referencia": "T-507",
+                          "Descripcion_Corta": "T-507",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 32317.89,
+                          "PrecioMinimo": 5386.32,
+                          "PrecioSugerido": 8700
+                      },
+                      {
+                          "IdItem": 40,
+                          "Referencia": "T-507",
+                          "Descripcion_Corta": "T-507",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 32317.89,
+                          "PrecioMinimo": 5386.32,
+                          "PrecioSugerido": 9200
+                      },
+                      {
+                          "IdItem": 41,
+                          "Referencia": "T-508",
+                          "Descripcion_Corta": "T-508",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 11837.37,
+                          "PrecioMinimo": 1972.89,
+                          "PrecioSugerido": 8600
+                      },
+                      {
+                          "IdItem": 41,
+                          "Referencia": "T-508",
+                          "Descripcion_Corta": "T-508",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 11837.37,
+                          "PrecioMinimo": 1972.89,
+                          "PrecioSugerido": 9100
+                      },
+                      {
+                          "IdItem": 41,
+                          "Referencia": "T-508",
+                          "Descripcion_Corta": "T-508",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 11837.37,
+                          "PrecioMinimo": 1972.89,
+                          "PrecioSugerido": 9700
+                      },
+                      {
+                          "IdItem": 42,
+                          "Referencia": "T-510",
+                          "Descripcion_Corta": "T-510",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 20142.32,
+                          "PrecioMinimo": 3357.05,
+                          "PrecioSugerido": 6400
+                      },
+                      {
+                          "IdItem": 42,
+                          "Referencia": "T-510",
+                          "Descripcion_Corta": "T-510",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 20142.32,
+                          "PrecioMinimo": 3357.05,
+                          "PrecioSugerido": 8000
+                      },
+                      {
+                          "IdItem": 42,
+                          "Referencia": "T-510",
+                          "Descripcion_Corta": "T-510",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 20142.32,
+                          "PrecioMinimo": 3357.05,
+                          "PrecioSugerido": 7100
+                      },
+                      {
+                          "IdItem": 43,
+                          "Referencia": "T-511",
+                          "Descripcion_Corta": "T-511",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 21044.21,
+                          "PrecioMinimo": 6281.95,
+                          "PrecioSugerido": 13300
+                      },
+                      {
+                          "IdItem": 43,
+                          "Referencia": "T-511",
+                          "Descripcion_Corta": "T-511",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 21044.21,
+                          "PrecioMinimo": 6281.95,
+                          "PrecioSugerido": 10900
+                      },
+                      {
+                          "IdItem": 43,
+                          "Referencia": "T-511",
+                          "Descripcion_Corta": "T-511",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 21044.21,
+                          "PrecioMinimo": 6281.95,
+                          "PrecioSugerido": 12000
+                      },
+                      {
+                          "IdItem": 44,
+                          "Referencia": "T-512",
+                          "Descripcion_Corta": "T-512",
+                          "Lista_precio": "003",
+                          "Precio": 0,
+                          "PrecioMaximo": 38984.4,
+                          "PrecioMinimo": 5862.32,
+                          "PrecioSugerido": 10300
+                      },
+                      {
+                          "IdItem": 44,
+                          "Referencia": "T-512",
+                          "Descripcion_Corta": "T-512",
+                          "Lista_precio": "001",
+                          "Precio": 0,
+                          "PrecioMaximo": 38984.4,
+                          "PrecioMinimo": 5862.32,
+                          "PrecioSugerido": 12300
+                      },
+                      {
+                          "IdItem": 44,
+                          "Referencia": "T-512",
+                          "Descripcion_Corta": "T-512",
+                          "Lista_precio": "002",
+                          "Precio": 0,
+                          "PrecioMaximo": 38984.4,
+                          "PrecioMinimo": 5862.32,
+                          "PrecioSugerido": 11200
+                      }
+                  ]
+              }
+          }

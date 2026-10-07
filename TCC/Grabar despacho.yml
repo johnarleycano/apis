@@ -1,0 +1,242 @@
+info:
+  name: Grabar despacho
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{tcc_url}}/remesas/grabardespacho8"
+  headers:
+    - name: AccessToken
+      value: CLITCC20240OLPBZGKAK
+  body:
+    type: json
+    data: "{\r
+
+      \    \"numerodespacho\" : null, // Puede ser nulo de esta manera TCC genera el numero del despacho\r
+
+      \    \"fechadespacho\" : \"2025-10-30\", // Fecha en la que se realiza el envío (YYYY-MM-DD)\r
+
+      \    // Se diligencia solo si se va a solicitar la recogida\r
+
+      \    \"solicitudrecogida\" : {\r
+
+      \        \"numero\" : null,\r
+
+      \        \"fecha\" : null,\r
+
+      \        \"ventanainicio\" : null,\r
+
+      \        \"ventanafin\" : null\r
+
+      \    },\r
+
+      \    \"unidadnegocio\" : \"1\",  // 1: Paqueteria; 2: Mensajeria\r
+
+      \    \"cuentaremitente\" : \"1485100\", // Numero de acuerdo comercial asignado (1485100: Paquetería; 5625200: Mensajería)\r
+
+      \    \"sederemitente\" : null, // Código de la sede del cliente desde donde será generado el despacho, el cual es acordado con TCC\r
+
+      \    \"primernombreremitente\" : \"John\",\r
+
+      \    \"segundonombreremitente\" : \"Arley\",\r
+
+      \    \"primerapellidoremitente\" : \"Cano\",\r
+
+      \    \"segundoapellidoremitente\" : \"Salinas\",\r
+
+      \    \"razonsocialremitente\" : \"John Arley Cano Salinas\",\r
+
+      \    \"contactoremitente\" : \"John Arley Cano\", // Nombre de la persona que se debe contactar al momento de hacer la recogida de mercancia\r
+
+      \    \"tipoidentificacionremitente\" : \"CC\", // CC, NIT\r
+
+      \    \"identificacionremitente\" : \"1017177502\",\r
+
+      \    \"direccionremitente\" : \"Transversal 38AA # 59A 231\",\r
+
+      \    \"ciudadorigen\" : \"05360000\",\r
+
+      \    \"telefonoremitente\" : \"3134587623\",\r
+
+      \    \"emailremitente\" : \"johnarleycano@hotmail.com\",\r
+
+      \    // Máximo 100 destinatarios\r
+
+      \    \"destinatarios\" : [\r
+
+      \        {\r
+
+      \            \"numerocontrol\" : \"1\",  // Consecutivo\r
+
+      \            \"numeroremesa\" : null,  // Puede ser nulo de esta manera TCC genera el numero del despacho\r
+
+      \            \"numeroreferenciacliente\" : null,   // Numero de referencia del pedido\r
+
+      \            \"tipoidentificaciondestinatario\" : \"CC\",\r
+
+      \            \"identificaciondestinatario\" : \"1017250261\",\r
+
+      \            \"sededestinatario\" : null,  // Código de la sede del cliente destinatario\r
+
+      \            \"primernombredestinatario\" : \"Yasmin\",\r
+
+      \            \"segundonombredestinatario\" : \"Daniela\",\r
+
+      \            \"primerapellidodestinatario\" : \"Muñoz\",\r
+
+      \            \"segundoapellidodestinatario\" : \"Marulanda\",\r
+
+      \            \"razonsocialdestinatario\" : \"YASMIN DANIELA MUÑOZ MARULANDA\",\r
+
+      \            \"contactodestinatario\" : \"YASMIN DANIELA MUÑOZ MARULANDA\",\r
+
+      \            \"direcciondestinatario\" : \"Carera 69B # 25B - 08\",\r
+
+      \            \"telefonodestinatario\" : \"3143618016\",\r
+
+      \            \"ciudaddestino\" : \"05631000\",\r
+
+      \            \"formapago\" : null,\r
+
+      \            \"llevabodega\" : null,   // Indicador si el cliente lleva la mercancia a una bodega de TCC para su despacho (SI, NO)\r
+
+      \            \"recogebodega\" : null,  // Indicador si el cliente destinatario del despacho se acerca a una bodega de TCC a reclamar su mercancia (SI, NO)\r
+
+      \            \"centrocostos\" : null,  // Centro de costos del remintente\r
+
+      \            /*\r
+
+      \            TCC Paqueteria.\r
+
+      \            TISE_NORMAL_PAQ --> Tipo de servicio Normal (Paqueteria).\r
+
+      \            \r
+
+      \            TCC Mensajeria.\r
+
+      \            TISE_NORMAL_MEN --> Tipo de servicio Normal (Mensajeria). TISE_9AM --> Tipo de servicio 9 AM .\r
+
+      \            TISE_RD_NORMAL --> Tipo de servicio Radicación de Documentos. TISE_RD_DIGITAL --> Tipo de servicio Radicación de Documentos Digital.\r
+
+      \            TISE_RD_MIXTO --> Tipo de servicio Radicación de Documentos Mixto.\r
+
+      \            */\r
+
+      \            \"tiposervicio\" : \"TISE_NORMAL_PAQ\",\r
+
+      \            \"observaciones\" : \"Prueba\",\r
+
+      \            \"recaudoproducto\" : null,   // aquí se debe llevar el valor total a recaudar al momento de realizar la entrega de la mercancía al destinatario\r
+
+      \            \"unidades\" : [\r
+
+      \                {\r
+
+      \                    /*\r
+
+      \                    TIPO_UND_PAQ --> Unidad Tipo Paquete\r
+
+      \                    TIPO_UND_DOCB --> Unidad Tipo Fisico Normal)\r
+
+      \                    TIPO_UND_BOOM_FS --> Unidad Tipo Fisico Normal)\r
+
+      \                    TIPO_UND_DOCD --> Unidad Tipo Dardo \r
+
+      \                    TIPO_UND_BOOM_DGT --> Unidad Tipo Digital\r
+
+      \                    TIPO_UND_BOOM_MXT --> unidad Tipo Mixto\r
+
+      \                    */\r
+
+      \                    \"tipounidad\" : \"TIPO_UND_PAQ\",\r
+
+      \                    /*\r
+
+      \                    Determina la clase de empaque, según unidad de negocio, de la seguiente forma:\r
+
+      \                    \r
+
+      \                    TCC Paqueteria:\r
+
+      \                    CLEM_CAJA\r
+
+      \                    CLEM_SOBRE\r
+
+      \                    CLEM_LIO\r
+
+      \                    \r
+
+      \                    TCC Mensajeria:\r
+
+      \                    CLEM_PEQUENA\r
+
+      \                    CLEM_MEDIANA\r
+
+      \                    CLEM_GRANDE\r
+
+      \                    CLEM_MINI\r
+
+      \                    CLEM_SOBRE_MEN\r
+
+      \                    */\r
+
+      \                    \"claseempaque\" : \"CLEM_CAJA\",\r
+
+      \                    \"tipoempaque\" : null,   // Corresponde al tipo de empaque comercial acordado con el cliente\r
+
+      \                    \"dicecontener\" : \"Repuestos\",\r
+
+      \                    \"kilosreales\" : \"10\",   // Peso real de la unidad\r
+
+      \                    \"largo\" : \"1\",  // Dado en centimetros. Si no se tiene la información debe enviarse un cero (0)\r
+
+      \                    \"alto\" : \"1\",   // Dado en centimetros. Si no se tiene la información debe enviarse un cero (0)\r
+
+      \                    \"ancho\" : \"1\",  // Dado en centimetros. Si no se tiene la información debe enviarse un cero (0)\r
+
+      \                    // Si son enviadas las dimensiones, estas priman sobre el valor enviado en volumen, tambien si no se tiene el volumen se puede enviar Cero (0), siempre y cuando se envie el peso real(ancho (metros) * largo (metros) * alto (metros)) * 400 -> (0.4 * 0.4 * 0.3) * 400\r
+
+      \                    \"pesovolumen\" : \"10\",\r
+
+      \                    \"valormercancia\" : \"1200000\",\r
+
+      \                    \"codigobarras\" : null,\r
+
+      \                    \"numerobolsa\" : null,   // Opera solo TCC Mensajeria\r
+
+      \                    \"referencias\" : null,   // Opera solo TCC Mensajeria\r
+
+      \                    \"unidadesinternas\" : \"1\"    // Número de unidades internas contenidas\r
+
+      \                }\r
+
+      \            ],\r
+
+      \            \"documentosreferencia\" : [\r
+
+      \                {\r
+
+      \                    \"tipodocumento\" : null,\r
+
+      \                    \"numerodocumento\" : null,\r
+
+      \                    \"fechadocumento\" : null\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

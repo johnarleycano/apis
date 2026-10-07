@@ -1,0 +1,4 @@
+name: Producción
+variables:
+  - name: erpApiUrlVersion2
+    value: https://servicios.siesacloud.com

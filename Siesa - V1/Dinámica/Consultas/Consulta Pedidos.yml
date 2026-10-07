@@ -1,0 +1,191 @@
+info:
+  name: Consulta Pedidos
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Pedidos"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Pedidos
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Pedidos
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Pedidos"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Pedidos
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "3228"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 27 Apr 2023 16:18:12 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 1,
+                          "Razon_Social": "GOMEZ FRANCO JHON BAYRON",
+                          "Descripcion_Sucursal": "SRL766 GOMEZ FRANCO JHON BAYRON",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 18800000,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 15798319,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 2,
+                          "Razon_Social": "ECHEVERRY AGUDELO ROGELIO ANDRES",
+                          "Descripcion_Sucursal": "ECHEVERRY AGUDELO ROGELIO ANDRES",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 214200,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 720000,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 2,
+                          "Razon_Social": "ECHEVERRY AGUDELO ROGELIO ANDRES",
+                          "Descripcion_Sucursal": "ECHEVERRY AGUDELO ROGELIO ANDRES",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 325683.66,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 1094735,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 2,
+                          "Razon_Social": "ECHEVERRY AGUDELO ROGELIO ANDRES",
+                          "Descripcion_Sucursal": "ECHEVERRY AGUDELO ROGELIO ANDRES",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 171888.89,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 577778,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4,
+                          "Razon_Social": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Descripcion_Sucursal": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 39000,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 65546,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4,
+                          "Razon_Social": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Descripcion_Sucursal": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 300000,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 252101,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4,
+                          "Razon_Social": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Descripcion_Sucursal": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 95000,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 159664,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4,
+                          "Razon_Social": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Descripcion_Sucursal": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 178500,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 300000,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4,
+                          "Razon_Social": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Descripcion_Sucursal": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 165000,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 138656,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4,
+                          "Razon_Social": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Descripcion_Sucursal": "AUTOPARTES TRES OSOS Y OSOS SAS",
+                          "Fecha_Documento": "2021-09-01T00:00:00",
+                          "Precio_Unitario": 275000,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 231093,
+                          "Descuento": 0
+                      }
+                  ]
+              }
+          }

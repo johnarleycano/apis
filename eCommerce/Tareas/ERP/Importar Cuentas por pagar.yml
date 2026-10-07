@@ -1,0 +1,19 @@
+info:
+  name: Importar Cuentas por pagar
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_cuentas_por_pagar/1017177502"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

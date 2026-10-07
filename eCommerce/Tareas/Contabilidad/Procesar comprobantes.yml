@@ -1,0 +1,17 @@
+info:
+  name: Procesar comprobantes
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/contabilidad_validar_comprobantes"
+  body:
+    type: form-urlencoded
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

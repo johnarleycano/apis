@@ -1,0 +1,100 @@
+info:
+  name: Recibir mensaje
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/whatsapp"
+  params:
+    - name: hub_mode
+      value: a
+      type: query
+      disabled: true
+  body:
+    type: json
+    data: "{\r
+
+      \    \"object\": \"whatsapp_business_account\",\r
+
+      \    \"entry\": [\r
+
+      \        {\r
+
+      \            \"id\": \"2592661617733236\",\r
+
+      \            \"changes\": [\r
+
+      \                {\r
+
+      \                    \"value\": {\r
+
+      \                        \"messaging_product\": \"whatsapp\",\r
+
+      \                        \"metadata\": {\r
+
+      \                            \"display_phone_number\": \"15551745522\",\r
+
+      \                            \"phone_number_id\": \"808278662362668\"\r
+
+      \                        },\r
+
+      \                        \"contacts\": [\r
+
+      \                            {\r
+
+      \                                \"profile\": {\r
+
+      \                                    \"name\": \"John Arley\"\r
+
+      \                                },\r
+
+      \                                \"wa_id\": \"573134587623\"\r
+
+      \                            }\r
+
+      \                        ],\r
+
+      \                        \"messages\": [\r
+
+      \                            {\r
+
+      \                                \"from\": \"573134587623\",\r
+
+      \                                \"id\": \"wamid.HBgMNTczMTM0NTg3NjIzFQIAEhggQUM0NzUxMTg0RkRENjc2MDI3QjNBMzAyRDdFMDYwODEA\",\r
+
+      \                                \"timestamp\": \"1768348349\",\r
+
+      \                                \"text\": {\r
+
+      \                                    \"body\": \"Como vas?\"\r
+
+      \                                },\r
+
+      \                                \"type\": \"text\"\r
+
+      \                            }\r
+
+      \                        ]\r
+
+      \                    },\r
+
+      \                    \"field\": \"messages\"\r
+
+      \                }\r
+
+      \            ]\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

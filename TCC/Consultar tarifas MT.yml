@@ -1,0 +1,46 @@
+info:
+  name: Consultar tarifas MT
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{tcc_url}}/tarifas/consultartarifasmt"
+  headers:
+    - name: AccessToken
+      value: CLITCC20240OLPBZGKAK
+  body:
+    type: json
+    data: "{\r
+
+      \    \"poblacionesorigen\": [\r
+
+      \        \"05001000\"  // Medellín\r
+
+      \    ],\r
+
+      \    // Pueden consultarse varios destinos\r
+
+      \    \"poblacionesdestino\": [\r
+
+      \        \"52356000\", // Ipiales\r
+
+      \        \"05308000\", // Girardota\r
+
+      \        \"13001000\"  // Cartagena\r
+
+      \    ],\r
+
+      \    \"idunidadnegocio\": \"2\",\r
+
+      \    \"registros\": 100\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

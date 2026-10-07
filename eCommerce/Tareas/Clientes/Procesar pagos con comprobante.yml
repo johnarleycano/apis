@@ -1,0 +1,20 @@
+info:
+  name: Procesar pagos con comprobante
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/clientes_procesar_pagos_con_comprobante"
+  body:
+    type: form-urlencoded
+    data:
+      - name: datos
+        value: '{"id_comprobante_tipo": 4, "anio": 2025, "id_sede":  1, "mes": "11.NOVIEMBRE"}'
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,19 @@
+info:
+  name: Borrar pedidos antiguos
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/pedidos_borrar_antiguos"
+  body:
+    type: form-urlencoded
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Borra pedidos con antiguedad mayor a un mes, con el fin de mantener ligera \* la carga de datos al inicio del eCommerce

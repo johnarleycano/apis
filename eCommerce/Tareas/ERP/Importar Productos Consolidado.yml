@@ -1,0 +1,23 @@
+info:
+  name: Importar Productos Consolidado
+  type: http
+  seq: 16
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_productos_consolidado?lista_precio=001"
+  params:
+    - name: lista_precio
+      value: "001"
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

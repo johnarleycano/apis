@@ -1,0 +1,17 @@
+info:
+  name: Clientes - Enviar mensaje masivo
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/webhooks/envio_certificados_masivo"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Envía notificaciones por correo electrónico a los clientes que tienen certificados tributarios pendientes de carga, y registra el resultado del proceso (enviados y fallidos)

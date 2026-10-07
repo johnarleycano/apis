@@ -1,0 +1,19 @@
+info:
+  name: Importar Pedidos (productos)
+  type: http
+  seq: 13
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_productos_pedidos/2026-01-14"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

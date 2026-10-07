@@ -1,0 +1,42 @@
+info:
+  name: Tercero Cliente
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/conectoresimportar?idCompania={{idCompania}}&idInterface={{idInterface}}&idDocumento=144328&nombreDocumento=TERCERO_CLIENTE"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "144328"
+      type: query
+    - name: nombreDocumento
+      value: TERCERO_CLIENTE
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+      disabled: true
+    - name: parametros
+      value: f430_id_tercero_fact="800246302"|f353_consec_docto_cruce="1344"
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

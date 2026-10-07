@@ -1,0 +1,38 @@
+info:
+  name: Ventas - Pedidos ⭐
+  type: http
+  seq: 55
+
+http:
+  method: GET
+  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Pedidos&paginacion=numPag=1|tamPag=100&parametros=f430_rowid IS NOT NULL and f430_id_co=''200'' and f430_id_tipo_docto=''CPC'' and f430_consec_docto=''25422''"
+  headers:
+    - name: ConniKey
+      value: "{{erpConniKeyVersion3}}"
+    - name: ConniToken
+      value: "{{erpConniTokenVersion3}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_Ventas_Pedidos
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f430_rowid IS NOT NULL and f430_id_co=''200'' and f430_id_tipo_docto=''CPC'' and f430_consec_docto=''25422''
+      type: query
+    - name: parametros
+      value: f430_rowid IS NOT NULL and f430_fecha_ts_aprobacion IS NOT NULL and f430_id_fecha = ''2026-07-08''
+      type: query
+      disabled: true
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

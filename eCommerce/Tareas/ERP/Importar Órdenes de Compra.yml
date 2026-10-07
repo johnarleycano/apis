@@ -1,0 +1,21 @@
+info:
+  name: Importar Órdenes de Compra
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_compras_ordenes"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Desde la API estándar API_v2_Compras_Ordenes importa las órdenes de compra

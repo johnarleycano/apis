@@ -1,0 +1,67 @@
+info:
+  name: ⭐ Pedido - Compromisos
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{erpApiUrl1}}/api/v3/conectoresimportar?idCompania={{idCompania}}&nombreDocumento=API_v1_Ventas_Comercial_CompromisosPedido&idInterface={{idInterface}}&idDocumento=240497"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: nombreDocumento
+      value: API_v1_Ventas_Comercial_CompromisosPedido
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "240497"
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Compromisos\": [\r
+
+      \        {\r
+
+      \            \"f430_id_co\": \"400\",\r
+
+      \            \"f430_id_tipo_docto\": \"CPV\",\r
+
+      \            \"f430_consec_docto\": 6,\r
+
+      \            \"f431_referencia_item\": \"330-6798S-ARM\",\r
+
+      \            \"f431_id_bodega\": \"00550\",\r
+
+      \            \"f431_id_ubicación_aux\": \"PISO-A\",\r
+
+      \            \"f431_id_unidad_medida\": \"UNID\",\r
+
+      \            \"f431_cant_base\": \"1\",\r
+
+      \            \"f431_nro_registro\": \"1193311\",\r
+
+      \            \"f405_cant_por_remisionar_base\": \"1\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,46 @@
+info:
+  name: Consultar tracking
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{tcc_url}}/remesas/consultarestatusremesasv3"
+  headers:
+    - name: AccessToken
+      value: "{{tcc_token}}"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"remesas\": [\r
+
+      \        {\r
+
+      \            \"numeroremesa\": \"446843299\" // Número de guía\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"documentosreferencia\": [\r
+
+      \        {\r
+
+      \            \"documentoreferencia1\": null\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"generarimagen\": true\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

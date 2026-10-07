@@ -1,0 +1,18 @@
+info:
+  name: Ver transacción
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{wompi_url}}/transactions/1143689-1780051926-91659"
+  auth:
+    type: bearer
+    token: ""
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

@@ -1,0 +1,323 @@
+info:
+  name: Procesar transacción
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/webhooks/pedido"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"data\": {\r
+
+      \        \"transaction\": {\r
+
+      \            // Pegar a partir de aquí\r
+
+      \            \"id\": \"1143689-1780051926-91659\",\r
+
+      \            \"created_at\": \"2026-05-29T10:52:06.628Z\",\r
+
+      \            \"finalized_at\": \"2026-05-29T10:53:55.000Z\",\r
+
+      \            \"amount_in_cents\": 34482800,\r
+
+      \            \"reference\": \"pe-1be9668544\",\r
+
+      \            \"currency\": \"COP\",\r
+
+      \            \"payment_method_type\": \"BANCOLOMBIA_TRANSFER\",\r
+
+      \            \"payment_method\": {\r
+
+      \                \"type\": \"BANCOLOMBIA_TRANSFER\",\r
+
+      \                \"extra\": {\r
+
+      \                    \"is_three_ds\": false,\r
+
+      \                    \"transfer_date\": \"2026-05-29T05:53:53.000-0500\",\r
+
+      \                    \"transfer_voucher\": \"TR260529055353NWidfE\",\r
+
+      \                    \"async_payment_url\": \"https://botonbancolombia.apps.bancolombia.com/web/transfer-gateway/checkout/_1OCNQserQs\",\r
+
+      \                    \"three_ds_auth_type\": null,\r
+
+      \                    \"external_identifier\": \"_1OCNQserQs\"\r
+
+      \                },\r
+
+      \                \"user_type\": \"PERSON\",\r
+
+      \                \"afe_decision\": \"FRAUD_CHECK\",\r
+
+      \                \"payment_description\": \"Pago a MUELLES Y FRENOS SIMON BOLIVAR SAS, ref: pe-1be9668544\"\r
+
+      \            },\r
+
+      \            \"payment_link_id\": null,\r
+
+      \            \"redirect_url\": \"https://repuestossimonbolivar.com/carrito/respuesta?referencia=pe-1be9668544\",\r
+
+      \            \"status\": \"APPROVED\",\r
+
+      \            \"status_message\": \"Aprobado\",\r
+
+      \            \"merchant\": {\r
+
+      \                \"id\": 143689,\r
+
+      \                \"name\": \"MUELLES Y FRENOS SIMON BOLIVAR SAS\",\r
+
+      \                \"legal_name\": \"MUELLES Y FRENOS SIMON BOLIVAR S.A.S\",\r
+
+      \                \"contact_name\": \"LINA MARIA VASQUEZ\",\r
+
+      \                \"phone_number\": \"+573182067157\",\r
+
+      \                \"logo_url\": \"https://s3.amazonaws.com/master-waybox-api-merchant-images/1689277920_3bcb10650488086888794eeb71004935\",\r
+
+      \                \"legal_id_type\": \"NIT\",\r
+
+      \                \"email\": \"coordinadorcartera@repuestossimonbolivar.com\",\r
+
+      \                \"legal_id\": \"900296641-6\",\r
+
+      \                \"public_key\": \"pub_prod_Y4Wae03QWgozJ3A8Mx8TwJfRQUPAWgdb\"\r
+
+      \            },\r
+
+      \            \"taxes\": [],\r
+
+      \            \"tip_in_cents\": null\r
+
+      \        }\r
+
+      \    },\r
+
+      \    \"meta\": {}\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Pedido contado
+    request:
+      url: "{{ecommerce_baseUrl}}/webhooks/pedido"
+      method: POST
+      body:
+        type: json
+        data: "{\r
+
+          \    \"data\": {\r
+
+          \        \"transaction\": {\r
+
+          \            // Pegar a partir de aquí\r
+
+          \            \"id\": \"1143689-1771611880-47761\",\r
+
+          \            \"created_at\": \"2026-02-20T18:24:41.029Z\",\r
+
+          \            \"finalized_at\": \"2026-02-20T18:25:11.000Z\",\r
+
+          \            \"amount_in_cents\": 13900000,\r
+
+          \            \"reference\": \"pe-adeeef4ee1\",\r
+
+          \            \"currency\": \"COP\",\r
+
+          \            \"payment_method_type\": \"BANCOLOMBIA_TRANSFER\",\r
+
+          \            \"payment_method\": {\r
+
+          \                \"type\": \"BANCOLOMBIA_TRANSFER\",\r
+
+          \                \"extra\": {\r
+
+          \                    \"is_three_ds\": false,\r
+
+          \                    \"async_payment_url\": \"https://botonbancolombia.apps.bancolombia.com/web/transfer-gateway/checkout/_gx18JiFlqI\",\r
+
+          \                    \"three_ds_auth_type\": null,\r
+
+          \                    \"external_identifier\": \"_gx18JiFlqI\"\r
+
+          \                },\r
+
+          \                \"user_type\": \"PERSON\",\r
+
+          \                \"afe_decision\": \"FRAUD_CHECK\",\r
+
+          \                \"payment_description\": \"Pago a MUELLES Y FRENOS SIMON BOLIVAR SAS, ref: pe-adeeef4ee1\"\r
+
+          \            },\r
+
+          \            \"payment_link_id\": null,\r
+
+          \            \"redirect_url\": \"https://repuestossimonbolivar.com/carrito/respuesta?referencia=pe-adeeef4ee1\",\r
+
+          \            \"status\": \"APPROVED\",\r
+
+          \            \"status_message\": \"Transacción rechazada por el usuario\",\r
+
+          \            \"merchant\": {\r
+
+          \                \"id\": 143689,\r
+
+          \                \"name\": \"MUELLES Y FRENOS SIMON BOLIVAR SAS\",\r
+
+          \                \"legal_name\": \"MUELLES Y FRENOS SIMON BOLIVAR S.A.S\",\r
+
+          \                \"contact_name\": \"LINA MARIA VASQUEZ\",\r
+
+          \                \"phone_number\": \"+573182067157\",\r
+
+          \                \"logo_url\": \"https://s3.amazonaws.com/master-waybox-api-merchant-images/1689277920_3bcb10650488086888794eeb71004935\",\r
+
+          \                \"legal_id_type\": \"NIT\",\r
+
+          \                \"email\": \"coordinadorcartera@repuestossimonbolivar.com\",\r
+
+          \                \"legal_id\": \"900296641-6\",\r
+
+          \                \"public_key\": \"pub_prod_Y4Wae03QWgozJ3A8Mx8TwJfRQUPAWgdb\"\r
+
+          \            },\r
+
+          \            \"taxes\": [],\r
+
+          \            \"tip_in_cents\": null\r
+
+          \        }\r
+
+          \    },\r
+
+          \    \"meta\": {}\r
+
+          }"
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Pedido crédito
+    request:
+      url: "{{ecommerce_baseUrl}}/webhooks/pedido/pc-5d06eda20e"
+      method: POST
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Pedido Venta Externa
+    request:
+      url: "{{ecommerce_baseUrl}}/webhooks/pedido/pc-f9712c98c7"
+      method: POST
+      body:
+        type: json
+        data: "{\r
+
+          \    \"data\": {\r
+
+          \        \"transaction\": {\r
+
+          \            // Pegar a partir de aquí\r
+
+          \            \"id\": \"1143689-1770672333-12255\",\r
+
+          \            \"created_at\": \"2026-02-09T21:25:33.943Z\",\r
+
+          \            \"finalized_at\": \"2026-02-09T21:26:08.000Z\",\r
+
+          \            \"amount_in_cents\": 110980000,\r
+
+          \            \"reference\": \"pe-bebf56bf2b\",\r
+
+          \            \"currency\": \"COP\",\r
+
+          \            \"payment_method_type\": \"BANCOLOMBIA_TRANSFER\",\r
+
+          \            \"payment_method\": {\r
+
+          \                \"type\": \"BANCOLOMBIA_TRANSFER\",\r
+
+          \                \"extra\": {\r
+
+          \                    \"is_three_ds\": false,\r
+
+          \                    \"transfer_date\": \"null\",\r
+
+          \                    \"transfer_voucher\": \"TRnvo1Sq0gPO\",\r
+
+          \                    \"async_payment_url\": \"https://botonbancolombia.apps.bancolombia.com/web/transfer-gateway/checkout/_SpdVGrFUm3\",\r
+
+          \                    \"three_ds_auth_type\": null,\r
+
+          \                    \"external_identifier\": \"_SpdVGrFUm3\"\r
+
+          \                },\r
+
+          \                \"user_type\": \"PERSON\",\r
+
+          \                \"afe_decision\": \"FRAUD_CHECK\",\r
+
+          \                \"payment_description\": \"Pago a MUELLES Y FRENOS SIMON BOLIVAR SAS, ref: pe-bebf56bf2b\"\r
+
+          \            },\r
+
+          \            \"payment_link_id\": null,\r
+
+          \            \"redirect_url\": \"https://repuestossimonbolivar.com/carrito/respuesta?referencia=pe-bebf56bf2b\",\r
+
+          \            \"status\": \"APPROVED\",\r
+
+          \            \"status_message\": \"Saldo insuficiente\",\r
+
+          \            \"merchant\": {\r
+
+          \                \"id\": 143689,\r
+
+          \                \"name\": \"MUELLES Y FRENOS SIMON BOLIVAR SAS\",\r
+
+          \                \"legal_name\": \"MUELLES Y FRENOS SIMON BOLIVAR S.A.S\",\r
+
+          \                \"contact_name\": \"LINA MARIA VASQUEZ\",\r
+
+          \                \"phone_number\": \"+573182067157\",\r
+
+          \                \"logo_url\": \"https://s3.amazonaws.com/master-waybox-api-merchant-images/1689277920_3bcb10650488086888794eeb71004935\",\r
+
+          \                \"legal_id_type\": \"NIT\",\r
+
+          \                \"email\": \"coordinadorcartera@repuestossimonbolivar.com\",\r
+
+          \                \"legal_id\": \"900296641-6\",\r
+
+          \                \"public_key\": \"pub_prod_Y4Wae03QWgozJ3A8Mx8TwJfRQUPAWgdb\"\r
+
+          \            },\r
+
+          \            \"taxes\": [],\r
+
+          \            \"tip_in_cents\": null\r
+
+          \        }\r
+
+          \    },\r
+
+          \    \"meta\": {}\r
+
+          }"
+    response:
+      body:
+        type: text
+        data: ""

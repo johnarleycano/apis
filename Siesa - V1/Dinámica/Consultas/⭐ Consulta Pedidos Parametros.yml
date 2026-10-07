@@ -1,0 +1,493 @@
+info:
+  name: ⭐ Consulta Pedidos Parametros
+  type: http
+  seq: 9
+
+http:
+  method: GET
+  url: "{{base_url_produccion}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Pedidos_V2&parametros=Fechaini='2024-09-06'|Fechafin='2024-09-06'|Nro_documento='-1'|Id_Tercero='8354102'"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: Pedidos_V2
+      type: query
+    - name: parametros
+      value: Fechaini='2024-09-06'|Fechafin='2024-09-06'|Nro_documento='-1'|Id_Tercero='8354102'
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Pedidos Parametros
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Pedidos_V2&parametros=Fechaini='2023-05-16'|Fechafin='2023-05-16'|Nro_documento='-1'|Id_Tercero='900171734'"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Pedidos_V2
+          type: query
+        - name: parametros
+          value: Fechaini='2023-05-16'|Fechafin='2023-05-16'|Nro_documento='-1'|Id_Tercero='900171734'
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "11868"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 18 May 2023 19:22:06 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 7959,
+                          "Referencia": "SET-52400/52618-MERITOR                           ",
+                          "Descripcion": "SET TRANSMISION KW MERITOR 46160/52618-",
+                          "Precio_Unitario": 300700,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 252689,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 365,
+                          "Referencia": "1229Q2929                                         ",
+                          "Descripcion": "ARANDELA CANASTA DIVISOR 65LBS RT46160-R",
+                          "Precio_Unitario": 6500,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 21849,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 7868,
+                          "Referencia": "SET403-MERITOR                                    ",
+                          "Descripcion": "SET SET403 594A 592A LATERALES ROWELL",
+                          "Precio_Unitario": 186900,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 157059,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 2671,
+                          "Referencia": "SPL250X-SKF                                       ",
+                          "Descripcion": "CRUCETA CARDAN SPL250X TRAS KENW SKF",
+                          "Precio_Unitario": 475100,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 399244,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 8001,
+                          "Referencia": "0802                                              ",
+                          "Descripcion": "SILICONA ULTRA GREY ALTA TEMPERATURA",
+                          "Precio_Unitario": 26600,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 22353,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 5780,
+                          "Referencia": "5X1034                                            ",
+                          "Descripcion": "ORRING DIVISOR DE POTENCIA DE ROCKWEL-16",
+                          "Precio_Unitario": 13200,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 22185,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 511,
+                          "Referencia": "1229K3001                                         ",
+                          "Descripcion": "ARANDELA SATELITE MERITOR 1229K3001 4616",
+                          "Precio_Unitario": 7200,
+                          "Cantidad_Pedida": 8,
+                          "Valor_Bruto": 48403,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 497,
+                          "Referencia": "1229L3002                                         ",
+                          "Descripcion": "ARANDELA PLANETARIO ROCWELL RT-46160.65",
+                          "Precio_Unitario": 20700,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 69580,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 392,
+                          "Referencia": "1229S4985                                         ",
+                          "Descripcion": "ARANDELA DIVISOR (ESCUALIZACION) COBRE",
+                          "Precio_Unitario": 95100,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 79916,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 3650,
+                          "Referencia": "3280V8394                                         ",
+                          "Descripcion": "FILTRO TRANSMISION FREIGHTLINER KW MERIT",
+                          "Precio_Unitario": 67300,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 56555,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 5272,
+                          "Referencia": "26585                                             ",
+                          "Descripcion": "LOCTIGAS FUERZA ALTA 36ML P4040",
+                          "Precio_Unitario": 28500,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 23949,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 205,
+                          "Referencia": "66162                                             ",
+                          "Descripcion": "AMORTIGUADOR CABINA 66162 EAGLE KENW 6.3",
+                          "Precio_Unitario": 145500,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 244538,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "100",
+                          "Tipo_Documento": "CCC",
+                          "Nro_Documento": 4187,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 7237,
+                          "Referencia": "A1205*2728-MERI                                   ",
+                          "Descripcion": "RETENEDOR DIVISOR TRANSM ROWELL(MERITOR)",
+                          "Precio_Unitario": 256400,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 215462,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 7237,
+                          "Referencia": "A1205*2728-MERI                                   ",
+                          "Descripcion": "RETENEDOR DIVISOR TRANSM ROWELL(MERITOR)",
+                          "Precio_Unitario": 256400,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 215462,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 392,
+                          "Referencia": "1229S4985                                         ",
+                          "Descripcion": "ARANDELA DIVISOR (ESCUALIZACION) COBRE",
+                          "Precio_Unitario": 95100,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 79916,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 3650,
+                          "Referencia": "3280V8394                                         ",
+                          "Descripcion": "FILTRO TRANSMISION FREIGHTLINER KW MERIT",
+                          "Precio_Unitario": 67300,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 56555,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 5272,
+                          "Referencia": "26585                                             ",
+                          "Descripcion": "LOCTIGAS FUERZA ALTA 36ML P4040",
+                          "Precio_Unitario": 28500,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 23949,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 205,
+                          "Referencia": "66162                                             ",
+                          "Descripcion": "AMORTIGUADOR CABINA 66162 EAGLE KENW 6.3",
+                          "Precio_Unitario": 145500,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 244538,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 511,
+                          "Referencia": "1229K3001                                         ",
+                          "Descripcion": "ARANDELA SATELITE MERITOR 1229K3001 4616",
+                          "Precio_Unitario": 7200,
+                          "Cantidad_Pedida": 8,
+                          "Valor_Bruto": 48403,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 497,
+                          "Referencia": "1229L3002                                         ",
+                          "Descripcion": "ARANDELA PLANETARIO ROCWELL RT-46160.65",
+                          "Precio_Unitario": 20700,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 69580,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 5780,
+                          "Referencia": "5X1034                                            ",
+                          "Descripcion": "ORRING DIVISOR DE POTENCIA DE ROCKWEL-16",
+                          "Precio_Unitario": 13200,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 22185,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 8001,
+                          "Referencia": "0802                                              ",
+                          "Descripcion": "SILICONA ULTRA GREY ALTA TEMPERATURA",
+                          "Precio_Unitario": 26600,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 22353,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 365,
+                          "Referencia": "1229Q2929                                         ",
+                          "Descripcion": "ARANDELA CANASTA DIVISOR 65LBS RT46160-R",
+                          "Precio_Unitario": 6500,
+                          "Cantidad_Pedida": 4,
+                          "Valor_Bruto": 21849,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 7868,
+                          "Referencia": "SET403-MERITOR                                    ",
+                          "Descripcion": "SET SET403 594A 592A LATERALES ROWELL",
+                          "Precio_Unitario": 186900,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 157059,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 2671,
+                          "Referencia": "SPL250X-SKF                                       ",
+                          "Descripcion": "CRUCETA CARDAN SPL250X TRAS KENW SKF",
+                          "Precio_Unitario": 475100,
+                          "Cantidad_Pedida": 2,
+                          "Valor_Bruto": 798487,
+                          "Descuento": 0
+                      },
+                      {
+                          "Centro_Operaciones": "500",
+                          "Tipo_Documento": "CPV",
+                          "Nro_Documento": 491,
+                          "Id_Tercero": "900171734      ",
+                          "Razon_Social": "LOGISTICA F.T.A S.A.S",
+                          "Descripcion_Sucursal": "LOGISTICA F TA",
+                          "Fecha_Documento": "2023-05-16T00:00:00",
+                          "Item": 7959,
+                          "Referencia": "SET-52400/52618-MERITOR                           ",
+                          "Descripcion": "SET TRANSMISION KW MERITOR 46160/52618-",
+                          "Precio_Unitario": 300700,
+                          "Cantidad_Pedida": 1,
+                          "Valor_Bruto": 252689,
+                          "Descuento": 0
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,974 @@
+info:
+  name: Pedidos AE
+  type: http
+  seq: 12
+
+http:
+  method: GET
+  url: "{{simonBolivar_BaseUrl}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=AE_Pedidos&parametros=FechaIni=2025-08-01 00:46|FechaFin=2025-09-05 07:46|NitTercero=-1|IdSucursal=-1"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: AE_Pedidos
+      type: query
+    - name: parametros
+      value: FechaIni=2025-08-01 00:46|FechaFin=2025-09-05 07:46|NitTercero=-1|IdSucursal=-1
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Consulta Inventarios
+    request:
+      url: "{{base_url_qa}}/api/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=Inventarios"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: Inventarios
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "15334"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Thu, 27 Apr 2023 16:12:16 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Table": [
+                      {
+                          "Iditem": "11",
+                          "Referencia": "101878",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "101878",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "13",
+                          "Referencia": "122417-EURO",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "13",
+                          "Referencia": "122417-EURO",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "13",
+                          "Referencia": "122417-EURO",
+                          "Bodega": "00021",
+                          "Descripcion_Corta": "122417-EURO",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "14",
+                          "Referencia": "98584E",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "98548",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "15",
+                          "Referencia": "208326",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "KSLHDF412",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "15",
+                          "Referencia": "208326",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "KSLHDF412",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 22,
+                          "Disponible": 15
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 9,
+                          "Disponible": 9
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 17,
+                          "Disponible": 17
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00004",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00800",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00002",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00021",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00060",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00510",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00050",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "16",
+                          "Referencia": "91400",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "KTBSF437",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 42,
+                          "Disponible": 30
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 5,
+                          "Disponible": 5
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 16,
+                          "Disponible": 16
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00004",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00250",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00251",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00600",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00800",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00002",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00021",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00400",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00060",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00111",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "17",
+                          "Referencia": "3557854C1",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "KTBSF287",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "18",
+                          "Referencia": "ECL1937",
+                          "Bodega": "00900",
+                          "Descripcion_Corta": "ECL1937",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 2,
+                          "Disponible": 2
+                      },
+                      {
+                          "Iditem": "19",
+                          "Referencia": "41000150",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "41000150",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "19",
+                          "Referencia": "41000150",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "41000150",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "19",
+                          "Referencia": "41000150",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "41000150",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "19",
+                          "Referencia": "41000150",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "41000150",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "20",
+                          "Referencia": "41000151",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "41000151",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 6,
+                          "Disponible": 6
+                      },
+                      {
+                          "Iditem": "21",
+                          "Referencia": "41000135",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "41000135",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "21",
+                          "Referencia": "41000135",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "41000135",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "22",
+                          "Referencia": "41000140",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "41000140",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "22",
+                          "Referencia": "41000140",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "41000140",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "22",
+                          "Referencia": "41000140",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "41000140",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 11,
+                          "Disponible": 11
+                      },
+                      {
+                          "Iditem": "22",
+                          "Referencia": "41000140",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "41000140",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "23",
+                          "Referencia": "410000141",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "410000141",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "24",
+                          "Referencia": "AM-23/4*21/2",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "AM-23/4p21/2",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "25",
+                          "Referencia": "AM",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "AM",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 2,
+                          "Disponible": 2
+                      },
+                      {
+                          "Iditem": "26",
+                          "Referencia": "AM-4p41/2",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "26",
+                          "Referencia": "AM-4p41/2",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "26",
+                          "Referencia": "AM-4p41/2",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "26",
+                          "Referencia": "AM-4p41/2",
+                          "Bodega": "00021",
+                          "Descripcion_Corta": "AM-4p41/2",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "27",
+                          "Referencia": "AM-4p3",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "AM-4p3",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "27",
+                          "Referencia": "AM-4p3",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "AM-4p3",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "29",
+                          "Referencia": "TIOA15",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "TIOA15",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 12,
+                          "Disponible": 8
+                      },
+                      {
+                          "Iditem": "29",
+                          "Referencia": "TIOA15",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "TIOA15",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "30",
+                          "Referencia": "TIOA10",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "TIOA10",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "30",
+                          "Referencia": "TIOA10",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "TIOA10",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "30",
+                          "Referencia": "TIOA10",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "TIOA10",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "31",
+                          "Referencia": "TIOA18",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "TIOA18",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 10,
+                          "Disponible": 10
+                      },
+                      {
+                          "Iditem": "31",
+                          "Referencia": "TIOA18",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "TIOA18",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 2,
+                          "Disponible": 2
+                      },
+                      {
+                          "Iditem": "31",
+                          "Referencia": "TIOA18",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "TIOA18",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "31",
+                          "Referencia": "TIOA18",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "TIOA18",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "32",
+                          "Referencia": "TIOA12",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "TIOA12",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 11,
+                          "Disponible": 11
+                      },
+                      {
+                          "Iditem": "32",
+                          "Referencia": "TIOA12",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "TIOA12",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 7,
+                          "Disponible": 7
+                      },
+                      {
+                          "Iditem": "32",
+                          "Referencia": "TIOA12",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "TIOA12",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "32",
+                          "Referencia": "TIOA12",
+                          "Bodega": "00006",
+                          "Descripcion_Corta": "TIOA12",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "32",
+                          "Referencia": "TIOA12",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "TIOA12",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "33",
+                          "Referencia": "TIOA7.5",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "TIOA7.5",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 13,
+                          "Disponible": 13
+                      },
+                      {
+                          "Iditem": "33",
+                          "Referencia": "TIOA7.5",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "TIOA7.5",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 10,
+                          "Disponible": 10
+                      },
+                      {
+                          "Iditem": "35",
+                          "Referencia": "T-502",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-502",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "35",
+                          "Referencia": "T-502",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-502",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 5,
+                          "Disponible": 5
+                      },
+                      {
+                          "Iditem": "35",
+                          "Referencia": "T-502",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "T-502",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "36",
+                          "Referencia": "T-503",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-503",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "37",
+                          "Referencia": "T-504",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-504",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 2,
+                          "Disponible": 2
+                      },
+                      {
+                          "Iditem": "38",
+                          "Referencia": "T-505",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-505",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 7,
+                          "Disponible": 7
+                      },
+                      {
+                          "Iditem": "38",
+                          "Referencia": "T-505",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-505",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "39",
+                          "Referencia": "T-506",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-506",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "39",
+                          "Referencia": "T-506",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-506",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 2,
+                          "Disponible": 2
+                      },
+                      {
+                          "Iditem": "40",
+                          "Referencia": "T-507",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-507",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "40",
+                          "Referencia": "T-507",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "T-507",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "40",
+                          "Referencia": "T-507",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-507",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "41",
+                          "Referencia": "T-508",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-508",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "41",
+                          "Referencia": "T-508",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-508",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "41",
+                          "Referencia": "T-508",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "T-508",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "42",
+                          "Referencia": "T-510",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-510",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "42",
+                          "Referencia": "T-510",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-510",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 2,
+                          "Disponible": 2
+                      },
+                      {
+                          "Iditem": "43",
+                          "Referencia": "T-511",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-511",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "43",
+                          "Referencia": "T-511",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-511",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "43",
+                          "Referencia": "T-511",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "T-511",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "44",
+                          "Referencia": "T-512",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-512",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 5,
+                          "Disponible": 5
+                      },
+                      {
+                          "Iditem": "44",
+                          "Referencia": "T-512",
+                          "Bodega": "00110",
+                          "Descripcion_Corta": "T-512",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "44",
+                          "Referencia": "T-512",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-512",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 3,
+                          "Disponible": 3
+                      },
+                      {
+                          "Iditem": "44",
+                          "Referencia": "T-512",
+                          "Bodega": "00021",
+                          "Descripcion_Corta": "T-512",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "44",
+                          "Referencia": "T-512",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "T-512",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "45",
+                          "Referencia": "T-513",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-513",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 1,
+                          "Disponible": 1
+                      },
+                      {
+                          "Iditem": "45",
+                          "Referencia": "T-513",
+                          "Bodega": "00300",
+                          "Descripcion_Corta": "T-513",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 4,
+                          "Disponible": 4
+                      },
+                      {
+                          "Iditem": "45",
+                          "Referencia": "T-513",
+                          "Bodega": "00550",
+                          "Descripcion_Corta": "T-513",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 0,
+                          "Disponible": 0
+                      },
+                      {
+                          "Iditem": "46",
+                          "Referencia": "T-514",
+                          "Bodega": "00001",
+                          "Descripcion_Corta": "T-514",
+                          "Unidad_Inventario": "UNID",
+                          "Existencia": 5,
+                          "Disponible": 4
+                      }
+                  ]
+              }
+          }

@@ -1,0 +1,227 @@
+info:
+  name: ⭐ Recibo de caja
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{simonBolivar_BaseUrl}}/api/v3/conectoresimportar?idCompania={{idCompania}}&nombreDocumento=API_v1_ReciboCaja&idInterface={{idInterface}}&idDocumento=150388"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: nombreDocumento
+      value: API_v1_ReciboCaja
+      type: query
+    - name: idInterface
+      value: "{{idInterface}}"
+      type: query
+    - name: idDocumento
+      value: "150388"
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \    \"Inicial\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"RCyOtrosIngresos\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F_CONSEC_AUTO_REG\": \"1\", // 0=Manual (respeta el consecutivo asignado en el plano), 1=Automático, el consecutivo es recalculado con base en la tabla de consecutivos de docto.\r
+
+      \            \"F350_ID_CO\": \"100\", // Centro operativo\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"FRC\", // Código de tipo de documento\r
+
+      \            \"F350_CONSEC_DOCTO\": \"69330\", // Numero de documento\r
+
+      \            \"F350_FECHA\": \"20251124\", // AAAAMMDD\r
+
+      \            \"F357_ID_CAJA\": \"100\", // Código de caja\r
+
+      \            \"F357_FECHA_RECAUDO\": \"20250502\", // AAAAMMDD\r
+
+      \            \"F350_ID_TERCERO\": \"18594842\", // NIT\r
+
+      \            \"F357_ID_MONEDA_INGRESO\": \"COP\",\r
+
+      \            \"F357_VALOR_INGRESO\": \"111111.00\",\r
+
+      \            \"F357_ID_MONEDA_APLICAR\": \"COP\",\r
+
+      \            \"F357_VALOR_APLICAR_REAL\": \"111111.00\",\r
+
+      \            \"F357_ID_COBRADOR\": \"Z001\", // Código de vendedor\r
+
+      \            \"F357_ID_UN\": \"01\",\r
+
+      \            \"F357_ID_CCOSTO\": \"\",\r
+
+      \            \"F357_ID_FE\": \"1101\", // Concepto de flujo de efectivo, es obligatorio si la caja no tiene uno por defecto.\r
+
+      \            \"F350_ID_CLASE_DOCTO\": \"14\", // 13=Recibo de caja, 14=Otros ingresos\r
+
+      \            \"F350_IND_ESTADO\": \"1\", // 1=Aprobado, 2=Anulado\r
+
+      \            \"F350_IND_IMPRESION\": \"1\", // 0=No Impreso; 1=Impreso\r
+
+      \            \"F350_NOTAS\": \"CONSIGNACIÓN DEL DIA 2025-11-24\", // CONSIGNACIÓN DEL DIA \"Fecha de la consignación\"\r
+
+      \            // Ajuste al peso\r
+
+      \            \"F351_ID_AUXILIAR_AJUSTE\": \"\", // 42958105, si tiene ajuste al peso\r
+
+      \            \"F351_ID_CCOSTO_AJUSTE\": \"\",\r
+
+      \            // Pronto pago\r
+
+      \            \"F351_ID_AUXILIAR_PP\": \"\",\r
+
+      \            \"F351_ID_CCOSTO_PP\": \"\",\r
+
+      \            // Aprovechamientos\r
+
+      \            \"F351_ID_AUXILIAR_OTRO_ING\": \"\", // 42300505, si tiene aprovechamientos\r
+
+      \            \"F351_ID_TERCERO_OTRO_ING\": \"\", // Solo se requiere si la auxiliar de otro ingreso maneja tercero\r
+
+      \            \"F351_ID_SUCURSAL_OTRO_ING\": \"\", // Se requiere si la auxiliar de otro ingreso es de saldo abierto cliente.\r
+
+      \            \"F351_ID_CO_OTRO_ING\": \"100\", // Se requiere si el valor ingreso es mayor al valor aplicado a la cartera\r
+
+      \            \"F351_ID_UN_OTRO_ING\": \"01\", // Se requiere si el valor ingreso es mayor al valor aplicado a la cartera\r
+
+      \            \"F351_ID_CCOSTO_OTRO_ING\": \"\",\r
+
+      \            \"F357_REFERENCIA\": \"\",\r
+
+      \            \"F357_IND_VALIDA_MEDPAGO\": \"0\" // 0 = No valida; 1 = Valida\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"caja\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F350_ID_CO\": \"100\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"FRC\",\r
+
+      \            \"F350_CONSEC_DOCTO\": \"69330\",\r
+
+      \            \"F358_ID_MEDIOS_PAGO\": \"Z01\",\r
+
+      \            \"F358_VALOR\": \"111111.00\",\r
+
+      \            \"F358_ID_BANCO\": \"\",\r
+
+      \            \"F358_NRO_CHEQUE\": \"0\",\r
+
+      \            \"F358_NRO_CUENTA\": \"\",\r
+
+      \            \"F358_COD_SEGURIDAD\": \"\",   \r
+
+      \            \"F358_NRO_AUTORIZACION\": \"\",\r
+
+      \            \"F358_FECHA_VCTO\": \"\",  \r
+
+      \            \"F358_REFERENCIA_OTROS\": \"000110011-Prueba\",    // Referencia\r
+
+      \            \"F358_FECHA_CONSIGNACION\": \"20251122\",\r
+
+      \            \"F358_ID_CAUSALES_DEVOLUCION\": \"\",\r
+
+      \            \"F358_ID_TERCERO\": \"811006779\",\r
+
+      \            \"F358_NOTAS\": \"CONSIGNACIÓN DEL DIA 2025-11-24\",\r
+
+      \            \"F358_ID_CCOSTO\": \"\",\r
+
+      \            \"f358_nro_alt_docto_banco\": \"\",\r
+
+      \            \"f358_docto_banco_cg\": \"CG\" // CG = ConsignaciònNC = Nota crèdito.\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"CxC\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\",\r
+
+      \            \"F350_ID_CO\": \"100\",\r
+
+      \            \"F350_ID_TIPO_DOCTO\": \"FRC\",\r
+
+      \            \"F350_CONSEC_DOCTO\": \"69330\",\r
+
+      \            \"F353_ID_AUXILIAR_DOCTO_CRUCE\": \"13050505\",\r
+
+      \            \"F353_ID_CO_DOCTO_CRUCE\": \"300\",\r
+
+      \            \"F353_ID_UN_DOCTO_CRUCE\": \"01\",\r
+
+      \            \"F353_ID_SUCURSAL_DOCTO_CRUCE\": \"001\",\r
+
+      \            \"F353_ID_TIPO_DOCTO_CRUCE\": \"CFE\",\r
+
+      \            \"F353_CONSEC_DOCTO_CRUCE\": \"22788\",\r
+
+      \            \"F353_NRO_CUOTA_CRUCE\": \"0\",\r
+
+      \            \"F354_VALOR_CR\": \"111111.00\",\r
+
+      \            \"F354_VALOR_APLICADO_PP\": \"0\",\r
+
+      \            \"F354_VALOR_APROVECHA\": \"0\",\r
+
+      \            \"F354_VALOR_RETENCION\": \"0\"\r
+
+      \        }\r
+
+      \    ],\r
+
+      \    \"Final\": [\r
+
+      \        {\r
+
+      \            \"F_CIA\": \"1\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Creación de recibos de caja

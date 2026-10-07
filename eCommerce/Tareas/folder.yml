@@ -1,0 +1,40 @@
+info:
+  name: Tareas
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit
+  scripts:
+    - type: after-response
+      code: "test('Código de estado es 200', function () {\r
+
+        \    expect(res.getStatus()).to.equal(200);\r
+
+        });\r
+
+        \r
+
+        test('No hay un error de PHP sin capturar en la respuesta', function () {\r
+
+        \    var texto = JSON.stringify(res.getBody());\r
+
+        \    expect(texto).to.not.include('PHP Error');\r
+
+        \    expect(texto).to.not.include('Fatal error');\r
+
+        \    expect(texto).to.not.include('Call to undefined');\r
+
+        \    expect(texto).to.not.include('Undefined index');\r
+
+        \    expect(texto).to.not.include('Undefined array key');\r
+
+        });\r
+
+        \r
+
+        test('La respuesta es JSON válido', function () {\r
+
+        \    expect(function () { res.getBody(); }).to.not.throw();\r
+
+        });"

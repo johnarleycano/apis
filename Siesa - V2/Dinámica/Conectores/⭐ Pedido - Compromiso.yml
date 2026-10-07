@@ -1,0 +1,67 @@
+info:
+  name: ⭐ Pedido - Compromiso
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://serviciosqa.siesacloud.com/api/siesa/v3.1/conectoresimportar?idCompania=7129&idSistema=7129&idDocumento=241166&nombreDocumento=API_v1_Ventas_Comercial_CompromisosPedido
+  headers:
+    - name: ConniKey
+      value: "{{erpConniKeyConnektaVersion2}}"
+    - name: ConniToken
+      value: "{{erpConniTokenConnektaVersion2}}"
+  params:
+    - name: idCompania
+      value: "7129"
+      type: query
+    - name: idSistema
+      value: "7129"
+      type: query
+    - name: idDocumento
+      value: "241166"
+      type: query
+    - name: nombreDocumento
+      value: API_v1_Ventas_Comercial_CompromisosPedido
+      type: query
+  body:
+    type: json
+    data: "{\r
+
+      \  \"Compromisos\": [\r
+
+      \    {\r
+
+      \      \"f430_id_co\": \"100\",\r
+
+      \      \"f430_id_tipo_docto\": \"CPC\",\r
+
+      \      \"f430_consec_docto\": 40415,\r
+
+      \      \"f431_id_item\": 1421,\r
+
+      \      \"f431_id_bodega\": \"00550\",\r
+
+      \      \"f431_id_ubicación_aux\": \"PISO-A\",\r
+
+      \      \"f431_id_unidad_medida\": \"UNID\",\r
+
+      \      \"f431_cant_base\": \"1\",\r
+
+      \      \"f431_nro_registro\": 1216909, // f431_rowid de Pedidos\r
+
+      \      \"f405_cant_por_remisionar_base\": \"1\"\r
+
+      \    }\r
+
+      \  ]\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

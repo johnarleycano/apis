@@ -1,0 +1,107 @@
+info:
+  name: Estructura Pedidos
+  type: http
+  seq: 3
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/conectoresestructura?idCompania={{idCompania}}&idDocumento=144733"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idDocumento
+      value: "144733"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Estructura Pedidos
+    request:
+      url: "{{base_url_qa}}/api/v3/conectoresestructura?idCompania={{idCompania}}&idDocumento=144733"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: idDocumento
+          value: "144733"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "783"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Tue, 25 Apr 2023 17:04:57 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Pedidos": [
+                      {
+                          "f430_id_co": "",
+                          "f430_id_tipo_docto": "",
+                          "f430_consec_docto": "",
+                          "f430_id_fecha": "",
+                          "f430_id_tercero_fact": "",
+                          "f430_id_sucursal_fact": "",
+                          "f430_id_tercero_rem": "",
+                          "f430_id_sucursal_rem": "",
+                          "f430_id_tipo_cli_fact": "",
+                          "f430_id_co_fact": "",
+                          "f430_fecha_entrega": "",
+                          "f430_num_dias_entrega": "",
+                          "f430_num_docto_referencia": "",
+                          "f430_id_cond_pago": "",
+                          "f430_notas": "",
+                          "f430_id_tercero_vendedor": ""
+                      }
+                  ],
+                  "Movimientos": [
+                      {
+                          "f431_id_co": "",
+                          "f431_id_tipo_docto": "",
+                          "f431_consec_docto": "",
+                          "f431_nro_registro": "",
+                          "f431_id_item": "",
+                          "f431_id_bodega": "",
+                          "f431_id_motivo": "",
+                          "f431_id_co_movto": "",
+                          "f431_id_un_movto": "",
+                          "f431_fecha_entrega": "",
+                          "f431_num_dias_entrega": "",
+                          "f431_id_unidad_medida": "",
+                          "f431_cant_pedida_base": "",
+                          "f431_notas": ""
+                      }
+                  ]
+              }
+          }

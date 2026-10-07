@@ -1,0 +1,23 @@
+info:
+  name: Importar Facturas
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_facturas?fecha=2026-07-09"
+  params:
+    - name: fecha
+      value: 2026-07-09
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

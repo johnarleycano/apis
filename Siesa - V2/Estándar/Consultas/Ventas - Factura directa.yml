@@ -1,0 +1,34 @@
+info:
+  name: Ventas - Factura directa
+  type: http
+  seq: 53
+
+http:
+  method: GET
+  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Factura_Directa&paginacion=numPag=1|tamPag=100&parametros=f350_id_cia_nota IS NOT NULL"
+  headers:
+    - name: ConniKey
+      value: "{{erpConniKeyVersion2}}"
+    - name: ConniToken
+      value: "{{erpConniTokenVersion2}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_Factura_Directa
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f350_id_cia_nota IS NOT NULL
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

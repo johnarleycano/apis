@@ -1,0 +1,52 @@
+info:
+  name: ⭐ Enviar email
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: https://graph.microsoft.com/v1.0/users/tienda@repuestossimonbolivar.com/sendMail
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r
+
+      \    \"message\": {\r
+
+      \        \"subject\": \"Prueba Simple\",\r
+
+      \        \"body\": {\r
+
+      \            \"contentType\": \"html\",\r
+
+      \            \"content\": \"<b>Este es un correo de prueba de John, enviado desde Postman</b>\"\r
+
+      \        },\r
+
+      \        \"toRecipients\": [\r
+
+      \            {\r
+
+      \                \"emailAddress\": {\r
+
+      \                    \"address\": \"johnarleycano@hotmail.com\"\r
+
+      \                }\r
+
+      \            }\r
+
+      \        ]\r
+
+      \    }\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

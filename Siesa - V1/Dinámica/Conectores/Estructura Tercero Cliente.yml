@@ -1,0 +1,143 @@
+info:
+  name: Estructura Tercero Cliente
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/conectoresestructura?idCompania={{idCompania}}&idDocumento={{idDocumento}}"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idDocumento
+      value: "{{idDocumento}}"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Estructura Tercero Cliente
+    request:
+      url: "{{base_url_qa}}/api/v3/conectoresestructura?idCompania={{idCompania}}&idDocumento={{idDocumento}}"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: idDocumento
+          value: "{{idDocumento}}"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "1283"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Tue, 25 Apr 2023 17:04:50 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Terceros": [
+                      {
+                          "F200_ID": "",
+                          "F200_NIT": "",
+                          "F200_ID_TIPO_IDENT": "",
+                          "F200_IND_TIPO_TERCERO": "",
+                          "F200_RAZON_SOCIAL": "",
+                          "F200_APELLIDO1": "",
+                          "F200_APELLIDO2": "",
+                          "F200_NOMBRES": "",
+                          "F015_CONTACTO": "",
+                          "F015_DIRECCION1": "",
+                          "F015_DIRECCION2": "",
+                          "F015_ID_PAIS": "",
+                          "F015_ID_DEPTO": "",
+                          "F015_ID_CIUDAD": "",
+                          "F015_TELEFONO": "",
+                          "F015_COD_POSTAL": "",
+                          "F015_EMAIL": "",
+                          "F200_FECHA_NACIMIENTO": "",
+                          "F200_ID_CIIU": "",
+                          "F015_CELULAR": ""
+                      }
+                  ],
+                  "Clientes": [
+                      {
+                          "F201_ID_TERCERO": "",
+                          "F201_ID_SUCURSAL": "",
+                          "F201_DESCRIPCION_SUCURSAL": "",
+                          "F201_ID_VENDEDOR": "",
+                          "F201_ID_COND_PAGO": "",
+                          "F201_DIAS_GRACIA": "",
+                          "F201_CUPO_CREDITO": "",
+                          "F201_ID_TIPO_CLI": "",
+                          "F201_ID_LISTA_PRECIO": "",
+                          "F015_CONTACTO": "",
+                          "F015_DIRECCION1": "",
+                          "F015_DIRECCION2": "",
+                          "F015_ID_PAIS": "",
+                          "F015_ID_DEPTO": "",
+                          "F015_ID_CIUDAD": "",
+                          "F015_TELEFONO": "",
+                          "F015_EMAIL": "",
+                          "F201_FECHA_INGRESO": "",
+                          "f201_id_cobrador": "",
+                          "f015_celular": ""
+                      }
+                  ],
+                  "Imptos_y_Reten": [
+                      {
+                          "F_TIPO_REG": "",
+                          "F_ID_TERCERO": "",
+                          "F_ID_SUCURSAL": "",
+                          "F_ID_CLASE": "",
+                          "F_ID_VALOR_TERCERO": ""
+                      }
+                  ],
+                  "Criterios_Clientes": [
+                      {
+                          "F207_ID_TERCERO": "",
+                          "F207_ID_SUCURSAL": "",
+                          "F207_ID_PLAN_CRITERIOS": "",
+                          "F207_ID_CRITERIO_MAYOR": ""
+                      }
+                  ],
+                  "Ent_Dinamica_Tercero": [
+                      {
+                          "f200_id": "",
+                          "f753_id_entidad": "",
+                          "f753_id_atributo": "",
+                          "f753_id_maestro": "",
+                          "f753_id_maestro_detalle": ""
+                      }
+                  ]
+              }
+          }

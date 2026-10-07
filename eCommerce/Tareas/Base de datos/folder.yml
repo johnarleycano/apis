@@ -1,0 +1,7 @@
+info:
+  name: Base de datos
+  type: folder
+  seq: 5
+
+request:
+  auth: inherit

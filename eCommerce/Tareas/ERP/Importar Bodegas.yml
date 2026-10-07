@@ -1,0 +1,21 @@
+info:
+  name: Importar Bodegas
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_bodegas"
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+docs: Desde la API estándar API_v2_Bodegas importa las bodegas existentes

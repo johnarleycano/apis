@@ -1,0 +1,34 @@
+opencollection: 1.0.0
+
+info:
+  name: Repuestos Simón Bolívar
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  variables:
+    - name: idCompania
+      value: "7129"
+    - name: erpConniTokenVersion2
+      value: "{{process.env.SIESA_CONNI_TOKEN}}"
+    - name: erpConniKeyVersion2
+      value: "{{process.env.SIESA_CONNI_KEY}}"
+
+docs:
+  content: Coleccion creada por Interfaces y Soluciones para la empresa Muelles y Frenos Simón Bolívar como parte de la integracion con el ERP Siesa Enterprise y el Ecommerce propio.
+  type: text/markdown
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

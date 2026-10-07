@@ -1,0 +1,22 @@
+info:
+  name: ⭐ Marcar como leído
+  type: http
+  seq: 5
+
+http:
+  method: PATCH
+  url: https://graph.microsoft.com/v1.0/users/cartera3@repuestossimonbolivar.com/messages/AAMkAGRhYjQxMWEyLTlkZmYtNDc4OC04NGViLTVjM2Y2YmJlYThmMgAuAAAAAADowzDOATPNSoy_GZCDbHgpAQCgoDlCPAWCQb7hk-grncVBAAAZOy0bAAA=
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: "{\r\n  \"isRead\": true\r\n}"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

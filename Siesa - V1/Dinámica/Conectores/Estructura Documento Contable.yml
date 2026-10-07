@@ -1,0 +1,118 @@
+info:
+  name: Estructura Documento Contable
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{base_url_qa}}/api/v3/conectoresestructura?idCompania={{idCompania}}&idDocumento=145767"
+  headers:
+    - name: conniKey
+      value: "{{conniKey}}"
+    - name: conniToken
+      value: "{{conniToken}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: idDocumento
+      value: "145767"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Estructura Documento Contable
+    request:
+      url: "{{base_url_qa}}/api/v3/conectoresestructura?idCompania={{idCompania}}&idDocumento=145767"
+      method: GET
+      headers:
+        - name: conniKey
+          value: "{{conniKey}}"
+        - name: conniToken
+          value: "{{conniToken}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: idDocumento
+          value: "145767"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Length
+          value: "869"
+        - name: Content-Type
+          value: application/json; charset=utf-8
+        - name: Server
+          value: Microsoft-IIS/10.0
+        - name: X-Powered-By
+          value: ASP.NET
+        - name: Date
+          value: Tue, 25 Apr 2023 17:05:05 GMT
+      body:
+        type: json
+        data: |-
+          {
+              "codigo": 0,
+              "mensaje": "transacción exitosa",
+              "detalle": {
+                  "Documento_contable": [
+                      {
+                          "F350_CONSEC_DOCTO": "",
+                          "F350_FECHA": "",
+                          "F350_ID_TERCERO": "",
+                          "F350_NOTAS": ""
+                      }
+                  ],
+                  "Movimiento_contable": [
+                      {
+                          "F350_CONSEC_DOCTO": "",
+                          "F351_ID_AUXILIAR": "",
+                          "F351_VALOR_DB": "",
+                          "F351_NRO_DOCTO_BANCO": "",
+                          "F351_NOTAS": ""
+                      }
+                  ],
+                  "Movimiento_CxC": [
+                      {
+                          "F350_CONSEC_DOCTO": "",
+                          "F351_ID_AUXILIAR": "",
+                          "F351_ID_TERCERO": "",
+                          "F351_ID_CO_MOV": "",
+                          "F351_VALOR_CR": "",
+                          "F351_NOTAS": "",
+                          "F353_ID_SUCURSAL": "",
+                          "F353_ID_TIPO_DOCTO_CRUCE": "",
+                          "F353_CONSEC_DOCTO_CRUCE": "",
+                          "F353_FECHA_VCTO": "",
+                          "F353_FECHA_DSCTO_PP": ""
+                      }
+                  ],
+                  "Movimiento_CxP": [
+                      {
+                          "F350_CONSEC_DOCTO": "",
+                          "F351_ID_AUXILIAR": "",
+                          "F351_ID_TERCERO": "",
+                          "F351_ID_CO_MOV": "",
+                          "F351_VALOR_DB": "",
+                          "F351_VALOR_CR": "",
+                          "F351_NOTAS": "",
+                          "F353_ID_SUCURSAL": "",
+                          "F353_PREFIJO_CRUCE": "",
+                          "F353_CONSEC_DOCTO_CRUCE": "",
+                          "F353_FECHA_VCTO": "",
+                          "F353_FECHA_DSCTO_PP": "",
+                          "F353_FECHA_DOCTO_CRUCE": ""
+                      }
+                  ]
+              }
+          }

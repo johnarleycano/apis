@@ -1,0 +1,7 @@
+info:
+  name: Siesa - V2
+  type: folder
+  seq: 2
+
+request:
+  auth: inherit

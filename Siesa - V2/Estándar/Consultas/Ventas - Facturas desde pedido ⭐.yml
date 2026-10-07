@@ -1,0 +1,90 @@
+info:
+  name: Ventas - Facturas desde pedido ⭐
+  type: http
+  seq: 52
+
+http:
+  method: GET
+  url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Facturas_DesdePedido&paginacion=numPag=1|tamPag=100&parametros=f350_id_co=''100'' and f350_id_tipo_docto = ''CFF''"
+  headers:
+    - name: ConniKey
+      value: "{{erpConniKeyVersion2}}"
+    - name: ConniToken
+      value: "{{erpConniTokenVersion2}}"
+  params:
+    - name: idCompania
+      value: "{{idCompania}}"
+      type: query
+    - name: descripcion
+      value: API_v2_Ventas_Facturas_DesdePedido
+      type: query
+    - name: paginacion
+      value: numPag=1|tamPag=100
+      type: query
+    - name: parametros
+      value: f350_id_co=''100'' and f350_id_tipo_docto = ''CFF''
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
+
+examples:
+  - name: Facturas de un día
+    request:
+      url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Facturas_DesdePedido&paginacion=numPag=1|tamPag=100&parametros=f350_rowid IS NOT NULL and f350_fecha=''2026-05-01''"
+      method: GET
+      headers:
+        - name: ConniKey
+          value: "{{erpConniKeyVersion2}}"
+        - name: ConniToken
+          value: "{{erpConniTokenVersion2}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_Ventas_Facturas_DesdePedido
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f350_rowid IS NOT NULL and f350_fecha=''2026-05-01''
+          type: query
+    response:
+      body:
+        type: text
+        data: ""
+  - name: Facturas de un producto
+    request:
+      url: "{{erpApiUrlVersion2}}/api/siesa/v3/ejecutarconsultaestandar?idCompania={{idCompania}}&descripcion=API_v2_Ventas_Facturas_DesdePedido&paginacion=numPag=1|tamPag=100&parametros=f350_rowid IS NOT NULL and f350_fecha=''2026-05-01''"
+      method: GET
+      headers:
+        - name: ConniKey
+          value: "{{erpConniKeyVersion2}}"
+        - name: ConniToken
+          value: "{{erpConniTokenVersion2}}"
+      params:
+        - name: idCompania
+          value: "{{idCompania}}"
+          type: query
+        - name: descripcion
+          value: API_v2_Ventas_Facturas_DesdePedido
+          type: query
+        - name: paginacion
+          value: numPag=1|tamPag=100
+          type: query
+        - name: parametros
+          value: f350_rowid IS NOT NULL and f350_fecha=''2026-05-01''
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      body:
+        type: text
+        data: ""
