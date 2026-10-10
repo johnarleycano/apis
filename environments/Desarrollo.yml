@@ -2,4 +2,5 @@ name: Desarrollo
 variables:
   - name: urlVersion1
     value: https://serviciosqa.siesacloud.com
-    description: ""
+  - name: ecommerce_baseUrl
+    value: http://localhost:8080/simonbolivar/ecommerce

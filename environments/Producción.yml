@@ -2,4 +2,5 @@ name: Producción
 variables:
   - name: urlVersion1
     value: https://servicios.siesacloud.com
-    description: ""
+  - name: ecommerce_baseUrl
+    value: https://repuestossimonbolivar.com

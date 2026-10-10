@@ -1,62 +1,72 @@
 info:
   name: ⭐ Pedido - Compromiso
   type: http
-  seq: 2
+  seq: 4
 
 http:
   method: POST
-  url: https://serviciosqa.siesacloud.com/api/siesa/v3.1/conectoresimportar?idCompania=7129&idSistema=7129&idDocumento=241166&nombreDocumento=API_v1_Ventas_Comercial_CompromisosPedido
+  url: https://servicios.siesacloud.com/api/siesa/v3.1/conectoresimportar?idCompania=7129&idSistema=1&idDocumento=258987&nombreDocumento=CompromisoWMS
   headers:
     - name: ConniKey
-      value: "{{erpConniKeyConnektaVersion2}}"
+      value: 7f3db62af80e421edf4a4f0e0ac79f15
     - name: ConniToken
-      value: "{{erpConniTokenConnektaVersion2}}"
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImY4MTAxODU3LTE3YWItNGIyZi05MTc5LWIxZWE5M2ZmNTI1NCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcHJpbWFyeXNpZCI6ImFhMWFkZTZmLWJjOTctNGY4MC04YTIyLThhMDQxMzU3MzdiZiJ9.A0eXfX-nNKHAtkwv6f_Sz4g2hxOCJjeBNCAU8we0SLU
   params:
     - name: idCompania
       value: "7129"
       type: query
     - name: idSistema
-      value: "7129"
+      value: "1"
       type: query
     - name: idDocumento
-      value: "241166"
+      value: "258987"
       type: query
     - name: nombreDocumento
-      value: API_v1_Ventas_Comercial_CompromisosPedido
+      value: CompromisoWMS
       type: query
   body:
     type: json
-    data: "{\r
-
-      \  \"Compromisos\": [\r
-
-      \    {\r
-
-      \      \"f430_id_co\": \"100\",\r
-
-      \      \"f430_id_tipo_docto\": \"CPC\",\r
-
-      \      \"f430_consec_docto\": 40415,\r
-
-      \      \"f431_id_item\": 1421,\r
-
-      \      \"f431_id_bodega\": \"00550\",\r
-
-      \      \"f431_id_ubicación_aux\": \"PISO-A\",\r
-
-      \      \"f431_id_unidad_medida\": \"UNID\",\r
-
-      \      \"f431_cant_base\": \"1\",\r
-
-      \      \"f431_nro_registro\": 1216909, // f431_rowid de Pedidos\r
-
-      \      \"f405_cant_por_remisionar_base\": \"1\"\r
-
-      \    }\r
-
-      \  ]\r
-
-      }"
+    data: |-
+      {
+        "Compromisos": [
+              {
+                  "f_cia": "001",
+                  "f430_id_co": "300",
+                  "f430_id_tipo_docto": "CPC",
+                  "f430_consec_docto": 15301,
+                  "f431_id_item": "",
+                  "f431_referencia_item": "KN44051-IMPO",
+                  "f431_codigo_barras": "",
+                  "f431_id_ext1_detalle": "",
+                  "f431_id_ext2_detalle": "",
+                  "f431_id_bodega": "00300",
+                  "f431_id_ubicacion_aux": "EXHIBICION",
+                  "f431_id_lote": "",
+                  "f431_id_unidad_medida": "UNID",
+                  "f431_cant_base": "2",
+                  "f431_nro_registro": 1358234,
+                  "f405_cant_por_remisionar_base": "2"
+              },
+              {
+                  "f_cia": "001",
+                  "f430_id_co": "300",
+                  "f430_id_tipo_docto": "CPC",
+                  "f430_consec_docto": 15301,
+                  "f431_id_item": "",
+                  "f431_referencia_item": "15919",
+                  "f431_codigo_barras": "",
+                  "f431_id_ext1_detalle": "",
+                  "f431_id_ext2_detalle": "",
+                  "f431_id_bodega": "00300",
+                  "f431_id_ubicacion_aux": "A-H-8-5",
+                  "f431_id_lote": "",
+                  "f431_id_unidad_medida": "UNID",
+                  "f431_cant_base": "3",
+                  "f431_nro_registro": 1358235,
+                  "f405_cant_por_remisionar_base": "3"
+              }
+          ]
+      }
   auth: inherit
 
 settings:

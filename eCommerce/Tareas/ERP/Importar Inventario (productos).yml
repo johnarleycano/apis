@@ -5,12 +5,11 @@ info:
 
 http:
   method: POST
-  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_productos_inventario?bodega=00014"
+  url: "{{ecommerce_baseUrl}}/tareas/erp/importar_productos_inventario?bodega=00550"
   params:
     - name: bodega
-      value: "00014"
+      value: "00550"
       type: query
-      description: Código de la bodega
   body:
     type: json
     data: ""

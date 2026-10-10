@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{urlVersion1}}/api/connekta/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Estado_cuenta_cliente_2&parametros=f200_id=-1|f353_consec_docto_cruce=-1|FechaInicio=|FechaFin=|TipoDocumento=-1|Sucursal=-1|CentroOperacion=-1|Nit=811007434|Auxiliar=-1|ValorMin=0.1|ValorMax=|DiasVencidosMin=|DiasVencidosMax=|SoloVencidos=0"
+  url: "{{urlVersion1}}/api/connekta/v3/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Estado_cuenta_cliente_2&parametros=f200_id=-1|FechaInicio=|FechaFin=|TipoDocumento=-1|Sucursal=-1|id_sucursal_cli=-1|CentroOperacion=-1|Auxiliar=-1|ValorMax=|DiasVencidosMin=|DiasVencidosMax=|SoloVencidos=0"
   headers:
     - name: ConniKey
       value: "{{conniKeyVersion2}}"
@@ -19,7 +19,7 @@ http:
       value: muellesyfrenos_Estado_cuenta_cliente_2
       type: query
     - name: parametros
-      value: f200_id=-1|f353_consec_docto_cruce=-1|FechaInicio=|FechaFin=|TipoDocumento=-1|Sucursal=-1|CentroOperacion=-1|Nit=811007434|Auxiliar=-1|ValorMin=0.1|ValorMax=|DiasVencidosMin=|DiasVencidosMax=|SoloVencidos=0
+      value: f200_id=-1|FechaInicio=|FechaFin=|TipoDocumento=-1|Sucursal=-1|id_sucursal_cli=-1|CentroOperacion=-1|Auxiliar=-1|ValorMax=|DiasVencidosMin=|DiasVencidosMax=|SoloVencidos=0
       type: query
   auth: inherit
 

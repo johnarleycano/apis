@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{urlVersion1}}/api/connekta/v3.1/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Margen_Calculado_ERP&paginacion=numPag=1|tamPag=100&parametros=Cantidad_Disponible > 0 and Iditem = ''72'' and Lista_Precio = ''001'' and Bodega = ''00300''"
+  url: "{{urlVersion1}}/api/connekta/v3.1/ejecutarconsulta?idCompania={{idCompania}}&descripcion=muellesyfrenos_Margen_Calculado_ERP&paginacion=numPag=1|tamPag=100&parametros=Cantidad_Disponible > 0 and Iditem = ''7452''"
   headers:
     - name: ConniKey
       value: "{{conniKeyVersion2}}"
@@ -22,7 +22,7 @@ http:
       value: numPag=1|tamPag=100
       type: query
     - name: parametros
-      value: Cantidad_Disponible > 0 and Iditem = ''72'' and Lista_Precio = ''001'' and Bodega = ''00300''
+      value: Cantidad_Disponible > 0 and Iditem = ''7452''
       type: query
   auth: inherit
 
